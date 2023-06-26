@@ -1,0 +1,22 @@
+// Copyright (c) 2022, All Right Reserved, Shubham Tiwari
+
+syntax = "proto3";
+
+package proto;
+
+
+//The following protos are reserved 12,13,14,15,16.You shd not use them
+
+enum LifeTimeEnum {
+  UNKNOWN_LIFETIME = 0;
+  ACTIVE = 1;
+  SUSPENDED = 2;
+  DELETED = 3;
+  LOCKED =4;
+}
+
+message EntityPb{
+	string hash_id =1 ;
+  string range_id =2 ;
+	LifeTimeEnum lifetime =3;
+}
