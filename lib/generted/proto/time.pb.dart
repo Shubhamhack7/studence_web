@@ -1,9 +1,13 @@
-///
+//
 //  Generated code. Do not modify.
 //  source: time.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
+
+// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: constant_identifier_names, library_prefixes
+// ignore_for_file: non_constant_identifier_names, prefer_final_fields
+// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
 
 import 'dart:core' as $core;
 
@@ -14,48 +18,21 @@ import 'time.pbenum.dart';
 export 'time.pbenum.dart';
 
 class TimeStatsPb extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TimeStatsPb', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'time'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
-    ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'totalValue', $pb.PbFieldType.O3, protoName: 'totalValue')
-    ..a<$core.int>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'totalData', $pb.PbFieldType.O3, protoName: 'totalData')
-    ..a<$core.int>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'minValue', $pb.PbFieldType.O3, protoName: 'minValue')
-    ..a<$core.int>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'maxValue', $pb.PbFieldType.O3, protoName: 'maxValue')
-    ..a<$core.double>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'avg', $pb.PbFieldType.OD)
+  factory TimeStatsPb() => create();
+  TimeStatsPb._() : super();
+  factory TimeStatsPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory TimeStatsPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TimeStatsPb', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'totalValue', $pb.PbFieldType.O3, protoName: 'totalValue')
+    ..a<$core.int>(3, _omitFieldNames ? '' : 'totalData', $pb.PbFieldType.O3, protoName: 'totalData')
+    ..a<$core.int>(4, _omitFieldNames ? '' : 'minValue', $pb.PbFieldType.O3, protoName: 'minValue')
+    ..a<$core.int>(5, _omitFieldNames ? '' : 'maxValue', $pb.PbFieldType.O3, protoName: 'maxValue')
+    ..a<$core.double>(6, _omitFieldNames ? '' : 'avg', $pb.PbFieldType.OD)
     ..hasRequiredFields = false
   ;
 
-  TimeStatsPb._() : super();
-  factory TimeStatsPb({
-    $core.String? id,
-    $core.int? totalValue,
-    $core.int? totalData,
-    $core.int? minValue,
-    $core.int? maxValue,
-    $core.double? avg,
-  }) {
-    final _result = create();
-    if (id != null) {
-      _result.id = id;
-    }
-    if (totalValue != null) {
-      _result.totalValue = totalValue;
-    }
-    if (totalData != null) {
-      _result.totalData = totalData;
-    }
-    if (minValue != null) {
-      _result.minValue = minValue;
-    }
-    if (maxValue != null) {
-      _result.maxValue = maxValue;
-    }
-    if (avg != null) {
-      _result.avg = avg;
-    }
-    return _result;
-  }
-  factory TimeStatsPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory TimeStatsPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -65,8 +42,10 @@ class TimeStatsPb extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  TimeStatsPb copyWith(void Function(TimeStatsPb) updates) => super.copyWith((message) => updates(message as TimeStatsPb)) as TimeStatsPb; // ignore: deprecated_member_use
+  TimeStatsPb copyWith(void Function(TimeStatsPb) updates) => super.copyWith((message) => updates(message as TimeStatsPb)) as TimeStatsPb;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static TimeStatsPb create() => TimeStatsPb._();
   TimeStatsPb createEmptyInstance() => create();
@@ -131,28 +110,17 @@ class TimeStatsPb extends $pb.GeneratedMessage {
 }
 
 class AccumulatedTimeStatsPb extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'AccumulatedTimeStatsPb', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'time'), createEmptyInstance: create)
-    ..pc<TimeStatsPb>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'timeStats', $pb.PbFieldType.PM, protoName: 'timeStats', subBuilder: TimeStatsPb.create)
-    ..aOM<AccumulatedTimeStatsIdPb>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name', subBuilder: AccumulatedTimeStatsIdPb.create)
+  factory AccumulatedTimeStatsPb() => create();
+  AccumulatedTimeStatsPb._() : super();
+  factory AccumulatedTimeStatsPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AccumulatedTimeStatsPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AccumulatedTimeStatsPb', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto'), createEmptyInstance: create)
+    ..pc<TimeStatsPb>(2, _omitFieldNames ? '' : 'timeStats', $pb.PbFieldType.PM, protoName: 'timeStats', subBuilder: TimeStatsPb.create)
+    ..aOM<AccumulatedTimeStatsIdPb>(3, _omitFieldNames ? '' : 'name', subBuilder: AccumulatedTimeStatsIdPb.create)
     ..hasRequiredFields = false
   ;
 
-  AccumulatedTimeStatsPb._() : super();
-  factory AccumulatedTimeStatsPb({
-    $core.Iterable<TimeStatsPb>? timeStats,
-    AccumulatedTimeStatsIdPb? name,
-  }) {
-    final _result = create();
-    if (timeStats != null) {
-      _result.timeStats.addAll(timeStats);
-    }
-    if (name != null) {
-      _result.name = name;
-    }
-    return _result;
-  }
-  factory AccumulatedTimeStatsPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory AccumulatedTimeStatsPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -162,8 +130,10 @@ class AccumulatedTimeStatsPb extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  AccumulatedTimeStatsPb copyWith(void Function(AccumulatedTimeStatsPb) updates) => super.copyWith((message) => updates(message as AccumulatedTimeStatsPb)) as AccumulatedTimeStatsPb; // ignore: deprecated_member_use
+  AccumulatedTimeStatsPb copyWith(void Function(AccumulatedTimeStatsPb) updates) => super.copyWith((message) => updates(message as AccumulatedTimeStatsPb)) as AccumulatedTimeStatsPb;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static AccumulatedTimeStatsPb create() => AccumulatedTimeStatsPb._();
   AccumulatedTimeStatsPb createEmptyInstance() => create();
@@ -188,23 +158,16 @@ class AccumulatedTimeStatsPb extends $pb.GeneratedMessage {
 }
 
 class TimeProfilePb extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TimeProfilePb', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'time'), createEmptyInstance: create)
-    ..pc<AccumulatedTimeStatsPb>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'accTimeStats', $pb.PbFieldType.PM, protoName: 'accTimeStats', subBuilder: AccumulatedTimeStatsPb.create)
+  factory TimeProfilePb() => create();
+  TimeProfilePb._() : super();
+  factory TimeProfilePb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory TimeProfilePb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TimeProfilePb', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto'), createEmptyInstance: create)
+    ..pc<AccumulatedTimeStatsPb>(2, _omitFieldNames ? '' : 'accTimeStats', $pb.PbFieldType.PM, protoName: 'accTimeStats', subBuilder: AccumulatedTimeStatsPb.create)
     ..hasRequiredFields = false
   ;
 
-  TimeProfilePb._() : super();
-  factory TimeProfilePb({
-    $core.Iterable<AccumulatedTimeStatsPb>? accTimeStats,
-  }) {
-    final _result = create();
-    if (accTimeStats != null) {
-      _result.accTimeStats.addAll(accTimeStats);
-    }
-    return _result;
-  }
-  factory TimeProfilePb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory TimeProfilePb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -214,8 +177,10 @@ class TimeProfilePb extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  TimeProfilePb copyWith(void Function(TimeProfilePb) updates) => super.copyWith((message) => updates(message as TimeProfilePb)) as TimeProfilePb; // ignore: deprecated_member_use
+  TimeProfilePb copyWith(void Function(TimeProfilePb) updates) => super.copyWith((message) => updates(message as TimeProfilePb)) as TimeProfilePb;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static TimeProfilePb create() => TimeProfilePb._();
   TimeProfilePb createEmptyInstance() => create();
@@ -229,23 +194,16 @@ class TimeProfilePb extends $pb.GeneratedMessage {
 }
 
 class AccumulatedTimeStatsIdPb extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'AccumulatedTimeStatsIdPb', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'time'), createEmptyInstance: create)
-    ..pc<TimeProfileDimensionId>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'dimensionId', $pb.PbFieldType.PM, protoName: 'dimensionId', subBuilder: TimeProfileDimensionId.create)
+  factory AccumulatedTimeStatsIdPb() => create();
+  AccumulatedTimeStatsIdPb._() : super();
+  factory AccumulatedTimeStatsIdPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AccumulatedTimeStatsIdPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AccumulatedTimeStatsIdPb', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto'), createEmptyInstance: create)
+    ..pc<TimeProfileDimensionId>(1, _omitFieldNames ? '' : 'dimensionId', $pb.PbFieldType.PM, protoName: 'dimensionId', subBuilder: TimeProfileDimensionId.create)
     ..hasRequiredFields = false
   ;
 
-  AccumulatedTimeStatsIdPb._() : super();
-  factory AccumulatedTimeStatsIdPb({
-    $core.Iterable<TimeProfileDimensionId>? dimensionId,
-  }) {
-    final _result = create();
-    if (dimensionId != null) {
-      _result.dimensionId.addAll(dimensionId);
-    }
-    return _result;
-  }
-  factory AccumulatedTimeStatsIdPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory AccumulatedTimeStatsIdPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -255,8 +213,10 @@ class AccumulatedTimeStatsIdPb extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  AccumulatedTimeStatsIdPb copyWith(void Function(AccumulatedTimeStatsIdPb) updates) => super.copyWith((message) => updates(message as AccumulatedTimeStatsIdPb)) as AccumulatedTimeStatsIdPb; // ignore: deprecated_member_use
+  AccumulatedTimeStatsIdPb copyWith(void Function(AccumulatedTimeStatsIdPb) updates) => super.copyWith((message) => updates(message as AccumulatedTimeStatsIdPb)) as AccumulatedTimeStatsIdPb;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static AccumulatedTimeStatsIdPb create() => AccumulatedTimeStatsIdPb._();
   AccumulatedTimeStatsIdPb createEmptyInstance() => create();
@@ -270,28 +230,17 @@ class AccumulatedTimeStatsIdPb extends $pb.GeneratedMessage {
 }
 
 class TimeProfileDimensionId extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TimeProfileDimensionId', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'time'), createEmptyInstance: create)
-    ..e<TimeProfileDimensionEnum>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name', $pb.PbFieldType.OE, defaultOrMaker: TimeProfileDimensionEnum.CONTEXT, valueOf: TimeProfileDimensionEnum.valueOf, enumValues: TimeProfileDimensionEnum.values)
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'value')
+  factory TimeProfileDimensionId() => create();
+  TimeProfileDimensionId._() : super();
+  factory TimeProfileDimensionId.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory TimeProfileDimensionId.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TimeProfileDimensionId', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto'), createEmptyInstance: create)
+    ..e<TimeProfileDimensionEnum>(1, _omitFieldNames ? '' : 'name', $pb.PbFieldType.OE, defaultOrMaker: TimeProfileDimensionEnum.CONTEXT, valueOf: TimeProfileDimensionEnum.valueOf, enumValues: TimeProfileDimensionEnum.values)
+    ..aOS(2, _omitFieldNames ? '' : 'value')
     ..hasRequiredFields = false
   ;
 
-  TimeProfileDimensionId._() : super();
-  factory TimeProfileDimensionId({
-    TimeProfileDimensionEnum? name,
-    $core.String? value,
-  }) {
-    final _result = create();
-    if (name != null) {
-      _result.name = name;
-    }
-    if (value != null) {
-      _result.value = value;
-    }
-    return _result;
-  }
-  factory TimeProfileDimensionId.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory TimeProfileDimensionId.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -301,8 +250,10 @@ class TimeProfileDimensionId extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  TimeProfileDimensionId copyWith(void Function(TimeProfileDimensionId) updates) => super.copyWith((message) => updates(message as TimeProfileDimensionId)) as TimeProfileDimensionId; // ignore: deprecated_member_use
+  TimeProfileDimensionId copyWith(void Function(TimeProfileDimensionId) updates) => super.copyWith((message) => updates(message as TimeProfileDimensionId)) as TimeProfileDimensionId;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static TimeProfileDimensionId create() => TimeProfileDimensionId._();
   TimeProfileDimensionId createEmptyInstance() => create();
@@ -330,3 +281,6 @@ class TimeProfileDimensionId extends $pb.GeneratedMessage {
   void clearValue() => clearField(2);
 }
 
+
+const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
+const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

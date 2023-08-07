@@ -86,10 +86,4 @@ class StudenceAppStage extends WidgetsBindingObserver {
     // TODO: implement didPushRouteInformation
     return super.didPushRouteInformation(routeInformation);
   }
-
-  @override
-  Future<AppExitResponse> didRequestAppExit() {
-    // TODO: implement didRequestAppExit
-    return super.didRequestAppExit();
-  }
 }

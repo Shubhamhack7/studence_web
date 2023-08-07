@@ -1,47 +1,32 @@
-///
+//
 //  Generated code. Do not modify.
 //  source: namePb.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
+
+// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: constant_identifier_names, library_prefixes
+// ignore_for_file: non_constant_identifier_names, prefer_final_fields
+// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
 
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
 class NamePb extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'NamePb', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'proto'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'firstName', protoName: 'firstName')
-    ..pPS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'middleName', protoName: 'middleName')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'lastName', protoName: 'lastName')
-    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'canonicalName', protoName: 'canonicalName')
+  factory NamePb() => create();
+  NamePb._() : super();
+  factory NamePb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory NamePb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NamePb', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'firstName', protoName: 'firstName')
+    ..pPS(2, _omitFieldNames ? '' : 'middleName', protoName: 'middleName')
+    ..aOS(3, _omitFieldNames ? '' : 'lastName', protoName: 'lastName')
+    ..aOS(4, _omitFieldNames ? '' : 'canonicalName', protoName: 'canonicalName')
     ..hasRequiredFields = false
   ;
 
-  NamePb._() : super();
-  factory NamePb({
-    $core.String? firstName,
-    $core.Iterable<$core.String>? middleName,
-    $core.String? lastName,
-    $core.String? canonicalName,
-  }) {
-    final _result = create();
-    if (firstName != null) {
-      _result.firstName = firstName;
-    }
-    if (middleName != null) {
-      _result.middleName.addAll(middleName);
-    }
-    if (lastName != null) {
-      _result.lastName = lastName;
-    }
-    if (canonicalName != null) {
-      _result.canonicalName = canonicalName;
-    }
-    return _result;
-  }
-  factory NamePb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory NamePb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -51,8 +36,10 @@ class NamePb extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  NamePb copyWith(void Function(NamePb) updates) => super.copyWith((message) => updates(message as NamePb)) as NamePb; // ignore: deprecated_member_use
+  NamePb copyWith(void Function(NamePb) updates) => super.copyWith((message) => updates(message as NamePb)) as NamePb;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static NamePb create() => NamePb._();
   NamePb createEmptyInstance() => create();
@@ -92,3 +79,6 @@ class NamePb extends $pb.GeneratedMessage {
   void clearCanonicalName() => clearField(4);
 }
 
+
+const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
+const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

@@ -6,7 +6,15 @@ class ServerHelper {
   }
 
   String getSearchUrl(String m_serverUrl, String servletPath, String json) {
-    return m_serverUrl + "/" + servletPath + "/" + Uri.encodeComponent(json);
+    return m_serverUrl +
+        "/" +
+        servletPath +
+        "/query=" +
+        Uri.encodeComponent(json);
+  }
+
+  String getServiceUrl(String m_serverUrl, String servletPath, String json) {
+    return m_serverUrl + "/" + servletPath + "/eg=" + Uri.encodeComponent(json);
   }
 
   postUrl(String m_serverUrl, String servletPath) {

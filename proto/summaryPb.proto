@@ -1,0 +1,15 @@
+// Copyright (c) 2022, All Right Reserved, Shubham Tiwari
+
+syntax = "proto3";
+
+package proto;
+
+
+message SummaryPb{
+  int32 resultsCount =1;
+  string nextToken = 2;
+}
+
+message NextTokenPb{
+  string nextToken = 1;
+}

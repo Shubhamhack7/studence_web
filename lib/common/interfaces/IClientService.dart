@@ -7,4 +7,5 @@ abstract class IClientService<P extends GeneratedMessage,
   P update(String id, P pb);
   Future<Lresp> search(Lreq pb);
   P delete(String id);
+  Future<Lresp> getUiPb(Lreq pb);
 }

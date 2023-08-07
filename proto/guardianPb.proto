@@ -1,0 +1,39 @@
+// Copyright (c) 2022, All Right Reserved, Shubham Tiwari
+
+syntax = "proto3";
+
+package proto;
+
+import "entityPb.proto";
+import "namePb.proto";
+import "contactDetailsPb.proto";
+import "summaryPb.proto";
+
+
+
+//The following protos are reserved 12,13,14,15,16.You shd not use them
+
+message GuardianPb{
+  EntityPb dbInfo =1;
+  NamePb fatherName= 2;
+  NamePb motherName= 3;
+  int32 noOfChildern = 4;
+  ContactDetailsPb contactDetails= 5;
+}
+
+message GuardianRefPb{
+  string dbInfoId =1;
+  string fatherName= 2;
+  string motherName= 3;
+}
+
+message GuardianSearchReqPb{
+  string name = 1;
+}
+
+
+message GuardianSearchRespPb{
+  SummaryPb summary =1;
+  repeated GuardianPb results = 2;
+}
+

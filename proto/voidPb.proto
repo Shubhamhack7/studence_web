@@ -1,0 +1,11 @@
+// Copyright (c) 2022, All Right Reserved, Shubham Tiwari
+
+syntax = "proto3";
+
+package proto;
+
+
+message VoidPb{
+
+}
+

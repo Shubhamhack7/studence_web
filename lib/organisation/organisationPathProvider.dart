@@ -7,4 +7,9 @@ class OrganisationPathProvider extends IPathProvider {
   String getServletPath() {
     return "organisation";
   }
+
+  @override
+  String getServiceServletPath() {
+    return "organisation";
+  }
 }

@@ -4,6 +4,8 @@ syntax = "proto3";
 
 package proto;
 
+import "timePb.proto";
+
 
 //The following protos are reserved 12,13,14,15,16.You shd not use them
 
@@ -19,4 +21,14 @@ message EntityPb{
 	string hash_id =1 ;
   string range_id =2 ;
 	LifeTimeEnum lifetime =3;
+  PbConfig config = 4;
+  TimezoneEnum timezone = 5;
+}
+
+message PbConfig {
+  int32 version =1;
+  TimePb createdAt =  2;
+  TimePb updatedAt =  3;
+  string updatedBy = 4;
+
 }

@@ -4,6 +4,7 @@ import 'package:studence_web/common/interfaces/IPathProvider.dart';
 import 'package:studence_web/common/service/CreateService.dart';
 import 'package:studence_web/common/service/GetService.dart';
 import 'package:studence_web/common/service/SearchService.dart';
+import 'package:studence_web/common/service/UipbService.dart';
 
 class AClientService<
     P extends GeneratedMessage,
@@ -34,8 +35,6 @@ class AClientService<
     throw UnimplementedError();
   }
 
-
-
   @override
   Future<P> get(String id) {
     GetService<P, PP> get = new GetService(id, m_pb, m_pathProvider);
@@ -53,5 +52,12 @@ class AClientService<
   P update(String id, P pb) {
     // TODO: implement update
     throw UnimplementedError();
+  }
+
+  @override
+  Future<Lresp> getUiPb(Lreq pb) {
+    UipbService<Lreq, Lresp, PP> uipbService =
+        new UipbService(pb, m_responsePb, m_pathProvider);
+    return uipbService.callingUiPbRequestToServer();
   }
 }
