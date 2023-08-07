@@ -3,6 +3,7 @@ import 'package:studence_web/common/interfaces/IClientService.dart';
 import 'package:studence_web/common/interfaces/IPathProvider.dart';
 import 'package:studence_web/common/service/CreateService.dart';
 import 'package:studence_web/common/service/GetService.dart';
+import 'package:studence_web/common/service/SearchService.dart';
 
 class AClientService<
     P extends GeneratedMessage,
@@ -10,10 +11,14 @@ class AClientService<
     Lresp extends GeneratedMessage,
     PP extends IPathProvider> extends IClientService<P, Lreq, Lresp> {
   late PP m_pathProvider;
+  late Lreq m_requestPb;
+  late Lresp m_responsePb;
   late P m_pb;
 
-  AClientService(P pb, PP pathProvider) {
+  AClientService(P pb, Lreq requestPb, Lresp responsePb, PP pathProvider) {
     m_pb = pb;
+    m_requestPb = requestPb;
+    m_responsePb = responsePb;
     m_pathProvider = pathProvider;
   }
 
@@ -24,10 +29,12 @@ class AClientService<
   }
 
   @override
-  P delete(P pb) {
+  P delete(String id) {
     // TODO: implement delete
     throw UnimplementedError();
   }
+
+
 
   @override
   Future<P> get(String id) {
@@ -36,9 +43,10 @@ class AClientService<
   }
 
   @override
-  Lresp search(Lreq pb) {
-    // TODO: implement search
-    throw UnimplementedError();
+  Future<Lresp> search(Lreq pb) {
+    SearchService<Lreq, Lresp, PP> search =
+        new SearchService(pb, m_responsePb, m_pathProvider);
+    return search.callingSearchRequestToServer();
   }
 
   @override

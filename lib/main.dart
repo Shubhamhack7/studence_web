@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:protobuf/protobuf.dart';
 import 'package:studence_web/common/appConfig/StudenceAppRoutes.dart';
+import 'package:studence_web/common/appConfig/StudenceSession.dart';
 import 'package:studence_web/common/appConfig/studenceAppConfig.dart';
 import 'package:studence_web/generted/proto/namePb.pb.dart';
 import 'package:studence_web/generted/proto/organisationPb.pb.dart';
@@ -14,19 +15,17 @@ import 'package:studence_web/widget/basicWIdget/edittextWidget/editTextWidget.da
 void main() {
   StudenceAppConfig();
   runApp(MyApp());
-  /* OrganisationClientService service = new OrganisationClientService();
-  OrganisationPb builder = OrganisationPb();
-  NamePb name = NamePb()
-    ..firstName = "Shubham"
-    ..lastName = "Tiwari";
-  builder.name = name;
-  service.create(builder).then((value) => {print(value)}).catchError((error) {
+
+  OrganisationClientService service = new OrganisationClientService();
+  OrganisationSearchReqPb builder = OrganisationSearchReqPb();
+  builder.name = "ram shyam";
+  service.search(builder).then((value) => {print(value)}).catchError((error) {
     print(
         'Error: $error'); // Prints any errors that occurred during the Future's execution
   }).whenComplete(() {
     print(
         'The Future is completed!'); // This message will be printed regardless of whether the Future succeeded or failed
-  });*/
+  });
 }
 
 class MyApp extends StatelessWidget {

@@ -122,6 +122,7 @@ class DeviceDetails {
     builder.androidDevice.displayInfo.displayYDpi =
         androidDevice.displayMetrics.yDpi;
     builder.androidDevice.serialNumber = androidDevice.serialNumber;
+    
   }
 
   void readIosData(

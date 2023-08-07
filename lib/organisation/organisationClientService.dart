@@ -8,5 +8,6 @@ class OrganisationClientService extends AClientService<
     OrganisationSearchRespPb,
     OrganisationPathProvider> {
   OrganisationClientService()
-      : super(OrganisationPb(), OrganisationPathProvider());
+      : super(OrganisationPb(), OrganisationSearchReqPb(),
+            OrganisationSearchRespPb(), OrganisationPathProvider());
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:studence_web/pages/HomePages/HomePage.dart';
+import 'package:studence_web/pages/LoginPages/animated_login.dart';
 import 'package:studence_web/pages/OrganisationPages/OrganisationCreatePage.dart';
 import 'package:studence_web/pages/OrganisationPages/OrganisationList.dart';
 
@@ -16,7 +17,7 @@ class AppPages {
       case AppPagesEnum.HOME:
         return AppRoutePage(page: HomePage(title: "HomePage"), data: data);
       case AppPagesEnum.LOGIN_SIGNUP:
-        return AppRoutePage(page: HomePage(title: "Login Page"), data: data);
+        return AppRoutePage(page: AnimatedLogin(title: "Login Page"), data: data);
       case AppPagesEnum.ORGANISATION_CREATE_PAGE:
         return AppRoutePage(
             page: OrganisationCreatePage(title: "Create Organisation"),

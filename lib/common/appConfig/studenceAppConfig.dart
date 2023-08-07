@@ -23,7 +23,7 @@ class StudenceAppConfig {
     currentPage.setListener((data) {
       print(data);
     });
-    currentPage.setValue(AppPagesEnum.HOME);
+    currentPage.setValue(AppPagesEnum.LOGIN_SIGNUP);
     setServerEnvironmentUrl();
     m_deviceDetails = new DeviceDetails();
     m_appPages = new AppPages();
