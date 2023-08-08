@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+
+package proto;
+
+import "deviceDetailsPb.proto";
+import "organisationPb.proto";
+import "campusPb.proto";
+import "loginPb.proto";
+import "timePb.proto";
+
+message StudenceSession {
+    DeviceDeatilsPb deviceInfo = 1;
+    LoginPb login =2;
+    OrganisationPb organisation = 3;
+    CampusPb campus = 4;
+    TimePb time  = 5;
+}

@@ -7,6 +7,9 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:studence_web/widget/basicWIdget/buttons/rounded_button.dart';
+import 'package:studence_web/widget/basicWIdget/dialogs/dialog_builder.dart';
+import 'package:studence_web/widget/basicWIdget/icons/base_icon.dart';
 
 import 'package:url_launcher/url_launcher.dart';
 
