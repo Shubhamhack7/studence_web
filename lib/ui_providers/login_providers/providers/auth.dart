@@ -278,6 +278,8 @@ class Auth extends ChangeNotifier {
       email: _emailController.text,
       password: _passwordController.text,
     );
+    print(" Auth " + loginData.email);
+    print(" Auth " + loginData.password);
     return onLogin(loginData);
   }
 
@@ -317,10 +319,10 @@ class Auth extends ChangeNotifier {
           Validators(
             validator: _passwordValidator ??
                 const ValidatorModel(
-                  checkLowerCase: true,
-                  checkUpperCase: true,
-                  checkNumber: true,
-                  checkSpace: true,
+                  checkLowerCase: false,
+                  checkUpperCase: false,
+                  checkNumber: false,
+                  checkSpace: false,
                 ),
           ).password)
       : null;

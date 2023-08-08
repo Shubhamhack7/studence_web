@@ -31,7 +31,7 @@ class UipbService<Lreq extends GeneratedMessage, Lresp extends GeneratedMessage,
             HttpRequestTypeEnum.GET,
             m_helper.getServiceUrl(
                 StudenceAppConfig().m_serverUrl,
-                m_pathProvider.getServletPath(),
+                m_pathProvider.getServiceServletPath(),
                 json.encode(m_reqPb.toProto3Json())),
             m_reqPb)
         .then((value) =>

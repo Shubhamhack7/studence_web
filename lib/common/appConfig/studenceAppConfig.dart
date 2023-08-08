@@ -39,7 +39,7 @@ class StudenceAppConfig {
         m_serverUrl = "";
         break;
       case ServerEnvironmentType.DEVELOPMENT:
-        m_serverUrl = "http://localhost:8080/studence-management-app";
+        m_serverUrl = "http://192.168.29.109:8080/studence-management-app";
         break;
     }
   }
