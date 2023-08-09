@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:studence_web/common/appConfig/StudenceGateKeeperManager.dart';
 import 'package:studence_web/common/appConfig/studenceAppConfig.dart';
-import 'package:studence_web/pages/AppPagesEnum.dart';
+import 'package:studence_web/common/appConfig/AppPagesEnum.dart';
 import 'package:studence_web/pages/OrganisationPages/OrganisationCreatePage.dart';
 
 class StudenceAppRoutes {
-  String get initialRoute => getUrlPath(StudenceAppConfig().getPath());
+  String get initialRoute => getUrlPath(StudenceGateKeeperManager().getPath());
 
   Route<dynamic> generateRoute(RouteSettings settings) {
     print(settings);
-    AppRoutePage page =
-        StudenceAppConfig().getPage(getPathFromUrl(settings.name!));
+    StudenceAppRoutePage page =
+        StudenceGateKeeperManager().getPage(getPathFromUrl(settings.name!));
     return MaterialPageRoute(
       builder: (_) => page.page,
       settings: RouteSettings(

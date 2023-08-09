@@ -1,10 +1,12 @@
 import 'package:async/async.dart';
 import 'package:flutter/material.dart';
+import 'package:studence_web/generted/proto/loginPb.pb.dart';
 import 'package:studence_web/ui_models/login_models/login_data.dart';
 import 'package:studence_web/ui_models/login_models/signup_data.dart';
 import 'package:studence_web/ui_models/login_models/social_login.dart';
 import 'package:studence_web/ui_models/login_models/validator_model.dart';
 import 'package:studence_web/ui_utils/validators.dart';
+import 'package:studence_web/widget/Controller/LoginController/LoginController.dart';
 import 'package:studence_web/widget/ui_widgets/constants/enums/auth_mode.dart';
 import 'package:studence_web/widget/ui_widgets/constants/enums/sign_up_modes.dart';
 
@@ -14,6 +16,8 @@ typedef AuthModeChangeCallback = void Function(AuthMode authMode);
 
 /// [Auth] is the provider for auth related data, functions.
 class Auth extends ChangeNotifier {
+  late LoginController m_loginController;
+
   /// Manages the state related to the authentication modes.
   Auth({
     required GlobalKey<FormState> formKey,
@@ -55,6 +59,7 @@ class Auth extends ChangeNotifier {
     _onForgotPassword = onForgotPassword ?? _defaultForgotPassFunc;
     _mode = initialMode ?? AuthMode.login;
     _initialMode = initialMode ?? AuthMode.login;
+    m_loginController = new LoginController();
   }
 
   /// Default login, signup and forgot password functions to be
@@ -280,6 +285,10 @@ class Auth extends ChangeNotifier {
     );
     print(" Auth " + loginData.email);
     print(" Auth " + loginData.password);
+    LoginReqUiPb uiPb = new LoginReqUiPb();
+    uiPb.emailId = loginData.email;
+    uiPb.password = loginData.password;
+    m_loginController.performLogin(uiPb);
     return onLogin(loginData);
   }
 

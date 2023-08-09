@@ -1,4 +1,5 @@
 import 'package:protobuf/protobuf.dart';
+import 'package:studence_web/common/appConfig/ServerEnvironmentType.dart';
 import 'package:studence_web/common/appConfig/studenceAppConfig.dart';
 import 'package:studence_web/common/httpReqResp/HttpReqRespHandler.dart';
 import 'package:studence_web/common/httpReqResp/HttpRequestTypeEnum.dart';
@@ -23,7 +24,7 @@ class CreateService<P extends GeneratedMessage, PP extends IPathProvider> {
     Future<P> a = m_handler
         .docall(
             HttpRequestTypeEnum.POST,
-            m_helper.postUrl(StudenceAppConfig().m_serverUrl,
+            m_helper.postUrl(StudenceEnvironment().getEnvUrl,
                 m_pathProvider.getServletPath()),
             m_pb)
         .then((value) =>

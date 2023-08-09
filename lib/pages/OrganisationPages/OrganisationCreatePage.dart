@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:studence_web/widget/OrganisationCreate/OrganisationCreateController.dart';
+import 'package:studence_web/widget/Controller/OrganisationController/OrganisationCreateController.dart';
 import 'package:studence_web/widget/OrganisationCreate/organisationCreateWidget.dart';
 
 class OrganisationCreatePage extends StatefulWidget {

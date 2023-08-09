@@ -8,7 +8,7 @@ import 'package:studence_web/generted/proto/namePb.pb.dart';
 import 'package:studence_web/generted/proto/organisationPb.pb.dart';
 import 'package:studence_web/helpers/OrganisationHelper.dart';
 import 'package:studence_web/organisation/organisationClientService.dart';
-import 'package:studence_web/widget/OrganisationCreate/OrganisationWidgetController.dart';
+import 'package:studence_web/widget/Controller/OrganisationController/OrganisationWidgetController.dart';
 
 class OrganisationCreateController extends OrganisationWidgetController
     implements IWidgetController<OrganisationWidgetController> {

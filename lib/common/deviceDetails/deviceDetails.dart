@@ -12,6 +12,8 @@ class DeviceDetails {
   static final DeviceDeatilsPb deviceDeatilsPb = DeviceDeatilsPb.create();
   static final DeviceInfoPlugin deviceInfoPlugin = DeviceInfoPlugin();
 
+  DeviceDeatilsPb get getDeviceDetails => deviceDeatilsPb;
+
   DeviceDetails() {
     collectDeviceDetails();
   }
@@ -122,7 +124,6 @@ class DeviceDetails {
     builder.androidDevice.displayInfo.displayYDpi =
         androidDevice.displayMetrics.yDpi;
     builder.androidDevice.serialNumber = androidDevice.serialNumber;
-    
   }
 
   void readIosData(

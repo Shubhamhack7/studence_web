@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:studence_web/generted/proto/organisationPb.pb.dart';
 import 'package:studence_web/helpers/OrganisationHelper.dart';
-import 'package:studence_web/widget/OrganisationCreate/OrganisationCreateController.dart';
+import 'package:studence_web/widget/Controller/OrganisationController/OrganisationCreateController.dart';
 
 class OrganisationCreateWidget extends StatefulWidget {
   final OrganisationCreateController controller;

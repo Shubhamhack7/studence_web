@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:protobuf/protobuf.dart';
 import 'package:http/http.dart' as http;
+import 'package:studence_web/common/appConfig/ServerEnvironmentType.dart';
 import 'package:studence_web/common/appConfig/studenceAppConfig.dart';
 import 'package:studence_web/common/httpReqResp/HttpReqRespHandler.dart';
 import 'package:studence_web/common/httpReqResp/HttpRequestTypeEnum.dart';
@@ -30,7 +31,7 @@ class UipbService<Lreq extends GeneratedMessage, Lresp extends GeneratedMessage,
         .docall(
             HttpRequestTypeEnum.GET,
             m_helper.getServiceUrl(
-                StudenceAppConfig().m_serverUrl,
+                StudenceEnvironment().getEnvUrl,
                 m_pathProvider.getServiceServletPath(),
                 json.encode(m_reqPb.toProto3Json())),
             m_reqPb)
