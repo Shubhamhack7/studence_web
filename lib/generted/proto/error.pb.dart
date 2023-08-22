@@ -1,9 +1,13 @@
-///
+//
 //  Generated code. Do not modify.
 //  source: error.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
+
+// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: constant_identifier_names, library_prefixes
+// ignore_for_file: non_constant_identifier_names, prefer_final_fields
+// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
 
 import 'dart:core' as $core;
 
@@ -14,53 +18,22 @@ import 'error.pbenum.dart';
 export 'error.pbenum.dart';
 
 class ErrorProtoPb extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ErrorProtoPb', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'proto'), createEmptyInstance: create)
-    ..e<ErrorTypePbEnum>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'ErrorTypePbEnum', $pb.PbFieldType.OE, protoName: 'ErrorTypePbEnum', defaultOrMaker: ErrorTypePbEnum.ERORTYPE_UNKNOWN_ERROR, valueOf: ErrorTypePbEnum.valueOf, enumValues: ErrorTypePbEnum.values)
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'errorEnumClass', protoName: 'errorEnumClass')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'errorEnumValue', protoName: 'errorEnumValue')
-    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'errorData', protoName: 'errorData')
-    ..pPS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'serviceId', protoName: 'serviceId')
-    ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'errorDataClass', protoName: 'errorDataClass')
-    ..e<ErrorCategoryUiEnum>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'errorCategory', $pb.PbFieldType.OE, protoName: 'errorCategory', defaultOrMaker: ErrorCategoryUiEnum.UNKNOWN_ERROR_CATEGORY, valueOf: ErrorCategoryUiEnum.valueOf, enumValues: ErrorCategoryUiEnum.values)
+  factory ErrorProtoPb() => create();
+  ErrorProtoPb._() : super();
+  factory ErrorProtoPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ErrorProtoPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ErrorProtoPb', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto'), createEmptyInstance: create)
+    ..e<ErrorTypePbEnum>(1, _omitFieldNames ? '' : 'ErrorTypePbEnum', $pb.PbFieldType.OE, protoName: 'ErrorTypePbEnum', defaultOrMaker: ErrorTypePbEnum.ERORTYPE_UNKNOWN_ERROR, valueOf: ErrorTypePbEnum.valueOf, enumValues: ErrorTypePbEnum.values)
+    ..aOS(2, _omitFieldNames ? '' : 'errorEnumClass', protoName: 'errorEnumClass')
+    ..aOS(3, _omitFieldNames ? '' : 'errorEnumValue', protoName: 'errorEnumValue')
+    ..aOS(4, _omitFieldNames ? '' : 'errorData', protoName: 'errorData')
+    ..pPS(5, _omitFieldNames ? '' : 'serviceId', protoName: 'serviceId')
+    ..aOS(6, _omitFieldNames ? '' : 'errorDataClass', protoName: 'errorDataClass')
+    ..e<ErrorCategoryUiEnum>(7, _omitFieldNames ? '' : 'errorCategory', $pb.PbFieldType.OE, protoName: 'errorCategory', defaultOrMaker: ErrorCategoryUiEnum.UNKNOWN_ERROR_CATEGORY, valueOf: ErrorCategoryUiEnum.valueOf, enumValues: ErrorCategoryUiEnum.values)
     ..hasRequiredFields = false
   ;
 
-  ErrorProtoPb._() : super();
-  factory ErrorProtoPb({
-    ErrorTypePbEnum? errorTypePbEnum,
-    $core.String? errorEnumClass,
-    $core.String? errorEnumValue,
-    $core.String? errorData,
-    $core.Iterable<$core.String>? serviceId,
-    $core.String? errorDataClass,
-    ErrorCategoryUiEnum? errorCategory,
-  }) {
-    final _result = create();
-    if (errorTypePbEnum != null) {
-      _result.errorTypePbEnum = errorTypePbEnum;
-    }
-    if (errorEnumClass != null) {
-      _result.errorEnumClass = errorEnumClass;
-    }
-    if (errorEnumValue != null) {
-      _result.errorEnumValue = errorEnumValue;
-    }
-    if (errorData != null) {
-      _result.errorData = errorData;
-    }
-    if (serviceId != null) {
-      _result.serviceId.addAll(serviceId);
-    }
-    if (errorDataClass != null) {
-      _result.errorDataClass = errorDataClass;
-    }
-    if (errorCategory != null) {
-      _result.errorCategory = errorCategory;
-    }
-    return _result;
-  }
-  factory ErrorProtoPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ErrorProtoPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -70,8 +43,10 @@ class ErrorProtoPb extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ErrorProtoPb copyWith(void Function(ErrorProtoPb) updates) => super.copyWith((message) => updates(message as ErrorProtoPb)) as ErrorProtoPb; // ignore: deprecated_member_use
+  ErrorProtoPb copyWith(void Function(ErrorProtoPb) updates) => super.copyWith((message) => updates(message as ErrorProtoPb)) as ErrorProtoPb;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static ErrorProtoPb create() => ErrorProtoPb._();
   ErrorProtoPb createEmptyInstance() => create();
@@ -139,58 +114,23 @@ class ErrorProtoPb extends $pb.GeneratedMessage {
 }
 
 class ErrorResponsePb extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ErrorResponsePb', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'proto'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'uiErrorString', protoName: 'uiErrorString')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'errorCode', protoName: 'errorCode')
-    ..e<ErrorCategoryUiEnum>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'errorCategory', $pb.PbFieldType.OE, protoName: 'errorCategory', defaultOrMaker: ErrorCategoryUiEnum.UNKNOWN_ERROR_CATEGORY, valueOf: ErrorCategoryUiEnum.valueOf, enumValues: ErrorCategoryUiEnum.values)
-    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'exceptionId', protoName: 'exceptionId')
-    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'serviceCode', protoName: 'serviceCode')
-    ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'operationId', protoName: 'operationId')
-    ..pc<ErrorProtoPb>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'errors', $pb.PbFieldType.PM, subBuilder: ErrorProtoPb.create)
-    ..aOS(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'debugStackTrace', protoName: 'debugStackTrace')
+  factory ErrorResponsePb() => create();
+  ErrorResponsePb._() : super();
+  factory ErrorResponsePb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ErrorResponsePb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ErrorResponsePb', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'uiErrorString', protoName: 'uiErrorString')
+    ..aOS(2, _omitFieldNames ? '' : 'errorCode', protoName: 'errorCode')
+    ..e<ErrorCategoryUiEnum>(3, _omitFieldNames ? '' : 'errorCategory', $pb.PbFieldType.OE, protoName: 'errorCategory', defaultOrMaker: ErrorCategoryUiEnum.UNKNOWN_ERROR_CATEGORY, valueOf: ErrorCategoryUiEnum.valueOf, enumValues: ErrorCategoryUiEnum.values)
+    ..aOS(4, _omitFieldNames ? '' : 'exceptionId', protoName: 'exceptionId')
+    ..aOS(5, _omitFieldNames ? '' : 'serviceCode', protoName: 'serviceCode')
+    ..aOS(6, _omitFieldNames ? '' : 'operationId', protoName: 'operationId')
+    ..pc<ErrorProtoPb>(7, _omitFieldNames ? '' : 'errors', $pb.PbFieldType.PM, subBuilder: ErrorProtoPb.create)
+    ..aOS(8, _omitFieldNames ? '' : 'debugStackTrace', protoName: 'debugStackTrace')
     ..hasRequiredFields = false
   ;
 
-  ErrorResponsePb._() : super();
-  factory ErrorResponsePb({
-    $core.String? uiErrorString,
-    $core.String? errorCode,
-    ErrorCategoryUiEnum? errorCategory,
-    $core.String? exceptionId,
-    $core.String? serviceCode,
-    $core.String? operationId,
-    $core.Iterable<ErrorProtoPb>? errors,
-    $core.String? debugStackTrace,
-  }) {
-    final _result = create();
-    if (uiErrorString != null) {
-      _result.uiErrorString = uiErrorString;
-    }
-    if (errorCode != null) {
-      _result.errorCode = errorCode;
-    }
-    if (errorCategory != null) {
-      _result.errorCategory = errorCategory;
-    }
-    if (exceptionId != null) {
-      _result.exceptionId = exceptionId;
-    }
-    if (serviceCode != null) {
-      _result.serviceCode = serviceCode;
-    }
-    if (operationId != null) {
-      _result.operationId = operationId;
-    }
-    if (errors != null) {
-      _result.errors.addAll(errors);
-    }
-    if (debugStackTrace != null) {
-      _result.debugStackTrace = debugStackTrace;
-    }
-    return _result;
-  }
-  factory ErrorResponsePb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ErrorResponsePb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -200,8 +140,10 @@ class ErrorResponsePb extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ErrorResponsePb copyWith(void Function(ErrorResponsePb) updates) => super.copyWith((message) => updates(message as ErrorResponsePb)) as ErrorResponsePb; // ignore: deprecated_member_use
+  ErrorResponsePb copyWith(void Function(ErrorResponsePb) updates) => super.copyWith((message) => updates(message as ErrorResponsePb)) as ErrorResponsePb;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static ErrorResponsePb create() => ErrorResponsePb._();
   ErrorResponsePb createEmptyInstance() => create();
@@ -278,28 +220,17 @@ class ErrorResponsePb extends $pb.GeneratedMessage {
 }
 
 class ResultPb extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ResultPb', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'proto'), createEmptyInstance: create)
-    ..e<ResultStatusUiEnum>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: ResultStatusUiEnum.UNKNOWN_STATUS, valueOf: ResultStatusUiEnum.valueOf, enumValues: ResultStatusUiEnum.values)
-    ..aOM<ErrorResponsePb>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'error', subBuilder: ErrorResponsePb.create)
+  factory ResultPb() => create();
+  ResultPb._() : super();
+  factory ResultPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ResultPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ResultPb', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto'), createEmptyInstance: create)
+    ..e<ResultStatusUiEnum>(1, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: ResultStatusUiEnum.UNKNOWN_STATUS, valueOf: ResultStatusUiEnum.valueOf, enumValues: ResultStatusUiEnum.values)
+    ..aOM<ErrorResponsePb>(2, _omitFieldNames ? '' : 'error', subBuilder: ErrorResponsePb.create)
     ..hasRequiredFields = false
   ;
 
-  ResultPb._() : super();
-  factory ResultPb({
-    ResultStatusUiEnum? status,
-    ErrorResponsePb? error,
-  }) {
-    final _result = create();
-    if (status != null) {
-      _result.status = status;
-    }
-    if (error != null) {
-      _result.error = error;
-    }
-    return _result;
-  }
-  factory ResultPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ResultPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -309,8 +240,10 @@ class ResultPb extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ResultPb copyWith(void Function(ResultPb) updates) => super.copyWith((message) => updates(message as ResultPb)) as ResultPb; // ignore: deprecated_member_use
+  ResultPb copyWith(void Function(ResultPb) updates) => super.copyWith((message) => updates(message as ResultPb)) as ResultPb;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static ResultPb create() => ResultPb._();
   ResultPb createEmptyInstance() => create();
@@ -341,28 +274,17 @@ class ResultPb extends $pb.GeneratedMessage {
 }
 
 class RedirectPb extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'RedirectPb', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'proto'), createEmptyInstance: create)
-    ..e<RedirectTypeEnum>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'redirectType', $pb.PbFieldType.OE, protoName: 'redirectType', defaultOrMaker: RedirectTypeEnum.UNKNOWN_REDIRECT, valueOf: RedirectTypeEnum.valueOf, enumValues: RedirectTypeEnum.values)
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'location')
+  factory RedirectPb() => create();
+  RedirectPb._() : super();
+  factory RedirectPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RedirectPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RedirectPb', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto'), createEmptyInstance: create)
+    ..e<RedirectTypeEnum>(1, _omitFieldNames ? '' : 'redirectType', $pb.PbFieldType.OE, protoName: 'redirectType', defaultOrMaker: RedirectTypeEnum.UNKNOWN_REDIRECT, valueOf: RedirectTypeEnum.valueOf, enumValues: RedirectTypeEnum.values)
+    ..aOS(2, _omitFieldNames ? '' : 'location')
     ..hasRequiredFields = false
   ;
 
-  RedirectPb._() : super();
-  factory RedirectPb({
-    RedirectTypeEnum? redirectType,
-    $core.String? location,
-  }) {
-    final _result = create();
-    if (redirectType != null) {
-      _result.redirectType = redirectType;
-    }
-    if (location != null) {
-      _result.location = location;
-    }
-    return _result;
-  }
-  factory RedirectPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory RedirectPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -372,8 +294,10 @@ class RedirectPb extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  RedirectPb copyWith(void Function(RedirectPb) updates) => super.copyWith((message) => updates(message as RedirectPb)) as RedirectPb; // ignore: deprecated_member_use
+  RedirectPb copyWith(void Function(RedirectPb) updates) => super.copyWith((message) => updates(message as RedirectPb)) as RedirectPb;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static RedirectPb create() => RedirectPb._();
   RedirectPb createEmptyInstance() => create();
@@ -401,3 +325,6 @@ class RedirectPb extends $pb.GeneratedMessage {
   void clearLocation() => clearField(2);
 }
 
+
+const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
+const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

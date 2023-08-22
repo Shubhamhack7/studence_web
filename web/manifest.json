@@ -1,6 +1,6 @@
 {
-    "name": "studence_web",
-    "short_name": "studence_web",
+    "name": "studence_mvc",
+    "short_name": "studence_mvc",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

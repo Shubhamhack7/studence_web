@@ -1,9 +1,13 @@
-///
+//
 //  Generated code. Do not modify.
 //  source: deviceDetailsPb.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
+
+// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: constant_identifier_names, library_prefixes
+// ignore_for_file: non_constant_identifier_names, prefer_final_fields
+// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
 
 import 'dart:core' as $core;
 
@@ -15,53 +19,22 @@ import 'deviceDetailsPb.pbenum.dart';
 export 'deviceDetailsPb.pbenum.dart';
 
 class AndroidDisplayInfo extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'AndroidDisplayInfo', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'proto'), createEmptyInstance: create)
-    ..a<$core.double>(27, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'displaySizeInches', $pb.PbFieldType.OF)
-    ..a<$core.int>(28, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'displayWidthPixels', $pb.PbFieldType.O3)
-    ..a<$core.double>(29, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'displayWidthInches', $pb.PbFieldType.OF)
-    ..a<$core.int>(30, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'displayHeightPixels', $pb.PbFieldType.O3)
-    ..a<$core.double>(31, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'displayHeightInches', $pb.PbFieldType.OF)
-    ..a<$core.double>(32, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'displayXDpi', $pb.PbFieldType.OF)
-    ..a<$core.double>(33, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'displayYDpi', $pb.PbFieldType.OF)
+  factory AndroidDisplayInfo() => create();
+  AndroidDisplayInfo._() : super();
+  factory AndroidDisplayInfo.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AndroidDisplayInfo.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AndroidDisplayInfo', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto'), createEmptyInstance: create)
+    ..a<$core.double>(27, _omitFieldNames ? '' : 'displaySizeInches', $pb.PbFieldType.OF)
+    ..a<$core.int>(28, _omitFieldNames ? '' : 'displayWidthPixels', $pb.PbFieldType.O3)
+    ..a<$core.double>(29, _omitFieldNames ? '' : 'displayWidthInches', $pb.PbFieldType.OF)
+    ..a<$core.int>(30, _omitFieldNames ? '' : 'displayHeightPixels', $pb.PbFieldType.O3)
+    ..a<$core.double>(31, _omitFieldNames ? '' : 'displayHeightInches', $pb.PbFieldType.OF)
+    ..a<$core.double>(32, _omitFieldNames ? '' : 'displayXDpi', $pb.PbFieldType.OF)
+    ..a<$core.double>(33, _omitFieldNames ? '' : 'displayYDpi', $pb.PbFieldType.OF)
     ..hasRequiredFields = false
   ;
 
-  AndroidDisplayInfo._() : super();
-  factory AndroidDisplayInfo({
-    $core.double? displaySizeInches,
-    $core.int? displayWidthPixels,
-    $core.double? displayWidthInches,
-    $core.int? displayHeightPixels,
-    $core.double? displayHeightInches,
-    $core.double? displayXDpi,
-    $core.double? displayYDpi,
-  }) {
-    final _result = create();
-    if (displaySizeInches != null) {
-      _result.displaySizeInches = displaySizeInches;
-    }
-    if (displayWidthPixels != null) {
-      _result.displayWidthPixels = displayWidthPixels;
-    }
-    if (displayWidthInches != null) {
-      _result.displayWidthInches = displayWidthInches;
-    }
-    if (displayHeightPixels != null) {
-      _result.displayHeightPixels = displayHeightPixels;
-    }
-    if (displayHeightInches != null) {
-      _result.displayHeightInches = displayHeightInches;
-    }
-    if (displayXDpi != null) {
-      _result.displayXDpi = displayXDpi;
-    }
-    if (displayYDpi != null) {
-      _result.displayYDpi = displayYDpi;
-    }
-    return _result;
-  }
-  factory AndroidDisplayInfo.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory AndroidDisplayInfo.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -71,8 +44,10 @@ class AndroidDisplayInfo extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  AndroidDisplayInfo copyWith(void Function(AndroidDisplayInfo) updates) => super.copyWith((message) => updates(message as AndroidDisplayInfo)) as AndroidDisplayInfo; // ignore: deprecated_member_use
+  AndroidDisplayInfo copyWith(void Function(AndroidDisplayInfo) updates) => super.copyWith((message) => updates(message as AndroidDisplayInfo)) as AndroidDisplayInfo;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static AndroidDisplayInfo create() => AndroidDisplayInfo._();
   AndroidDisplayInfo createEmptyInstance() => create();
@@ -146,158 +121,43 @@ class AndroidDisplayInfo extends $pb.GeneratedMessage {
 }
 
 class AndroidDeviceDetails extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'AndroidDeviceDetails', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'proto'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'securityPatch')
-    ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sdkInt', $pb.PbFieldType.O3)
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'release')
-    ..a<$core.int>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'previewSdkInt', $pb.PbFieldType.O3)
-    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'incremental')
-    ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'codename')
-    ..aOS(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'baseOs')
-    ..aOS(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'board')
-    ..aOS(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'bootloader')
-    ..aOS(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'brand')
-    ..aOS(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'device')
-    ..aOS(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'display')
-    ..aOS(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'fingerprint')
-    ..aOS(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'hardware')
-    ..aOS(15, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'host')
-    ..aOS(16, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
-    ..aOS(17, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'manufacturer')
-    ..aOS(18, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'model')
-    ..aOS(19, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'product')
-    ..pPS(20, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'supported32BitAbis', protoName: 'supported_32_bit_abis')
-    ..pPS(21, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'supported64BitAbis', protoName: 'supported_64_bit_abis')
-    ..pPS(22, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'supportedAbis')
-    ..aOS(23, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tags')
-    ..aOS(24, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'type')
-    ..aOB(25, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'isPhysicalDevice')
-    ..pPS(26, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'systemFeatures')
-    ..aOM<AndroidDisplayInfo>(27, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'displayInfo', protoName: 'displayInfo', subBuilder: AndroidDisplayInfo.create)
-    ..aOS(28, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'serialNumber')
+  factory AndroidDeviceDetails() => create();
+  AndroidDeviceDetails._() : super();
+  factory AndroidDeviceDetails.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AndroidDeviceDetails.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AndroidDeviceDetails', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'securityPatch')
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'sdkInt', $pb.PbFieldType.O3)
+    ..aOS(3, _omitFieldNames ? '' : 'release')
+    ..a<$core.int>(4, _omitFieldNames ? '' : 'previewSdkInt', $pb.PbFieldType.O3)
+    ..aOS(5, _omitFieldNames ? '' : 'incremental')
+    ..aOS(6, _omitFieldNames ? '' : 'codename')
+    ..aOS(7, _omitFieldNames ? '' : 'baseOs')
+    ..aOS(8, _omitFieldNames ? '' : 'board')
+    ..aOS(9, _omitFieldNames ? '' : 'bootloader')
+    ..aOS(10, _omitFieldNames ? '' : 'brand')
+    ..aOS(11, _omitFieldNames ? '' : 'device')
+    ..aOS(12, _omitFieldNames ? '' : 'display')
+    ..aOS(13, _omitFieldNames ? '' : 'fingerprint')
+    ..aOS(14, _omitFieldNames ? '' : 'hardware')
+    ..aOS(15, _omitFieldNames ? '' : 'host')
+    ..aOS(16, _omitFieldNames ? '' : 'id')
+    ..aOS(17, _omitFieldNames ? '' : 'manufacturer')
+    ..aOS(18, _omitFieldNames ? '' : 'model')
+    ..aOS(19, _omitFieldNames ? '' : 'product')
+    ..pPS(20, _omitFieldNames ? '' : 'supported32BitAbis', protoName: 'supported_32_bit_abis')
+    ..pPS(21, _omitFieldNames ? '' : 'supported64BitAbis', protoName: 'supported_64_bit_abis')
+    ..pPS(22, _omitFieldNames ? '' : 'supportedAbis')
+    ..aOS(23, _omitFieldNames ? '' : 'tags')
+    ..aOS(24, _omitFieldNames ? '' : 'type')
+    ..aOB(25, _omitFieldNames ? '' : 'isPhysicalDevice')
+    ..pPS(26, _omitFieldNames ? '' : 'systemFeatures')
+    ..aOM<AndroidDisplayInfo>(27, _omitFieldNames ? '' : 'displayInfo', protoName: 'displayInfo', subBuilder: AndroidDisplayInfo.create)
+    ..aOS(28, _omitFieldNames ? '' : 'serialNumber')
     ..hasRequiredFields = false
   ;
 
-  AndroidDeviceDetails._() : super();
-  factory AndroidDeviceDetails({
-    $core.String? securityPatch,
-    $core.int? sdkInt,
-    $core.String? release,
-    $core.int? previewSdkInt,
-    $core.String? incremental,
-    $core.String? codename,
-    $core.String? baseOs,
-    $core.String? board,
-    $core.String? bootloader,
-    $core.String? brand,
-    $core.String? device,
-    $core.String? display,
-    $core.String? fingerprint,
-    $core.String? hardware,
-    $core.String? host,
-    $core.String? id,
-    $core.String? manufacturer,
-    $core.String? model,
-    $core.String? product,
-    $core.Iterable<$core.String>? supported32BitAbis,
-    $core.Iterable<$core.String>? supported64BitAbis,
-    $core.Iterable<$core.String>? supportedAbis,
-    $core.String? tags,
-    $core.String? type,
-    $core.bool? isPhysicalDevice,
-    $core.Iterable<$core.String>? systemFeatures,
-    AndroidDisplayInfo? displayInfo,
-    $core.String? serialNumber,
-  }) {
-    final _result = create();
-    if (securityPatch != null) {
-      _result.securityPatch = securityPatch;
-    }
-    if (sdkInt != null) {
-      _result.sdkInt = sdkInt;
-    }
-    if (release != null) {
-      _result.release = release;
-    }
-    if (previewSdkInt != null) {
-      _result.previewSdkInt = previewSdkInt;
-    }
-    if (incremental != null) {
-      _result.incremental = incremental;
-    }
-    if (codename != null) {
-      _result.codename = codename;
-    }
-    if (baseOs != null) {
-      _result.baseOs = baseOs;
-    }
-    if (board != null) {
-      _result.board = board;
-    }
-    if (bootloader != null) {
-      _result.bootloader = bootloader;
-    }
-    if (brand != null) {
-      _result.brand = brand;
-    }
-    if (device != null) {
-      _result.device = device;
-    }
-    if (display != null) {
-      _result.display = display;
-    }
-    if (fingerprint != null) {
-      _result.fingerprint = fingerprint;
-    }
-    if (hardware != null) {
-      _result.hardware = hardware;
-    }
-    if (host != null) {
-      _result.host = host;
-    }
-    if (id != null) {
-      _result.id = id;
-    }
-    if (manufacturer != null) {
-      _result.manufacturer = manufacturer;
-    }
-    if (model != null) {
-      _result.model = model;
-    }
-    if (product != null) {
-      _result.product = product;
-    }
-    if (supported32BitAbis != null) {
-      _result.supported32BitAbis.addAll(supported32BitAbis);
-    }
-    if (supported64BitAbis != null) {
-      _result.supported64BitAbis.addAll(supported64BitAbis);
-    }
-    if (supportedAbis != null) {
-      _result.supportedAbis.addAll(supportedAbis);
-    }
-    if (tags != null) {
-      _result.tags = tags;
-    }
-    if (type != null) {
-      _result.type = type;
-    }
-    if (isPhysicalDevice != null) {
-      _result.isPhysicalDevice = isPhysicalDevice;
-    }
-    if (systemFeatures != null) {
-      _result.systemFeatures.addAll(systemFeatures);
-    }
-    if (displayInfo != null) {
-      _result.displayInfo = displayInfo;
-    }
-    if (serialNumber != null) {
-      _result.serialNumber = serialNumber;
-    }
-    return _result;
-  }
-  factory AndroidDeviceDetails.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory AndroidDeviceDetails.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -307,8 +167,10 @@ class AndroidDeviceDetails extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  AndroidDeviceDetails copyWith(void Function(AndroidDeviceDetails) updates) => super.copyWith((message) => updates(message as AndroidDeviceDetails)) as AndroidDeviceDetails; // ignore: deprecated_member_use
+  AndroidDeviceDetails copyWith(void Function(AndroidDeviceDetails) updates) => super.copyWith((message) => updates(message as AndroidDeviceDetails)) as AndroidDeviceDetails;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static AndroidDeviceDetails create() => AndroidDeviceDetails._();
   AndroidDeviceDetails createEmptyInstance() => create();
@@ -549,58 +411,23 @@ class AndroidDeviceDetails extends $pb.GeneratedMessage {
 }
 
 class IOSDeviceDetails extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'IOSDeviceDetails', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'proto'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'systemName', protoName: 'systemName')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'systemVersion', protoName: 'systemVersion')
-    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'model')
-    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'localizedModel', protoName: 'localizedModel')
-    ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'identifierForVendor', protoName: 'identifierForVendor')
-    ..aOB(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'isPhysicalDevice', protoName: 'isPhysicalDevice')
-    ..aOM<Utsname>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'utsname', subBuilder: Utsname.create)
+  factory IOSDeviceDetails() => create();
+  IOSDeviceDetails._() : super();
+  factory IOSDeviceDetails.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory IOSDeviceDetails.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'IOSDeviceDetails', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOS(2, _omitFieldNames ? '' : 'systemName', protoName: 'systemName')
+    ..aOS(3, _omitFieldNames ? '' : 'systemVersion', protoName: 'systemVersion')
+    ..aOS(4, _omitFieldNames ? '' : 'model')
+    ..aOS(5, _omitFieldNames ? '' : 'localizedModel', protoName: 'localizedModel')
+    ..aOS(6, _omitFieldNames ? '' : 'identifierForVendor', protoName: 'identifierForVendor')
+    ..aOB(7, _omitFieldNames ? '' : 'isPhysicalDevice', protoName: 'isPhysicalDevice')
+    ..aOM<Utsname>(8, _omitFieldNames ? '' : 'utsname', subBuilder: Utsname.create)
     ..hasRequiredFields = false
   ;
 
-  IOSDeviceDetails._() : super();
-  factory IOSDeviceDetails({
-    $core.String? name,
-    $core.String? systemName,
-    $core.String? systemVersion,
-    $core.String? model,
-    $core.String? localizedModel,
-    $core.String? identifierForVendor,
-    $core.bool? isPhysicalDevice,
-    Utsname? utsname,
-  }) {
-    final _result = create();
-    if (name != null) {
-      _result.name = name;
-    }
-    if (systemName != null) {
-      _result.systemName = systemName;
-    }
-    if (systemVersion != null) {
-      _result.systemVersion = systemVersion;
-    }
-    if (model != null) {
-      _result.model = model;
-    }
-    if (localizedModel != null) {
-      _result.localizedModel = localizedModel;
-    }
-    if (identifierForVendor != null) {
-      _result.identifierForVendor = identifierForVendor;
-    }
-    if (isPhysicalDevice != null) {
-      _result.isPhysicalDevice = isPhysicalDevice;
-    }
-    if (utsname != null) {
-      _result.utsname = utsname;
-    }
-    return _result;
-  }
-  factory IOSDeviceDetails.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory IOSDeviceDetails.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -610,8 +437,10 @@ class IOSDeviceDetails extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  IOSDeviceDetails copyWith(void Function(IOSDeviceDetails) updates) => super.copyWith((message) => updates(message as IOSDeviceDetails)) as IOSDeviceDetails; // ignore: deprecated_member_use
+  IOSDeviceDetails copyWith(void Function(IOSDeviceDetails) updates) => super.copyWith((message) => updates(message as IOSDeviceDetails)) as IOSDeviceDetails;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static IOSDeviceDetails create() => IOSDeviceDetails._();
   IOSDeviceDetails createEmptyInstance() => create();
@@ -696,43 +525,20 @@ class IOSDeviceDetails extends $pb.GeneratedMessage {
 }
 
 class Utsname extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Utsname', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'proto'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sysname')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'nodename')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'release')
-    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'version')
-    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'machine')
+  factory Utsname() => create();
+  Utsname._() : super();
+  factory Utsname.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Utsname.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Utsname', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'sysname')
+    ..aOS(2, _omitFieldNames ? '' : 'nodename')
+    ..aOS(3, _omitFieldNames ? '' : 'release')
+    ..aOS(4, _omitFieldNames ? '' : 'version')
+    ..aOS(5, _omitFieldNames ? '' : 'machine')
     ..hasRequiredFields = false
   ;
 
-  Utsname._() : super();
-  factory Utsname({
-    $core.String? sysname,
-    $core.String? nodename,
-    $core.String? release,
-    $core.String? version,
-    $core.String? machine,
-  }) {
-    final _result = create();
-    if (sysname != null) {
-      _result.sysname = sysname;
-    }
-    if (nodename != null) {
-      _result.nodename = nodename;
-    }
-    if (release != null) {
-      _result.release = release;
-    }
-    if (version != null) {
-      _result.version = version;
-    }
-    if (machine != null) {
-      _result.machine = machine;
-    }
-    return _result;
-  }
-  factory Utsname.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Utsname.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -742,8 +548,10 @@ class Utsname extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Utsname copyWith(void Function(Utsname) updates) => super.copyWith((message) => updates(message as Utsname)) as Utsname; // ignore: deprecated_member_use
+  Utsname copyWith(void Function(Utsname) updates) => super.copyWith((message) => updates(message as Utsname)) as Utsname;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static Utsname create() => Utsname._();
   Utsname createEmptyInstance() => create();
@@ -799,143 +607,40 @@ class Utsname extends $pb.GeneratedMessage {
 }
 
 class WindowsDeviceDetails extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'WindowsDeviceDetails', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'proto'), createEmptyInstance: create)
-    ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'numberOfCores', $pb.PbFieldType.O3, protoName: 'numberOfCores')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'computerName', protoName: 'computerName')
-    ..a<$core.int>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'systemMemoryInMegabytes', $pb.PbFieldType.O3, protoName: 'systemMemoryInMegabytes')
-    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userName', protoName: 'userName')
-    ..a<$core.int>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'majorVersion', $pb.PbFieldType.O3, protoName: 'majorVersion')
-    ..a<$core.int>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'minorVersion', $pb.PbFieldType.O3, protoName: 'minorVersion')
-    ..a<$core.int>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'buildNumber', $pb.PbFieldType.O3, protoName: 'buildNumber')
-    ..a<$core.int>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'platformId', $pb.PbFieldType.O3, protoName: 'platformId')
-    ..aOS(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'csdVersion', protoName: 'csdVersion')
-    ..a<$core.int>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'servicePackMajor', $pb.PbFieldType.O3, protoName: 'servicePackMajor')
-    ..a<$core.int>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'servicePackMinor', $pb.PbFieldType.O3, protoName: 'servicePackMinor')
-    ..a<$core.int>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'suitMask', $pb.PbFieldType.O3, protoName: 'suitMask')
-    ..a<$core.int>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'productType', $pb.PbFieldType.O3, protoName: 'productType')
-    ..aOS(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'reserved')
-    ..aOS(15, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'buildLab', protoName: 'buildLab')
-    ..aOS(16, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'buildLabEx', protoName: 'buildLabEx')
-    ..aOS(17, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'digitalProductId', protoName: 'digitalProductId')
-    ..aOS(18, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'displayVersion', protoName: 'displayVersion')
-    ..aOS(19, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'editionId', protoName: 'editionId')
-    ..aOS(20, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'installDate', protoName: 'installDate')
-    ..aOS(21, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'productId', protoName: 'productId')
-    ..aOS(22, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'productName', protoName: 'productName')
-    ..aOS(23, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'registeredOwner', protoName: 'registeredOwner')
-    ..aOS(24, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'releaseId', protoName: 'releaseId')
-    ..aOS(25, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'deviceId', protoName: 'deviceId')
+  factory WindowsDeviceDetails() => create();
+  WindowsDeviceDetails._() : super();
+  factory WindowsDeviceDetails.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory WindowsDeviceDetails.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'WindowsDeviceDetails', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto'), createEmptyInstance: create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'numberOfCores', $pb.PbFieldType.O3, protoName: 'numberOfCores')
+    ..aOS(2, _omitFieldNames ? '' : 'computerName', protoName: 'computerName')
+    ..a<$core.int>(3, _omitFieldNames ? '' : 'systemMemoryInMegabytes', $pb.PbFieldType.O3, protoName: 'systemMemoryInMegabytes')
+    ..aOS(4, _omitFieldNames ? '' : 'userName', protoName: 'userName')
+    ..a<$core.int>(5, _omitFieldNames ? '' : 'majorVersion', $pb.PbFieldType.O3, protoName: 'majorVersion')
+    ..a<$core.int>(6, _omitFieldNames ? '' : 'minorVersion', $pb.PbFieldType.O3, protoName: 'minorVersion')
+    ..a<$core.int>(7, _omitFieldNames ? '' : 'buildNumber', $pb.PbFieldType.O3, protoName: 'buildNumber')
+    ..a<$core.int>(8, _omitFieldNames ? '' : 'platformId', $pb.PbFieldType.O3, protoName: 'platformId')
+    ..aOS(9, _omitFieldNames ? '' : 'csdVersion', protoName: 'csdVersion')
+    ..a<$core.int>(10, _omitFieldNames ? '' : 'servicePackMajor', $pb.PbFieldType.O3, protoName: 'servicePackMajor')
+    ..a<$core.int>(11, _omitFieldNames ? '' : 'servicePackMinor', $pb.PbFieldType.O3, protoName: 'servicePackMinor')
+    ..a<$core.int>(12, _omitFieldNames ? '' : 'suitMask', $pb.PbFieldType.O3, protoName: 'suitMask')
+    ..a<$core.int>(13, _omitFieldNames ? '' : 'productType', $pb.PbFieldType.O3, protoName: 'productType')
+    ..aOS(14, _omitFieldNames ? '' : 'reserved')
+    ..aOS(15, _omitFieldNames ? '' : 'buildLab', protoName: 'buildLab')
+    ..aOS(16, _omitFieldNames ? '' : 'buildLabEx', protoName: 'buildLabEx')
+    ..aOS(17, _omitFieldNames ? '' : 'digitalProductId', protoName: 'digitalProductId')
+    ..aOS(18, _omitFieldNames ? '' : 'displayVersion', protoName: 'displayVersion')
+    ..aOS(19, _omitFieldNames ? '' : 'editionId', protoName: 'editionId')
+    ..aOS(20, _omitFieldNames ? '' : 'installDate', protoName: 'installDate')
+    ..aOS(21, _omitFieldNames ? '' : 'productId', protoName: 'productId')
+    ..aOS(22, _omitFieldNames ? '' : 'productName', protoName: 'productName')
+    ..aOS(23, _omitFieldNames ? '' : 'registeredOwner', protoName: 'registeredOwner')
+    ..aOS(24, _omitFieldNames ? '' : 'releaseId', protoName: 'releaseId')
+    ..aOS(25, _omitFieldNames ? '' : 'deviceId', protoName: 'deviceId')
     ..hasRequiredFields = false
   ;
 
-  WindowsDeviceDetails._() : super();
-  factory WindowsDeviceDetails({
-    $core.int? numberOfCores,
-    $core.String? computerName,
-    $core.int? systemMemoryInMegabytes,
-    $core.String? userName,
-    $core.int? majorVersion,
-    $core.int? minorVersion,
-    $core.int? buildNumber,
-    $core.int? platformId,
-    $core.String? csdVersion,
-    $core.int? servicePackMajor,
-    $core.int? servicePackMinor,
-    $core.int? suitMask,
-    $core.int? productType,
-    $core.String? reserved,
-    $core.String? buildLab,
-    $core.String? buildLabEx,
-    $core.String? digitalProductId,
-    $core.String? displayVersion,
-    $core.String? editionId,
-    $core.String? installDate,
-    $core.String? productId,
-    $core.String? productName,
-    $core.String? registeredOwner,
-    $core.String? releaseId,
-    $core.String? deviceId,
-  }) {
-    final _result = create();
-    if (numberOfCores != null) {
-      _result.numberOfCores = numberOfCores;
-    }
-    if (computerName != null) {
-      _result.computerName = computerName;
-    }
-    if (systemMemoryInMegabytes != null) {
-      _result.systemMemoryInMegabytes = systemMemoryInMegabytes;
-    }
-    if (userName != null) {
-      _result.userName = userName;
-    }
-    if (majorVersion != null) {
-      _result.majorVersion = majorVersion;
-    }
-    if (minorVersion != null) {
-      _result.minorVersion = minorVersion;
-    }
-    if (buildNumber != null) {
-      _result.buildNumber = buildNumber;
-    }
-    if (platformId != null) {
-      _result.platformId = platformId;
-    }
-    if (csdVersion != null) {
-      _result.csdVersion = csdVersion;
-    }
-    if (servicePackMajor != null) {
-      _result.servicePackMajor = servicePackMajor;
-    }
-    if (servicePackMinor != null) {
-      _result.servicePackMinor = servicePackMinor;
-    }
-    if (suitMask != null) {
-      _result.suitMask = suitMask;
-    }
-    if (productType != null) {
-      _result.productType = productType;
-    }
-    if (reserved != null) {
-      _result.reserved = reserved;
-    }
-    if (buildLab != null) {
-      _result.buildLab = buildLab;
-    }
-    if (buildLabEx != null) {
-      _result.buildLabEx = buildLabEx;
-    }
-    if (digitalProductId != null) {
-      _result.digitalProductId = digitalProductId;
-    }
-    if (displayVersion != null) {
-      _result.displayVersion = displayVersion;
-    }
-    if (editionId != null) {
-      _result.editionId = editionId;
-    }
-    if (installDate != null) {
-      _result.installDate = installDate;
-    }
-    if (productId != null) {
-      _result.productId = productId;
-    }
-    if (productName != null) {
-      _result.productName = productName;
-    }
-    if (registeredOwner != null) {
-      _result.registeredOwner = registeredOwner;
-    }
-    if (releaseId != null) {
-      _result.releaseId = releaseId;
-    }
-    if (deviceId != null) {
-      _result.deviceId = deviceId;
-    }
-    return _result;
-  }
-  factory WindowsDeviceDetails.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory WindowsDeviceDetails.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -945,8 +650,10 @@ class WindowsDeviceDetails extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  WindowsDeviceDetails copyWith(void Function(WindowsDeviceDetails) updates) => super.copyWith((message) => updates(message as WindowsDeviceDetails)) as WindowsDeviceDetails; // ignore: deprecated_member_use
+  WindowsDeviceDetails copyWith(void Function(WindowsDeviceDetails) updates) => super.copyWith((message) => updates(message as WindowsDeviceDetails)) as WindowsDeviceDetails;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static WindowsDeviceDetails create() => WindowsDeviceDetails._();
   WindowsDeviceDetails createEmptyInstance() => create();
@@ -1182,83 +889,28 @@ class WindowsDeviceDetails extends $pb.GeneratedMessage {
 }
 
 class MacOSDeviceDetails extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'MacOSDeviceDetails', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'proto'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'computerName')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'hostName')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'arch')
-    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'model')
-    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'kernelVersion')
-    ..a<$core.int>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'majorVersion', $pb.PbFieldType.O3)
-    ..a<$core.int>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'minorVersion', $pb.PbFieldType.O3)
-    ..a<$core.int>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'patchVersion', $pb.PbFieldType.O3)
-    ..aOS(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'osRelease')
-    ..a<$core.int>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'activeCpus', $pb.PbFieldType.O3)
-    ..aInt64(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'memorySize')
-    ..aInt64(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'cpuFrequency')
-    ..aOS(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'systemGuid')
+  factory MacOSDeviceDetails() => create();
+  MacOSDeviceDetails._() : super();
+  factory MacOSDeviceDetails.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory MacOSDeviceDetails.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MacOSDeviceDetails', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'computerName')
+    ..aOS(2, _omitFieldNames ? '' : 'hostName')
+    ..aOS(3, _omitFieldNames ? '' : 'arch')
+    ..aOS(4, _omitFieldNames ? '' : 'model')
+    ..aOS(5, _omitFieldNames ? '' : 'kernelVersion')
+    ..a<$core.int>(6, _omitFieldNames ? '' : 'majorVersion', $pb.PbFieldType.O3)
+    ..a<$core.int>(7, _omitFieldNames ? '' : 'minorVersion', $pb.PbFieldType.O3)
+    ..a<$core.int>(8, _omitFieldNames ? '' : 'patchVersion', $pb.PbFieldType.O3)
+    ..aOS(9, _omitFieldNames ? '' : 'osRelease')
+    ..a<$core.int>(10, _omitFieldNames ? '' : 'activeCpus', $pb.PbFieldType.O3)
+    ..aInt64(11, _omitFieldNames ? '' : 'memorySize')
+    ..aInt64(12, _omitFieldNames ? '' : 'cpuFrequency')
+    ..aOS(13, _omitFieldNames ? '' : 'systemGuid')
     ..hasRequiredFields = false
   ;
 
-  MacOSDeviceDetails._() : super();
-  factory MacOSDeviceDetails({
-    $core.String? computerName,
-    $core.String? hostName,
-    $core.String? arch,
-    $core.String? model,
-    $core.String? kernelVersion,
-    $core.int? majorVersion,
-    $core.int? minorVersion,
-    $core.int? patchVersion,
-    $core.String? osRelease,
-    $core.int? activeCpus,
-    $fixnum.Int64? memorySize,
-    $fixnum.Int64? cpuFrequency,
-    $core.String? systemGuid,
-  }) {
-    final _result = create();
-    if (computerName != null) {
-      _result.computerName = computerName;
-    }
-    if (hostName != null) {
-      _result.hostName = hostName;
-    }
-    if (arch != null) {
-      _result.arch = arch;
-    }
-    if (model != null) {
-      _result.model = model;
-    }
-    if (kernelVersion != null) {
-      _result.kernelVersion = kernelVersion;
-    }
-    if (majorVersion != null) {
-      _result.majorVersion = majorVersion;
-    }
-    if (minorVersion != null) {
-      _result.minorVersion = minorVersion;
-    }
-    if (patchVersion != null) {
-      _result.patchVersion = patchVersion;
-    }
-    if (osRelease != null) {
-      _result.osRelease = osRelease;
-    }
-    if (activeCpus != null) {
-      _result.activeCpus = activeCpus;
-    }
-    if (memorySize != null) {
-      _result.memorySize = memorySize;
-    }
-    if (cpuFrequency != null) {
-      _result.cpuFrequency = cpuFrequency;
-    }
-    if (systemGuid != null) {
-      _result.systemGuid = systemGuid;
-    }
-    return _result;
-  }
-  factory MacOSDeviceDetails.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory MacOSDeviceDetails.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1268,8 +920,10 @@ class MacOSDeviceDetails extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  MacOSDeviceDetails copyWith(void Function(MacOSDeviceDetails) updates) => super.copyWith((message) => updates(message as MacOSDeviceDetails)) as MacOSDeviceDetails; // ignore: deprecated_member_use
+  MacOSDeviceDetails copyWith(void Function(MacOSDeviceDetails) updates) => super.copyWith((message) => updates(message as MacOSDeviceDetails)) as MacOSDeviceDetails;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static MacOSDeviceDetails create() => MacOSDeviceDetails._();
   MacOSDeviceDetails createEmptyInstance() => create();
@@ -1397,93 +1051,30 @@ class MacOSDeviceDetails extends $pb.GeneratedMessage {
 }
 
 class WebBrowserInfoDetails extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'WebBrowserInfoDetails', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'proto'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'browserName', protoName: 'browserName')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'appCodeName', protoName: 'appCodeName')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'appName', protoName: 'appName')
-    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'appVersion', protoName: 'appVersion')
-    ..a<$core.int>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'deviceMemory', $pb.PbFieldType.OU3, protoName: 'deviceMemory')
-    ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'language')
-    ..pPS(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'languages')
-    ..aOS(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'platform')
-    ..aOS(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'product')
-    ..aOS(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'productSub', protoName: 'productSub')
-    ..aOS(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userAgent', protoName: 'userAgent')
-    ..aOS(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'vendor')
-    ..aOS(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'vendorSub', protoName: 'vendorSub')
-    ..a<$core.int>(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'hardwareConcurrency', $pb.PbFieldType.OU3, protoName: 'hardwareConcurrency')
-    ..a<$core.int>(15, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'maxTouchPoints', $pb.PbFieldType.OU3, protoName: 'maxTouchPoints')
+  factory WebBrowserInfoDetails() => create();
+  WebBrowserInfoDetails._() : super();
+  factory WebBrowserInfoDetails.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory WebBrowserInfoDetails.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'WebBrowserInfoDetails', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'browserName', protoName: 'browserName')
+    ..aOS(2, _omitFieldNames ? '' : 'appCodeName', protoName: 'appCodeName')
+    ..aOS(3, _omitFieldNames ? '' : 'appName', protoName: 'appName')
+    ..aOS(4, _omitFieldNames ? '' : 'appVersion', protoName: 'appVersion')
+    ..a<$core.int>(5, _omitFieldNames ? '' : 'deviceMemory', $pb.PbFieldType.OU3, protoName: 'deviceMemory')
+    ..aOS(6, _omitFieldNames ? '' : 'language')
+    ..pPS(7, _omitFieldNames ? '' : 'languages')
+    ..aOS(8, _omitFieldNames ? '' : 'platform')
+    ..aOS(9, _omitFieldNames ? '' : 'product')
+    ..aOS(10, _omitFieldNames ? '' : 'productSub', protoName: 'productSub')
+    ..aOS(11, _omitFieldNames ? '' : 'userAgent', protoName: 'userAgent')
+    ..aOS(12, _omitFieldNames ? '' : 'vendor')
+    ..aOS(13, _omitFieldNames ? '' : 'vendorSub', protoName: 'vendorSub')
+    ..a<$core.int>(14, _omitFieldNames ? '' : 'hardwareConcurrency', $pb.PbFieldType.OU3, protoName: 'hardwareConcurrency')
+    ..a<$core.int>(15, _omitFieldNames ? '' : 'maxTouchPoints', $pb.PbFieldType.OU3, protoName: 'maxTouchPoints')
     ..hasRequiredFields = false
   ;
 
-  WebBrowserInfoDetails._() : super();
-  factory WebBrowserInfoDetails({
-    $core.String? browserName,
-    $core.String? appCodeName,
-    $core.String? appName,
-    $core.String? appVersion,
-    $core.int? deviceMemory,
-    $core.String? language,
-    $core.Iterable<$core.String>? languages,
-    $core.String? platform,
-    $core.String? product,
-    $core.String? productSub,
-    $core.String? userAgent,
-    $core.String? vendor,
-    $core.String? vendorSub,
-    $core.int? hardwareConcurrency,
-    $core.int? maxTouchPoints,
-  }) {
-    final _result = create();
-    if (browserName != null) {
-      _result.browserName = browserName;
-    }
-    if (appCodeName != null) {
-      _result.appCodeName = appCodeName;
-    }
-    if (appName != null) {
-      _result.appName = appName;
-    }
-    if (appVersion != null) {
-      _result.appVersion = appVersion;
-    }
-    if (deviceMemory != null) {
-      _result.deviceMemory = deviceMemory;
-    }
-    if (language != null) {
-      _result.language = language;
-    }
-    if (languages != null) {
-      _result.languages.addAll(languages);
-    }
-    if (platform != null) {
-      _result.platform = platform;
-    }
-    if (product != null) {
-      _result.product = product;
-    }
-    if (productSub != null) {
-      _result.productSub = productSub;
-    }
-    if (userAgent != null) {
-      _result.userAgent = userAgent;
-    }
-    if (vendor != null) {
-      _result.vendor = vendor;
-    }
-    if (vendorSub != null) {
-      _result.vendorSub = vendorSub;
-    }
-    if (hardwareConcurrency != null) {
-      _result.hardwareConcurrency = hardwareConcurrency;
-    }
-    if (maxTouchPoints != null) {
-      _result.maxTouchPoints = maxTouchPoints;
-    }
-    return _result;
-  }
-  factory WebBrowserInfoDetails.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory WebBrowserInfoDetails.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1493,8 +1084,10 @@ class WebBrowserInfoDetails extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  WebBrowserInfoDetails copyWith(void Function(WebBrowserInfoDetails) updates) => super.copyWith((message) => updates(message as WebBrowserInfoDetails)) as WebBrowserInfoDetails; // ignore: deprecated_member_use
+  WebBrowserInfoDetails copyWith(void Function(WebBrowserInfoDetails) updates) => super.copyWith((message) => updates(message as WebBrowserInfoDetails)) as WebBrowserInfoDetails;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static WebBrowserInfoDetails create() => WebBrowserInfoDetails._();
   WebBrowserInfoDetails createEmptyInstance() => create();
@@ -1634,73 +1227,26 @@ class WebBrowserInfoDetails extends $pb.GeneratedMessage {
 }
 
 class LinuxDeviceInfoDetails extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'LinuxDeviceInfoDetails', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'proto'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'version')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
-    ..pPS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'idLike', protoName: 'idLike')
-    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'versionCodename', protoName: 'versionCodename')
-    ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'versionId', protoName: 'versionId')
-    ..aOS(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'prettyName', protoName: 'prettyName')
-    ..aOS(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'buildId', protoName: 'buildId')
-    ..aOS(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'variant')
-    ..aOS(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'variantId', protoName: 'variantId')
-    ..aOS(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'machineId', protoName: 'machineId')
+  factory LinuxDeviceInfoDetails() => create();
+  LinuxDeviceInfoDetails._() : super();
+  factory LinuxDeviceInfoDetails.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory LinuxDeviceInfoDetails.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LinuxDeviceInfoDetails', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOS(2, _omitFieldNames ? '' : 'version')
+    ..aOS(3, _omitFieldNames ? '' : 'id')
+    ..pPS(4, _omitFieldNames ? '' : 'idLike', protoName: 'idLike')
+    ..aOS(5, _omitFieldNames ? '' : 'versionCodename', protoName: 'versionCodename')
+    ..aOS(6, _omitFieldNames ? '' : 'versionId', protoName: 'versionId')
+    ..aOS(7, _omitFieldNames ? '' : 'prettyName', protoName: 'prettyName')
+    ..aOS(8, _omitFieldNames ? '' : 'buildId', protoName: 'buildId')
+    ..aOS(9, _omitFieldNames ? '' : 'variant')
+    ..aOS(10, _omitFieldNames ? '' : 'variantId', protoName: 'variantId')
+    ..aOS(11, _omitFieldNames ? '' : 'machineId', protoName: 'machineId')
     ..hasRequiredFields = false
   ;
 
-  LinuxDeviceInfoDetails._() : super();
-  factory LinuxDeviceInfoDetails({
-    $core.String? name,
-    $core.String? version,
-    $core.String? id,
-    $core.Iterable<$core.String>? idLike,
-    $core.String? versionCodename,
-    $core.String? versionId,
-    $core.String? prettyName,
-    $core.String? buildId,
-    $core.String? variant,
-    $core.String? variantId,
-    $core.String? machineId,
-  }) {
-    final _result = create();
-    if (name != null) {
-      _result.name = name;
-    }
-    if (version != null) {
-      _result.version = version;
-    }
-    if (id != null) {
-      _result.id = id;
-    }
-    if (idLike != null) {
-      _result.idLike.addAll(idLike);
-    }
-    if (versionCodename != null) {
-      _result.versionCodename = versionCodename;
-    }
-    if (versionId != null) {
-      _result.versionId = versionId;
-    }
-    if (prettyName != null) {
-      _result.prettyName = prettyName;
-    }
-    if (buildId != null) {
-      _result.buildId = buildId;
-    }
-    if (variant != null) {
-      _result.variant = variant;
-    }
-    if (variantId != null) {
-      _result.variantId = variantId;
-    }
-    if (machineId != null) {
-      _result.machineId = machineId;
-    }
-    return _result;
-  }
-  factory LinuxDeviceInfoDetails.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory LinuxDeviceInfoDetails.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1710,8 +1256,10 @@ class LinuxDeviceInfoDetails extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  LinuxDeviceInfoDetails copyWith(void Function(LinuxDeviceInfoDetails) updates) => super.copyWith((message) => updates(message as LinuxDeviceInfoDetails)) as LinuxDeviceInfoDetails; // ignore: deprecated_member_use
+  LinuxDeviceInfoDetails copyWith(void Function(LinuxDeviceInfoDetails) updates) => super.copyWith((message) => updates(message as LinuxDeviceInfoDetails)) as LinuxDeviceInfoDetails;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static LinuxDeviceInfoDetails create() => LinuxDeviceInfoDetails._();
   LinuxDeviceInfoDetails createEmptyInstance() => create();
@@ -1815,28 +1363,17 @@ class LinuxDeviceInfoDetails extends $pb.GeneratedMessage {
 }
 
 class DeviceScreenSize extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'DeviceScreenSize', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'proto'), createEmptyInstance: create)
-    ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'hieght', $pb.PbFieldType.O3)
-    ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'width', $pb.PbFieldType.O3)
+  factory DeviceScreenSize() => create();
+  DeviceScreenSize._() : super();
+  factory DeviceScreenSize.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeviceScreenSize.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeviceScreenSize', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto'), createEmptyInstance: create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'hieght', $pb.PbFieldType.O3)
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'width', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
   ;
 
-  DeviceScreenSize._() : super();
-  factory DeviceScreenSize({
-    $core.int? hieght,
-    $core.int? width,
-  }) {
-    final _result = create();
-    if (hieght != null) {
-      _result.hieght = hieght;
-    }
-    if (width != null) {
-      _result.width = width;
-    }
-    return _result;
-  }
-  factory DeviceScreenSize.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory DeviceScreenSize.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1846,8 +1383,10 @@ class DeviceScreenSize extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  DeviceScreenSize copyWith(void Function(DeviceScreenSize) updates) => super.copyWith((message) => updates(message as DeviceScreenSize)) as DeviceScreenSize; // ignore: deprecated_member_use
+  DeviceScreenSize copyWith(void Function(DeviceScreenSize) updates) => super.copyWith((message) => updates(message as DeviceScreenSize)) as DeviceScreenSize;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static DeviceScreenSize create() => DeviceScreenSize._();
   DeviceScreenSize createEmptyInstance() => create();
@@ -1876,78 +1415,27 @@ class DeviceScreenSize extends $pb.GeneratedMessage {
 }
 
 class DeviceDeatilsPb extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'DeviceDeatilsPb', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'proto'), createEmptyInstance: create)
-    ..e<DeviceOSTypeEnum>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'deviceOsType', $pb.PbFieldType.OE, protoName: 'deviceOsType', defaultOrMaker: DeviceOSTypeEnum.UNKNOWN_OS, valueOf: DeviceOSTypeEnum.valueOf, enumValues: DeviceOSTypeEnum.values)
-    ..aOM<AndroidDeviceDetails>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'androidDevice', protoName: 'androidDevice', subBuilder: AndroidDeviceDetails.create)
-    ..aOM<IOSDeviceDetails>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'iosDevice', protoName: 'iosDevice', subBuilder: IOSDeviceDetails.create)
-    ..aOM<WindowsDeviceDetails>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'windowsDevice', protoName: 'windowsDevice', subBuilder: WindowsDeviceDetails.create)
-    ..aOM<MacOSDeviceDetails>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'macOsDevice', protoName: 'macOsDevice', subBuilder: MacOSDeviceDetails.create)
-    ..aOM<WebBrowserInfoDetails>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'webBrowserDevice', protoName: 'webBrowserDevice', subBuilder: WebBrowserInfoDetails.create)
-    ..aOM<LinuxDeviceInfoDetails>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'linuxDevice', protoName: 'linuxDevice', subBuilder: LinuxDeviceInfoDetails.create)
-    ..e<DeviceTypeEnum>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'deviceType', $pb.PbFieldType.OE, protoName: 'deviceType', defaultOrMaker: DeviceTypeEnum.UNKNOWN_DEVICE_TYPE, valueOf: DeviceTypeEnum.valueOf, enumValues: DeviceTypeEnum.values)
-    ..aOM<DeviceScreenSize>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'screeSize', protoName: 'screeSize', subBuilder: DeviceScreenSize.create)
-    ..aOS(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'deviceMacId', protoName: 'deviceMacId')
-    ..aOS(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'deviceIpAddress', protoName: 'deviceIpAddress')
-    ..e<DeviceAppMode>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'mode', $pb.PbFieldType.OE, defaultOrMaker: DeviceAppMode.UKNOWN_MODE, valueOf: DeviceAppMode.valueOf, enumValues: DeviceAppMode.values)
+  factory DeviceDeatilsPb() => create();
+  DeviceDeatilsPb._() : super();
+  factory DeviceDeatilsPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeviceDeatilsPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeviceDeatilsPb', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto'), createEmptyInstance: create)
+    ..e<DeviceOSTypeEnum>(1, _omitFieldNames ? '' : 'deviceOsType', $pb.PbFieldType.OE, protoName: 'deviceOsType', defaultOrMaker: DeviceOSTypeEnum.UNKNOWN_OS, valueOf: DeviceOSTypeEnum.valueOf, enumValues: DeviceOSTypeEnum.values)
+    ..aOM<AndroidDeviceDetails>(2, _omitFieldNames ? '' : 'androidDevice', protoName: 'androidDevice', subBuilder: AndroidDeviceDetails.create)
+    ..aOM<IOSDeviceDetails>(3, _omitFieldNames ? '' : 'iosDevice', protoName: 'iosDevice', subBuilder: IOSDeviceDetails.create)
+    ..aOM<WindowsDeviceDetails>(4, _omitFieldNames ? '' : 'windowsDevice', protoName: 'windowsDevice', subBuilder: WindowsDeviceDetails.create)
+    ..aOM<MacOSDeviceDetails>(5, _omitFieldNames ? '' : 'macOsDevice', protoName: 'macOsDevice', subBuilder: MacOSDeviceDetails.create)
+    ..aOM<WebBrowserInfoDetails>(6, _omitFieldNames ? '' : 'webBrowserDevice', protoName: 'webBrowserDevice', subBuilder: WebBrowserInfoDetails.create)
+    ..aOM<LinuxDeviceInfoDetails>(7, _omitFieldNames ? '' : 'linuxDevice', protoName: 'linuxDevice', subBuilder: LinuxDeviceInfoDetails.create)
+    ..e<DeviceTypeEnum>(8, _omitFieldNames ? '' : 'deviceType', $pb.PbFieldType.OE, protoName: 'deviceType', defaultOrMaker: DeviceTypeEnum.UNKNOWN_DEVICE_TYPE, valueOf: DeviceTypeEnum.valueOf, enumValues: DeviceTypeEnum.values)
+    ..aOM<DeviceScreenSize>(9, _omitFieldNames ? '' : 'screeSize', protoName: 'screeSize', subBuilder: DeviceScreenSize.create)
+    ..aOS(10, _omitFieldNames ? '' : 'deviceMacId', protoName: 'deviceMacId')
+    ..aOS(11, _omitFieldNames ? '' : 'deviceIpAddress', protoName: 'deviceIpAddress')
+    ..e<DeviceAppMode>(12, _omitFieldNames ? '' : 'mode', $pb.PbFieldType.OE, defaultOrMaker: DeviceAppMode.UKNOWN_MODE, valueOf: DeviceAppMode.valueOf, enumValues: DeviceAppMode.values)
     ..hasRequiredFields = false
   ;
 
-  DeviceDeatilsPb._() : super();
-  factory DeviceDeatilsPb({
-    DeviceOSTypeEnum? deviceOsType,
-    AndroidDeviceDetails? androidDevice,
-    IOSDeviceDetails? iosDevice,
-    WindowsDeviceDetails? windowsDevice,
-    MacOSDeviceDetails? macOsDevice,
-    WebBrowserInfoDetails? webBrowserDevice,
-    LinuxDeviceInfoDetails? linuxDevice,
-    DeviceTypeEnum? deviceType,
-    DeviceScreenSize? screeSize,
-    $core.String? deviceMacId,
-    $core.String? deviceIpAddress,
-    DeviceAppMode? mode,
-  }) {
-    final _result = create();
-    if (deviceOsType != null) {
-      _result.deviceOsType = deviceOsType;
-    }
-    if (androidDevice != null) {
-      _result.androidDevice = androidDevice;
-    }
-    if (iosDevice != null) {
-      _result.iosDevice = iosDevice;
-    }
-    if (windowsDevice != null) {
-      _result.windowsDevice = windowsDevice;
-    }
-    if (macOsDevice != null) {
-      _result.macOsDevice = macOsDevice;
-    }
-    if (webBrowserDevice != null) {
-      _result.webBrowserDevice = webBrowserDevice;
-    }
-    if (linuxDevice != null) {
-      _result.linuxDevice = linuxDevice;
-    }
-    if (deviceType != null) {
-      _result.deviceType = deviceType;
-    }
-    if (screeSize != null) {
-      _result.screeSize = screeSize;
-    }
-    if (deviceMacId != null) {
-      _result.deviceMacId = deviceMacId;
-    }
-    if (deviceIpAddress != null) {
-      _result.deviceIpAddress = deviceIpAddress;
-    }
-    if (mode != null) {
-      _result.mode = mode;
-    }
-    return _result;
-  }
-  factory DeviceDeatilsPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory DeviceDeatilsPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1957,8 +1445,10 @@ class DeviceDeatilsPb extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  DeviceDeatilsPb copyWith(void Function(DeviceDeatilsPb) updates) => super.copyWith((message) => updates(message as DeviceDeatilsPb)) as DeviceDeatilsPb; // ignore: deprecated_member_use
+  DeviceDeatilsPb copyWith(void Function(DeviceDeatilsPb) updates) => super.copyWith((message) => updates(message as DeviceDeatilsPb)) as DeviceDeatilsPb;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static DeviceDeatilsPb create() => DeviceDeatilsPb._();
   DeviceDeatilsPb createEmptyInstance() => create();
@@ -2090,3 +1580,6 @@ class DeviceDeatilsPb extends $pb.GeneratedMessage {
   void clearMode() => clearField(12);
 }
 
+
+const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
+const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

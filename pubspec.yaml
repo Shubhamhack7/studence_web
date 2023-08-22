@@ -1,6 +1,5 @@
-name: studence_web
+name: studence_mvc
 description: A new Flutter project.
-
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -20,7 +19,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: '>=2.18.5 <3.0.0'
+  sdk: '>=3.0.6 <4.0.0'
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -35,58 +34,28 @@ dependencies:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.2
-  protobuf: ^2.1.0
-  protoc_plugin: ^20.0.1
-  device_info_plus: ^8.2.2
-  connectivity_plus: ^3.0.6
-  network_info_plus: ^3.0.5
+  cupertino_icons: ^1.0.5
+  singleton: ^0.0.2-nullsafety
+  fluro: ^2.0.5
+  protobuf: ^3.0.0
+  http: ^1.1.0
+  shared_preferences: ^2.2.0
+  protoc_plugin: ^21.0.2
+  device_info_plus: ^9.0.3
   mac_address: ^1.0.0
   dart_ipify: ^1.1.1
-  http: ^0.13.6
-  enum_to_string: ^2.0.1
+  flutter_typeahead: ^4.6.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  build_runner: ^2.1.5
-  protoc_builder: ^0.3.1
-
-scripts:
-  complie_proto: sh scripts/complieproto.sh
-
-targets:
-  $default:
-    sources:
-      - $package$
-      - lib/$lib$
-      - proto/**
-    builders:
-      protoc_builder:
-        options:
-          # The version of the Protobuf compiler to use.
-          protobuf_version: "3.21.12" # Make sure to use quotation marks.
-          # The version of the Dart protoc_plugin package to use.
-          protoc_plugin_version: "20.0.1" # Make sure to use quotation marks.
-          # Include paths given to the Protobuf compiler during compilation.
-          proto_paths:
-            - "proto/"
-          # The root directory for generated Dart output files.
-          out_dir: "lib/src/generated"
-  
-
-protobuf:
-  plugin:
-    protoc-gen-dart: ./usr/local/bin/protoc-gen-dart
-  proto_path:
-    - lib/protobuf
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^2.0.0
+  flutter_lints: ^2.0.2
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

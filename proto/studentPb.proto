@@ -1,0 +1,45 @@
+// Copyright (c) 2022, All Right Reserved, Shubham Tiwari
+
+syntax = "proto3";
+
+package proto;
+
+import "entityPb.proto";
+import "namePb.proto";
+import "summaryPb.proto";
+import "classPb.proto";
+import "campusPb.proto";
+import "guardianPb.proto";
+
+
+//The following protos are reserved 12,13,14,15,16.You shd not use them
+
+message StudentPb{
+  EntityPb dbInfo =1;
+  NamePb name= 2;
+  ClassesRefPb classRef = 3;
+  CampusRefPb campusRef= 4;
+  string classRollNo=5;
+  string serialOrRegistrationNo = 6;
+  GuardianRefPb parentRef= 7;
+}
+
+message StudentRefPb{
+  string dbInfoId =1;
+  string name= 2;
+  ClassType classType = 3;
+  CampusRefPb campusRef= 4;
+  string classRollNo=5;
+  GuardianRefPb parentRef= 6;
+}
+
+message StudentSearchReqPb{
+  string name = 1;
+}
+
+
+message StudentSearchRespPb{
+  SummaryPb summary =1;
+  repeated StudentPb results = 2;
+}
+

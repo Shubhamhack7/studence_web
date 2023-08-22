@@ -1,0 +1,43 @@
+// Copyright (c) 2022, All Right Reserved, Shubham Tiwari
+// Copyright (c) 2022, All Right Reserved, Shubham Tiwari
+
+syntax = "proto3";
+
+package proto;
+
+import "entityPb.proto";
+import "namePb.proto";
+import "summaryPb.proto";
+import "studentPb.proto";
+import "classPb.proto";
+import "teacherPb.proto";
+import "dataTypesPb.proto";
+
+
+
+//The following protos are reserved 12,13,14,15,16.You shd not use them
+
+message AttendencePb{
+  EntityPb dbInfo =1;
+  NamePb name= 2;
+  StudentRefPb studentRef = 3;
+  ClassesRefPb classRef = 4;
+  TeacherRefPb teacherRef = 5;
+  BooleanEnum isPresent = 6;
+}
+
+message AttendenceRefPb{
+  string dbInfoId =1;
+  string name= 2;
+}
+
+message AttendenceSearchReqPb{
+  string name = 1;
+}
+
+
+message AttendenceSearchRespPb{
+  SummaryPb summary =1;
+  repeated AttendencePb results = 2;
+}
+

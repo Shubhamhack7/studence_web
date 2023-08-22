@@ -1,0 +1,58 @@
+// Copyright (c) 2022, All Right Reserved, Shubham Tiwari
+
+syntax = "proto3";
+
+package proto;
+
+
+
+import "entityPb.proto";
+import "contactDetailsPb.proto";
+import "summaryPb.proto";
+import "genericRefPb.proto";
+
+option java_multiple_files = true;
+option java_generate_equals_and_hash = true;
+//The following protos are reserved 12,13,14,15,16.You shd not use them
+
+enum ProfileTypeEnum {
+  UNKNOWN_LOGIN_TYPE = 0;
+  ADMIN = 1;
+  ORGANISATION = 2;
+  CAMPUS = 3;
+  TEACHER =4;
+  STUDENT =5;
+  PARENTS =6;
+}
+
+message LoginPb{
+  EntityPb dbInfo =1;
+  ProfileTypeEnum type= 2;
+  GenericRefPb ref = 3;
+  MobileNumberPb mobileNo = 4;
+  EmailPb emailId = 5;
+  string encryptedPassword  = 6;
+}
+
+
+message LoginSearchReqPb{
+  string mobileNo = 1;
+  string emailId = 2;
+  NextTokenPb nextToken =3;
+}
+
+message LoginReqUiPb{
+  string mobileNo = 1;
+  string emailId = 2;
+  string password =3;
+}
+
+message LoginRespUiPb{
+    LoginPb login =1;
+}
+
+message LoginSearchRespPb{
+  SummaryPb summary =1;
+  repeated LoginPb results = 2;
+}
+

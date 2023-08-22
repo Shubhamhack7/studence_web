@@ -1,0 +1,39 @@
+// Copyright (c) 2022, All Right Reserved, Shubham Tiwari
+
+syntax = "proto3";
+
+package proto;
+
+import "entityPb.proto";
+import "namePb.proto";
+import "contactDetailsPb.proto";
+import "summaryPb.proto";
+import "organisationPb.proto";
+
+
+//The following protos are reserved 12,13,14,15,16.You shd not use them
+
+message CampusPb{
+  EntityPb dbInfo =1;
+  NamePb name= 2;
+  ContactDetailsPb contactDetails= 3;
+  OrganisationRefPb organisationRef = 4;
+  string campusCode  = 5;
+}
+
+message CampusRefPb{
+  string dbInfoId =1;
+  string name= 2;
+  OrganisationRefPb organisationRef = 3;
+}
+
+message CampusSearchReqPb{
+  string name = 1;
+}
+
+
+message CampusSearchRespPb{
+  SummaryPb summary =1;
+  repeated CampusPb results = 2;
+}
+

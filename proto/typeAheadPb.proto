@@ -1,0 +1,32 @@
+// Copyright (c) 2022, All Right Reserved, Shubham Tiwari
+
+syntax = "proto3";
+
+package proto;
+
+import "entityPb.proto";
+import "summaryPb.proto";
+import "genericRefPb.proto";
+import "loginPb.proto";
+
+
+
+
+message TypeAheadPb {
+  EntityPb dbInfo =1;
+  GenericRefPb context =2;
+  ProfileTypeEnum typeAheadType =3;
+}
+
+message TypeAheadSearchReqPb{
+  string context = 1;
+  ProfileTypeEnum typeAheadType =2;
+  NextTokenPb nextToken =3;
+}
+
+
+message TypeAheadSearchRespPb{
+  SummaryPb summary =1;
+  repeated TypeAheadPb results = 2;
+}
+
