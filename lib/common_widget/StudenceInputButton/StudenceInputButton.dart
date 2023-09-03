@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:studence_mvc/commom_interfaces/IFormatter.dart';
+import 'package:studence_mvc/common_utility/Strings.dart';
 import 'package:studence_mvc/common_widget/widget_utility/ButtonAlignment.dart';
 
 class StudenceInputButton extends StatefulWidget {
   late final Color backgroundColor;
   late final Color textColor;
+  final Color isSelectedBgColor; // New parameter for selected background color
+  final Color isSelectedTextColor; // New parameter for selected text color
   final double height;
   final double width;
   final double borderRadius;
@@ -12,15 +16,19 @@ class StudenceInputButton extends StatefulWidget {
   final bool isVisible;
   final ButtonAlignment alignment;
   final double buttonSpacing;
+  final IFormatter<dynamic> formatter;
 
   StudenceInputButton({
     required this.backgroundColor,
     required this.textColor,
+    required this.isSelectedBgColor,
+    required this.isSelectedTextColor,
     required this.height,
     required this.width,
     required this.borderRadius,
     required this.itemList,
     required this.controller,
+    required this.formatter,
     this.isVisible = true,
     this.alignment = ButtonAlignment.HORIZONTAL,
     this.buttonSpacing = 10.0,
@@ -40,18 +48,21 @@ class _StudenceInputButtonState extends State<StudenceInputButton> {
 
     // Initialize buttonSelections map
     for (var item in widget.itemList) {
-      buttonSelections[item.name] = false;
+      if (Strings.notEmpty(widget.formatter.getString(item))) {
+        buttonSelections[widget.formatter.getString(item)] = false;
+      }
     }
     if (widget.itemList.isNotEmpty) {
-      buttonSelections[widget.itemList[0].name] = true;
+      buttonSelections[widget.formatter.getString(widget.itemList[0])] = true;
     }
   }
 
   @override
   Widget build(BuildContext context) {
+    print("Widget is being rebuilt!");
     return Visibility(
       visible: widget.isVisible,
-      child: widget.alignment == ButtonAlignment.horizontal
+      child: widget.alignment == ButtonAlignment.HORIZONTAL
           ? Row(
               children: _buildButtons(),
             )
@@ -63,15 +74,12 @@ class _StudenceInputButtonState extends State<StudenceInputButton> {
 
   List<Widget> _buildButtons() {
     List<Widget> buttons = [];
-    bool isFirst = true;
     for (var item in widget.itemList) {
-      String label = item.name;
-      Color bgColor =
-          getButtonSelection(label) ? Colors.blue : widget.textColor;
-      Color textColor =
-          getButtonSelection(label) ? widget.textColor : widget.backgroundColor;
-      Color borderColor = widget.backgroundColor;
-
+      String label = widget.formatter.getString(item);
+      Color borderColor = widget.isSelectedBgColor;
+      if (Strings.isEmpty(label)) {
+        continue;
+      }
       buttons.add(
         SizedBox(
           height: widget.height,
@@ -84,17 +92,41 @@ class _StudenceInputButtonState extends State<StudenceInputButton> {
                       setButtonSelection(label);
                     });
                   },
-            style: ElevatedButton.styleFrom(
-              textStyle: TextStyle(color: textColor),
+            style: ButtonStyle(
+              textStyle: MaterialStateProperty.all<TextStyle>(
+                TextStyle(color: getTextColor(getButtonSelection(label))),
+              ),
+              backgroundColor: MaterialStateProperty.resolveWith<Color>(
+                (Set<MaterialState> states) {
+                  if (states.contains(MaterialState.pressed) ||
+                      getButtonSelection(label)) {
+                    return widget.isSelectedBgColor;
+                  }
+                  return widget.backgroundColor;
+                },
+              ),
+              shape: MaterialStateProperty.all<OutlinedBorder>(
+                RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(widget.borderRadius),
+                  side: BorderSide(
+                    color: getButtonSelection(label)
+                        ? widget.backgroundColor
+                        : widget.isSelectedBgColor,
+                  ),
+                ),
+              ),
+            ),
+            /*style: ElevatedButton.styleFrom(
+              textStyle:
+                  TextStyle(color: getTextColor(getButtonSelection(label))),
               backgroundColor: getBgColor(getButtonSelection(label)),
-              foregroundColor: getButtonSelection(label)
-                  ? Colors.blue
-                  : widget.backgroundColor,
+              foregroundColor: getTextColor(getButtonSelection(label)),
+           
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(widget.borderRadius),
                 side: BorderSide(color: borderColor),
               ),
-            ),
+            ),*/
             child: ValueListenableBuilder<bool>(
               valueListenable: widget.controller,
               builder: (context, isLoading, child) {
@@ -106,20 +138,22 @@ class _StudenceInputButtonState extends State<StudenceInputButton> {
                         width: 20,
                         height: 20,
                         child: CircularProgressIndicator(
-                          color: textColor,
+                          color: getTextColor(getButtonSelection(label)),
                         ),
                       ),
                       SizedBox(width: 10),
                       Text(
                         label,
-                        style: TextStyle(color: textColor),
+                        style: TextStyle(
+                            color: getTextColor(getButtonSelection(label))),
                       ),
                     ],
                   );
                 } else {
                   return Text(
                     label,
-                    style: TextStyle(color: textColor),
+                    style: TextStyle(
+                        color: getTextColor(getButtonSelection(label))),
                   );
                 }
               },
@@ -156,12 +190,20 @@ class _StudenceInputButtonState extends State<StudenceInputButton> {
     // Perform action based on the pressed button label
   }
 
-  getBgColor(bool buttonSelection) {
+  Color getBgColor(bool buttonSelection) {
     if (buttonSelection) {
-      widget.backgroundColor;
-      print("bg color ");
+      print(widget.isSelectedBgColor);
+      return Colors.blue.shade300;
     } else {
-      widget.textColor;
+      return widget.backgroundColor;
+    }
+  }
+
+  Color getTextColor(bool buttonSelection) {
+    if (buttonSelection) {
+      return widget.isSelectedTextColor;
+    } else {
+      return widget.textColor;
     }
   }
 }

@@ -113,6 +113,22 @@ class Strings {
     }
   }
 
+  static String toTitleCaseForEnum(String givenString) {
+    if (isEmpty(givenString)) {
+      return '';
+    } else {
+      List<String> arr = givenString.split(' ');
+      StringBuffer sb = StringBuffer();
+      for (String value in arr) {
+        if (value.isNotEmpty) {
+          sb.write(
+              value[0].toUpperCase() + value.substring(1).toLowerCase() + ' ');
+        }
+      }
+      return sb.toString().trim().replaceAll("_", " ");
+    }
+  }
+
   static String removeSurroundingQuotes(String string) {
     int first = string.indexOf('"');
     if (first >= 0) {

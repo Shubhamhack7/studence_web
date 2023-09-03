@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class StudenceTextBox extends StatefulWidget {
+/*class StudenceTextBox extends StatefulWidget {
   final String placeholder;
   final TextEditingController controller;
   final double borderWidth;
@@ -74,7 +74,72 @@ class _StudenceTextBoxState extends State<StudenceTextBox> {
       ),
     );
   }
+}*/
+
+import 'package:flutter/material.dart';
+
+class StudenceTextBox extends StatefulWidget {
+  final String placeholder;
+  final double leftPadding;
+  final double rightPadding;
+  final double upperPadding;
+  final double lowerPadding;
+  final double width;
+  final double height;
+  final TextEditingController? controller;
+
+  const StudenceTextBox({
+    Key? key,
+    required this.placeholder,
+    this.leftPadding = 0,
+    this.rightPadding = 0,
+    this.upperPadding = 0,
+    this.lowerPadding = 0,
+    this.width = 250,
+    this.height = 50,
+    required this.controller,
+  }) : super(key: key);
+
+  @override
+  _StudenceTextBoxState createState() => _StudenceTextBoxState();
 }
+
+class _StudenceTextBoxState extends State<StudenceTextBox> {
+  bool _hasFocus = false;
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.fromLTRB(
+        widget.leftPadding,
+        widget.upperPadding,
+        widget.rightPadding,
+        widget.lowerPadding,
+      ),
+      width: widget.width,
+      height: widget.height,
+      child: TextField(
+        controller: widget.controller,
+        obscureText: true,
+        decoration: InputDecoration(
+          border: OutlineInputBorder(),
+          labelText: widget.placeholder,
+        ),
+      ),
+    );
+  }
+}
+
 
 
 //How to use See below..

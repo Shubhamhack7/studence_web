@@ -5,7 +5,7 @@ import 'package:studence_mvc/mvc/wrapper/ADefaultWrapperProvider.dart';
 
 class SimpleModel<O, OP extends ADefaultWrapperProvider<O, dynamic>>
     extends AModel {
-  final OP mDefaultProvider;
+  late OP mDefaultProvider;
   O? mdataOrWrapper;
 
   SimpleModel(this.mDefaultProvider);
@@ -45,6 +45,11 @@ class SimpleModel<O, OP extends ADefaultWrapperProvider<O, dynamic>>
 
   SimpleModel<O, OP> getDataOrWrapperModel() {
     return this;
+  }
+
+  void setDataOrWrapperModel(SimpleModel<O, OP> model) {
+    this._setDataOrWrapper(model.getDataOrWrapper() as O, false);
+    this.mDefaultProvider = model.mDefaultProvider;
   }
 
   @override

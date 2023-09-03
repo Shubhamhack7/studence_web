@@ -11,17 +11,23 @@ class StudenceCardList<T, V> extends StatefulWidget {
   });
 
   @override
-  _StudenceCardListState createState() => _StudenceCardListState();
+  _StudenceCardListState createState() => _StudenceCardListState<T, V>();
 }
 
-class _StudenceCardListState extends State<StudenceCardList> {
+class _StudenceCardListState<T, V> extends State<StudenceCardList<T, V>> {
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: widget.dataList.length,
-      itemBuilder: (context, index) {
-        return widget.composer.getWidget(widget.dataList[index]);
-      },
+    return CustomScrollView(
+      slivers: [
+        SliverList(
+          delegate: SliverChildBuilderDelegate(
+            (context, index) {
+              return widget.composer.getWidget(widget.dataList[index]);
+            },
+            childCount: widget.dataList.length,
+          ),
+        ),
+      ],
     );
   }
 }

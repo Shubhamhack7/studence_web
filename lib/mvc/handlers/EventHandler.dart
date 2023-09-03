@@ -4,8 +4,4 @@ class EventHandler {
   bool handleEvent() {
     return true;
   }
-
-  void handleEventWithVoid() {
-    return;
-  }
 }

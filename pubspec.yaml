@@ -45,6 +45,7 @@ dependencies:
   mac_address: ^1.0.0
   dart_ipify: ^1.1.1
   flutter_typeahead: ^4.6.2
+  fluttertoast: ^8.2.2
 
 dev_dependencies:
   flutter_test:
