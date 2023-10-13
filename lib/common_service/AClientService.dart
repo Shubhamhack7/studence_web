@@ -42,10 +42,10 @@ class AClientService<
   }
 
   @override
-  Future<Lresp> search(Lreq pb) {
+  Future<Lresp> search(Lreq pb) async {
     SearchService<Lreq, Lresp, PP> search =
         SearchService(pb, m_responsePb, m_pathProvider);
-    return search.callingSearchRequestToServer();
+    return await search.callingSearchRequestToServer();
   }
 
   @override

@@ -46,6 +46,7 @@ dependencies:
   dart_ipify: ^1.1.1
   flutter_typeahead: ^4.6.2
   fluttertoast: ^8.2.2
+  firebase_messaging: ^14.6.9
 
 dev_dependencies:
   flutter_test:

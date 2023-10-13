@@ -1,4 +1,5 @@
 import 'package:studence_mvc/common_utility/Strings.dart';
+import 'package:studence_mvc/common_utility/StudenceSpecialCharacterEnum.dart';
 import 'package:studence_mvc/generted/proto/entityPb.pb.dart';
 
 class EntityHelper {
@@ -13,5 +14,11 @@ class EntityHelper {
 
   static bool idisEmpty(EntityPb entityPb) {
     return !idNotEmpty(entityPb);
+  }
+
+  static String dbId(EntityPb entityPb) {
+    return entityPb.hashId +
+        StudenceSpecialCharacterEnum.EXCLAMATION.getUnicode() +
+        entityPb.rangeId;
   }
 }

@@ -4,6 +4,7 @@ import 'package:studence_mvc/Pages/HomePage/AdminHomePage.dart';
 import 'package:studence_mvc/Pages/LoginPage/LoginPage.dart';
 import 'package:studence_mvc/Pages/NotFoundPage.dart';
 import 'package:studence_mvc/Pages/Organisation/OrganisationCreate/OrganisationAndCampusCreate.dart';
+import 'package:studence_mvc/Pages/Organisation/OrganisationHomePage/OrganisationHomePage.dart';
 import 'package:studence_mvc/common_route/StudenceRouteEnum.dart';
 
 class StudenceRouterConfig {
@@ -14,7 +15,7 @@ class StudenceRouterConfig {
     router.define(
       StudenceRoute.getPath(StudenceRouteEnum.HOME),
       handler: Handler(
-        handlerFunc: (context, parameters) => AdminHomePage(),
+        handlerFunc: (context, parameters) => OrganisationHomePage(),
       ),
     );
     router.define(
