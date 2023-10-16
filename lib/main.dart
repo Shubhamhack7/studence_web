@@ -1,4 +1,8 @@
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
+import 'package:firebase_database/firebase_database.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:fluro/fluro.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:studence_mvc/common_route/StudenceRouteEnum.dart';
 import 'package:studence_mvc/common_route/StudenceRouterConfig.dart';
@@ -6,17 +10,45 @@ import 'package:studence_mvc/Pages/HomePage/AdminHomePage.dart';
 import 'package:studence_mvc/Pages/AboutPage.dart';
 import 'package:studence_mvc/mvc/Listener/ListenerProvider.dart';
 import 'package:studence_mvc/mvc/future/IFuture.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 import 'package:studence_mvc/mvc/future/SyncFuture.dart';
 import 'package:studence_mvc/mvc/handlers/EventHandler.dart';
 import 'package:studence_mvc/mvc/handlers/InputHandler.dart';
 import 'package:studence_mvc/mvc/model/SimpleModel.dart';
 import 'package:studence_mvc/mvc/model/interfaces/IModelUpdateListener.dart';
 
-void main() {
+Future<void> main() async {
   final router = FluroRouter();
   StudenceRouterConfig.router = router;
   StudenceRouterConfig.defineRoutes();
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  final DatabaseReference databaseRef = FirebaseDatabase.instance.reference();
+  databaseRef.child('users').child('user_id').set({
+    'name': 'John Doe',
+    'email': 'johndoe@example.com',
+  });
+  final FirebaseMessaging _firebaseMessaging = FirebaseMessaging.instance;
+  _firebaseMessaging.requestPermission();
+  _firebaseMessaging.getToken().then((value) {
+    print(value);
+  });
+  _firebaseMessaging.onTokenRefresh.listen((String newToken) {
+    print("Refreshed FCM Token: $newToken");
+  });
 
+  FirebaseMessaging.onBackgroundMessage((message) {
+    // Handle the message when the app is in the background or terminated state.
+    // You can use the message to display a notification.
+    print(message);
+    return Future<void>.value(null); // or simply return null;
+  });
+  FirebaseMessaging.onMessage.listen((message) {
+    print(message);
+  });
   runApp(MyApp(router: router));
   /*SimpleModel<InputHandler<String>, ListenerProvider<InputHandler<String>>>
       model = SimpleModel<InputHandler<String>, StringIListenerPRovider>(
@@ -25,7 +57,14 @@ void main() {
   // SimpleModel<EventHandler, ListenerProvider<EventHandler>> model =
   //     SimpleModel<EventHandler, EvelentListnerProvider>(
   //         EvelentListnerProvider(EventHandler()));
+//import 'package:firebase_core/firebase_core.dart';
+//import 'firebase_options.dart';
 
+// ...
+
+//await Firebase.initializeApp(
+  //   options: DefaultFirebaseOptions.currentPlatform,
+//)//;
   //model.setDataOrWrapper(StringEventhandler());
   //model.getDataOrWrapper()?.handleEvent();
   //print(model.getDataOrWrapper());

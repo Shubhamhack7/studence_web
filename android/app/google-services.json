@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "331366928134",
+    "firebase_url": "https://studence-dev-default-rtdb.firebaseio.com",
+    "project_id": "studence-dev",
+    "storage_bucket": "studence-dev.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:331366928134:android:5568c55c6dbae43bcfd887",
+        "android_client_info": {
+          "package_name": "com.example.studence_mvc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "331366928134-70p00flikg424k0gakcvekfhhdgjbhjd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBT-DhcViEq8yDjd2-789aA1o8Uw8ioS_I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "331366928134-70p00flikg424k0gakcvekfhhdgjbhjd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
