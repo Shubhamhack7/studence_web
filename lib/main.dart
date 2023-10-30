@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
@@ -39,6 +40,10 @@ Future<void> main() async {
   _firebaseMessaging.onTokenRefresh.listen((String newToken) {
     print("Refreshed FCM Token: $newToken");
   });
+  final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
+  UserCredential user = await _firebaseAuth.signInWithEmailAndPassword(
+      email: "test@studence.com", password: "test@123");
+  print(user.user!.uid);
 
   FirebaseMessaging.onBackgroundMessage((message) {
     // Handle the message when the app is in the background or terminated state.
