@@ -43,6 +43,7 @@ const LoginPb$json = {
     {'1': 'mobileNo', '3': 4, '4': 1, '5': 11, '6': '.proto.MobileNumberPb', '10': 'mobileNo'},
     {'1': 'emailId', '3': 5, '4': 1, '5': 11, '6': '.proto.EmailPb', '10': 'emailId'},
     {'1': 'encryptedPassword', '3': 6, '4': 1, '5': 9, '10': 'encryptedPassword'},
+    {'1': 'firebase_token', '3': 7, '4': 1, '5': 9, '10': 'firebaseToken'},
   ],
 };
 
@@ -52,7 +53,8 @@ final $typed_data.Uint8List loginPbDescriptor = $convert.base64Decode(
     'lwZRgCIAEoDjIWLnByb3RvLlByb2ZpbGVUeXBlRW51bVIEdHlwZRIlCgNyZWYYAyABKAsyEy5w'
     'cm90by5HZW5lcmljUmVmUGJSA3JlZhIxCghtb2JpbGVObxgEIAEoCzIVLnByb3RvLk1vYmlsZU'
     '51bWJlclBiUghtb2JpbGVObxIoCgdlbWFpbElkGAUgASgLMg4ucHJvdG8uRW1haWxQYlIHZW1h'
-    'aWxJZBIsChFlbmNyeXB0ZWRQYXNzd29yZBgGIAEoCVIRZW5jcnlwdGVkUGFzc3dvcmQ=');
+    'aWxJZBIsChFlbmNyeXB0ZWRQYXNzd29yZBgGIAEoCVIRZW5jcnlwdGVkUGFzc3dvcmQSJQoOZm'
+    'lyZWJhc2VfdG9rZW4YByABKAlSDWZpcmViYXNlVG9rZW4=');
 
 @$core.Deprecated('Use loginSearchReqPbDescriptor instead')
 const LoginSearchReqPb$json = {
@@ -60,15 +62,27 @@ const LoginSearchReqPb$json = {
   '2': [
     {'1': 'mobileNo', '3': 1, '4': 1, '5': 9, '10': 'mobileNo'},
     {'1': 'emailId', '3': 2, '4': 1, '5': 9, '10': 'emailId'},
-    {'1': 'nextToken', '3': 3, '4': 1, '5': 11, '6': '.proto.NextTokenPb', '10': 'nextToken'},
   ],
 };
 
 /// Descriptor for `LoginSearchReqPb`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List loginSearchReqPbDescriptor = $convert.base64Decode(
     'ChBMb2dpblNlYXJjaFJlcVBiEhoKCG1vYmlsZU5vGAEgASgJUghtb2JpbGVObxIYCgdlbWFpbE'
-    'lkGAIgASgJUgdlbWFpbElkEjAKCW5leHRUb2tlbhgDIAEoCzISLnByb3RvLk5leHRUb2tlblBi'
-    'UgluZXh0VG9rZW4=');
+    'lkGAIgASgJUgdlbWFpbElk');
+
+@$core.Deprecated('Use loginSearchRespPbDescriptor instead')
+const LoginSearchRespPb$json = {
+  '1': 'LoginSearchRespPb',
+  '2': [
+    {'1': 'summary', '3': 1, '4': 1, '5': 11, '6': '.proto.SummaryPb', '10': 'summary'},
+    {'1': 'results', '3': 2, '4': 3, '5': 11, '6': '.proto.LoginPb', '10': 'results'},
+  ],
+};
+
+/// Descriptor for `LoginSearchRespPb`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List loginSearchRespPbDescriptor = $convert.base64Decode(
+    'ChFMb2dpblNlYXJjaFJlc3BQYhIqCgdzdW1tYXJ5GAEgASgLMhAucHJvdG8uU3VtbWFyeVBiUg'
+    'dzdW1tYXJ5EigKB3Jlc3VsdHMYAiADKAsyDi5wcm90by5Mb2dpblBiUgdyZXN1bHRz');
 
 @$core.Deprecated('Use loginReqUiPbDescriptor instead')
 const LoginReqUiPb$json = {
@@ -90,24 +104,14 @@ const LoginRespUiPb$json = {
   '1': 'LoginRespUiPb',
   '2': [
     {'1': 'login', '3': 1, '4': 1, '5': 11, '6': '.proto.LoginPb', '10': 'login'},
+    {'1': 'sesssionId', '3': 2, '4': 1, '5': 9, '10': 'sesssionId'},
+    {'1': 'sesssionToken', '3': 3, '4': 1, '5': 9, '10': 'sesssionToken'},
   ],
 };
 
 /// Descriptor for `LoginRespUiPb`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List loginRespUiPbDescriptor = $convert.base64Decode(
-    'Cg1Mb2dpblJlc3BVaVBiEiQKBWxvZ2luGAEgASgLMg4ucHJvdG8uTG9naW5QYlIFbG9naW4=');
-
-@$core.Deprecated('Use loginSearchRespPbDescriptor instead')
-const LoginSearchRespPb$json = {
-  '1': 'LoginSearchRespPb',
-  '2': [
-    {'1': 'summary', '3': 1, '4': 1, '5': 11, '6': '.proto.SummaryPb', '10': 'summary'},
-    {'1': 'results', '3': 2, '4': 3, '5': 11, '6': '.proto.LoginPb', '10': 'results'},
-  ],
-};
-
-/// Descriptor for `LoginSearchRespPb`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List loginSearchRespPbDescriptor = $convert.base64Decode(
-    'ChFMb2dpblNlYXJjaFJlc3BQYhIqCgdzdW1tYXJ5GAEgASgLMhAucHJvdG8uU3VtbWFyeVBiUg'
-    'dzdW1tYXJ5EigKB3Jlc3VsdHMYAiADKAsyDi5wcm90by5Mb2dpblBiUgdyZXN1bHRz');
+    'Cg1Mb2dpblJlc3BVaVBiEiQKBWxvZ2luGAEgASgLMg4ucHJvdG8uTG9naW5QYlIFbG9naW4SHg'
+    'oKc2Vzc3Npb25JZBgCIAEoCVIKc2Vzc3Npb25JZBIkCg1zZXNzc2lvblRva2VuGAMgASgJUg1z'
+    'ZXNzc2lvblRva2Vu');
 

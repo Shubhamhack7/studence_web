@@ -14,7 +14,7 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import 'campusPb.pb.dart' as $3;
-import 'deviceDetailsPb.pb.dart' as $0;
+import 'devicePb.pb.dart' as $0;
 import 'loginPb.pb.dart' as $1;
 import 'organisationPb.pb.dart' as $2;
 import 'timePb.pb.dart' as $4;
@@ -26,7 +26,7 @@ class StudenceSession extends $pb.GeneratedMessage {
   factory StudenceSession.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StudenceSession', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto'), createEmptyInstance: create)
-    ..aOM<$0.DeviceDeatilsPb>(1, _omitFieldNames ? '' : 'deviceInfo', protoName: 'deviceInfo', subBuilder: $0.DeviceDeatilsPb.create)
+    ..aOM<$0.DeviceDetailsPb>(1, _omitFieldNames ? '' : 'deviceInfo', protoName: 'deviceInfo', subBuilder: $0.DeviceDetailsPb.create)
     ..aOM<$1.LoginPb>(2, _omitFieldNames ? '' : 'login', subBuilder: $1.LoginPb.create)
     ..aOM<$2.OrganisationPb>(3, _omitFieldNames ? '' : 'organisation', subBuilder: $2.OrganisationPb.create)
     ..aOM<$3.CampusPb>(4, _omitFieldNames ? '' : 'campus', subBuilder: $3.CampusPb.create)
@@ -56,15 +56,15 @@ class StudenceSession extends $pb.GeneratedMessage {
   static StudenceSession? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.DeviceDeatilsPb get deviceInfo => $_getN(0);
+  $0.DeviceDetailsPb get deviceInfo => $_getN(0);
   @$pb.TagNumber(1)
-  set deviceInfo($0.DeviceDeatilsPb v) { setField(1, v); }
+  set deviceInfo($0.DeviceDetailsPb v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasDeviceInfo() => $_has(0);
   @$pb.TagNumber(1)
   void clearDeviceInfo() => clearField(1);
   @$pb.TagNumber(1)
-  $0.DeviceDeatilsPb ensureDeviceInfo() => $_ensure(0);
+  $0.DeviceDetailsPb ensureDeviceInfo() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $1.LoginPb get login => $_getN(1);

@@ -26,7 +26,7 @@ protoc --dart_out=grpc:../lib/generted/proto/ --plugin=/usr/local/bin/protoc-gen
 protoc --dart_out=grpc:../lib/generted/proto/ --plugin=/usr/local/bin/protoc-gen-dart contactDetailsPb.proto
 protoc --dart_out=grpc:../lib/generted/proto/ --plugin=/usr/local/bin/protoc-gen-dart --proto_path=. --proto_path=./timePb.proto entityPb.proto
 protoc --dart_out=grpc:../lib/generted/proto/ --plugin=/usr/local/bin/protoc-gen-dart requestContextPb.proto
-protoc --dart_out=grpc:../lib/generted/proto/ --plugin=/usr/local/bin/protoc-gen-dart deviceDetailsPb.proto
+protoc --dart_out=grpc:../lib/generted/proto/ --plugin=/usr/local/bin/protoc-gen-dart devicePb.proto
 protoc --dart_out=grpc:../lib/generted/proto/ --plugin=/usr/local/bin/protoc-gen-dart --proto_path=. --proto_path=./entityPb.proto --proto_path=./namePb.proto --proto_path=./contactDetailsPb.proto organisationPb.proto
 protoc --dart_out=grpc:../lib/generted/proto/ --plugin=/usr/local/bin/protoc-gen-dart --proto_path=. campusPb.proto
 protoc --dart_out=grpc:../lib/generted/proto/ --plugin=/usr/local/bin/protoc-gen-dart --proto_path=. studentPb.proto
@@ -36,7 +36,7 @@ protoc --dart_out=grpc:../lib/generted/proto/ --plugin=/usr/local/bin/protoc-gen
 protoc --dart_out=grpc:../lib/generted/proto/ --plugin=/usr/local/bin/protoc-gen-dart --proto_path=. attendencePb.proto
 protoc --dart_out=grpc:../lib/generted/proto/ --plugin=/usr/local/bin/protoc-gen-dart --proto_path=. guardianPb.proto
 protoc --dart_out=grpc:../lib/generted/proto/ --plugin=/usr/local/bin/protoc-gen-dart --proto_path=. typeAheadPb.proto
-protoc --dart_out=grpc:../lib/generted/proto/ --plugin=/usr/local/bin/protoc-gen-dart --proto_path=. --proto_path=./deviceDetailsPb.proto --proto_path=./organisationPb.proto --proto_path=./campusPb.proto --proto_path=./loginPb.proto --proto_path=./timePb.proto clientSessionPb.proto
+protoc --dart_out=grpc:../lib/generted/proto/ --plugin=/usr/local/bin/protoc-gen-dart --proto_path=. --proto_path=./devicePb.proto --proto_path=./organisationPb.proto --proto_path=./campusPb.proto --proto_path=./loginPb.proto --proto_path=./timePb.proto clientSessionPb.proto
 
 cd ..
 echo "=================================================================================================="

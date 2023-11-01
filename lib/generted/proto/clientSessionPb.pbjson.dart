@@ -17,7 +17,7 @@ import 'dart:typed_data' as $typed_data;
 const StudenceSession$json = {
   '1': 'StudenceSession',
   '2': [
-    {'1': 'deviceInfo', '3': 1, '4': 1, '5': 11, '6': '.proto.DeviceDeatilsPb', '10': 'deviceInfo'},
+    {'1': 'deviceInfo', '3': 1, '4': 1, '5': 11, '6': '.proto.DeviceDetailsPb', '10': 'deviceInfo'},
     {'1': 'login', '3': 2, '4': 1, '5': 11, '6': '.proto.LoginPb', '10': 'login'},
     {'1': 'organisation', '3': 3, '4': 1, '5': 11, '6': '.proto.OrganisationPb', '10': 'organisation'},
     {'1': 'campus', '3': 4, '4': 1, '5': 11, '6': '.proto.CampusPb', '10': 'campus'},
@@ -27,8 +27,8 @@ const StudenceSession$json = {
 
 /// Descriptor for `StudenceSession`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List studenceSessionDescriptor = $convert.base64Decode(
-    'Cg9TdHVkZW5jZVNlc3Npb24SNgoKZGV2aWNlSW5mbxgBIAEoCzIWLnByb3RvLkRldmljZURlYX'
-    'RpbHNQYlIKZGV2aWNlSW5mbxIkCgVsb2dpbhgCIAEoCzIOLnByb3RvLkxvZ2luUGJSBWxvZ2lu'
+    'Cg9TdHVkZW5jZVNlc3Npb24SNgoKZGV2aWNlSW5mbxgBIAEoCzIWLnByb3RvLkRldmljZURldG'
+    'FpbHNQYlIKZGV2aWNlSW5mbxIkCgVsb2dpbhgCIAEoCzIOLnByb3RvLkxvZ2luUGJSBWxvZ2lu'
     'EjkKDG9yZ2FuaXNhdGlvbhgDIAEoCzIVLnByb3RvLk9yZ2FuaXNhdGlvblBiUgxvcmdhbmlzYX'
     'Rpb24SJwoGY2FtcHVzGAQgASgLMg8ucHJvdG8uQ2FtcHVzUGJSBmNhbXB1cxIhCgR0aW1lGAUg'
     'ASgLMg0ucHJvdG8uVGltZVBiUgR0aW1l');

@@ -1,6 +1,6 @@
 //
 //  Generated code. Do not modify.
-//  source: deviceDetailsPb.proto
+//  source: devicePb.proto
 //
 // @dart = 2.12
 
@@ -14,12 +14,12 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'deviceDetailsPb.pbenum.dart';
+import 'devicePb.pbenum.dart';
 import 'entityPb.pb.dart' as $0;
 import 'pushNotificationPb.pb.dart' as $1;
 import 'summaryPb.pb.dart' as $2;
 
-export 'deviceDetailsPb.pbenum.dart';
+export 'devicePb.pbenum.dart';
 
 class AndroidDisplayInfo extends $pb.GeneratedMessage {
   factory AndroidDisplayInfo() => create();

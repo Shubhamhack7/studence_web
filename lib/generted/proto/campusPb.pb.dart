@@ -263,6 +263,118 @@ class CampusSearchRespPb extends $pb.GeneratedMessage {
   $core.List<CampusPb> get results => $_getList(1);
 }
 
+class OrganisationCreateAndCampusCreateReqPb extends $pb.GeneratedMessage {
+  factory OrganisationCreateAndCampusCreateReqPb() => create();
+  OrganisationCreateAndCampusCreateReqPb._() : super();
+  factory OrganisationCreateAndCampusCreateReqPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory OrganisationCreateAndCampusCreateReqPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'OrganisationCreateAndCampusCreateReqPb', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto'), createEmptyInstance: create)
+    ..aOM<$3.OrganisationPb>(1, _omitFieldNames ? '' : 'organisation', subBuilder: $3.OrganisationPb.create)
+    ..aOM<CampusPb>(2, _omitFieldNames ? '' : 'campus', subBuilder: CampusPb.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  OrganisationCreateAndCampusCreateReqPb clone() => OrganisationCreateAndCampusCreateReqPb()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  OrganisationCreateAndCampusCreateReqPb copyWith(void Function(OrganisationCreateAndCampusCreateReqPb) updates) => super.copyWith((message) => updates(message as OrganisationCreateAndCampusCreateReqPb)) as OrganisationCreateAndCampusCreateReqPb;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OrganisationCreateAndCampusCreateReqPb create() => OrganisationCreateAndCampusCreateReqPb._();
+  OrganisationCreateAndCampusCreateReqPb createEmptyInstance() => create();
+  static $pb.PbList<OrganisationCreateAndCampusCreateReqPb> createRepeated() => $pb.PbList<OrganisationCreateAndCampusCreateReqPb>();
+  @$core.pragma('dart2js:noInline')
+  static OrganisationCreateAndCampusCreateReqPb getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<OrganisationCreateAndCampusCreateReqPb>(create);
+  static OrganisationCreateAndCampusCreateReqPb? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $3.OrganisationPb get organisation => $_getN(0);
+  @$pb.TagNumber(1)
+  set organisation($3.OrganisationPb v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOrganisation() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrganisation() => clearField(1);
+  @$pb.TagNumber(1)
+  $3.OrganisationPb ensureOrganisation() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  CampusPb get campus => $_getN(1);
+  @$pb.TagNumber(2)
+  set campus(CampusPb v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasCampus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCampus() => clearField(2);
+  @$pb.TagNumber(2)
+  CampusPb ensureCampus() => $_ensure(1);
+}
+
+class OrganisationCreateAndCampusCreateRespPb extends $pb.GeneratedMessage {
+  factory OrganisationCreateAndCampusCreateRespPb() => create();
+  OrganisationCreateAndCampusCreateRespPb._() : super();
+  factory OrganisationCreateAndCampusCreateRespPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory OrganisationCreateAndCampusCreateRespPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'OrganisationCreateAndCampusCreateRespPb', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto'), createEmptyInstance: create)
+    ..aOM<$3.OrganisationPb>(1, _omitFieldNames ? '' : 'organisation', subBuilder: $3.OrganisationPb.create)
+    ..aOM<CampusPb>(2, _omitFieldNames ? '' : 'campus', subBuilder: CampusPb.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  OrganisationCreateAndCampusCreateRespPb clone() => OrganisationCreateAndCampusCreateRespPb()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  OrganisationCreateAndCampusCreateRespPb copyWith(void Function(OrganisationCreateAndCampusCreateRespPb) updates) => super.copyWith((message) => updates(message as OrganisationCreateAndCampusCreateRespPb)) as OrganisationCreateAndCampusCreateRespPb;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OrganisationCreateAndCampusCreateRespPb create() => OrganisationCreateAndCampusCreateRespPb._();
+  OrganisationCreateAndCampusCreateRespPb createEmptyInstance() => create();
+  static $pb.PbList<OrganisationCreateAndCampusCreateRespPb> createRepeated() => $pb.PbList<OrganisationCreateAndCampusCreateRespPb>();
+  @$core.pragma('dart2js:noInline')
+  static OrganisationCreateAndCampusCreateRespPb getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<OrganisationCreateAndCampusCreateRespPb>(create);
+  static OrganisationCreateAndCampusCreateRespPb? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $3.OrganisationPb get organisation => $_getN(0);
+  @$pb.TagNumber(1)
+  set organisation($3.OrganisationPb v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOrganisation() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrganisation() => clearField(1);
+  @$pb.TagNumber(1)
+  $3.OrganisationPb ensureOrganisation() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  CampusPb get campus => $_getN(1);
+  @$pb.TagNumber(2)
+  set campus(CampusPb v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasCampus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCampus() => clearField(2);
+  @$pb.TagNumber(2)
+  CampusPb ensureCampus() => $_ensure(1);
+}
+
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
