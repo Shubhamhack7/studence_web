@@ -75,3 +75,33 @@ final $typed_data.Uint8List campusSearchRespPbDescriptor = $convert.base64Decode
     'ChJDYW1wdXNTZWFyY2hSZXNwUGISKgoHc3VtbWFyeRgBIAEoCzIQLnByb3RvLlN1bW1hcnlQYl'
     'IHc3VtbWFyeRIpCgdyZXN1bHRzGAIgAygLMg8ucHJvdG8uQ2FtcHVzUGJSB3Jlc3VsdHM=');
 
+@$core.Deprecated('Use organisationCreateAndCampusCreateReqPbDescriptor instead')
+const OrganisationCreateAndCampusCreateReqPb$json = {
+  '1': 'OrganisationCreateAndCampusCreateReqPb',
+  '2': [
+    {'1': 'organisation', '3': 1, '4': 1, '5': 11, '6': '.proto.OrganisationPb', '10': 'organisation'},
+    {'1': 'campus', '3': 2, '4': 1, '5': 11, '6': '.proto.CampusPb', '10': 'campus'},
+  ],
+};
+
+/// Descriptor for `OrganisationCreateAndCampusCreateReqPb`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List organisationCreateAndCampusCreateReqPbDescriptor = $convert.base64Decode(
+    'CiZPcmdhbmlzYXRpb25DcmVhdGVBbmRDYW1wdXNDcmVhdGVSZXFQYhI5CgxvcmdhbmlzYXRpb2'
+    '4YASABKAsyFS5wcm90by5PcmdhbmlzYXRpb25QYlIMb3JnYW5pc2F0aW9uEicKBmNhbXB1cxgC'
+    'IAEoCzIPLnByb3RvLkNhbXB1c1BiUgZjYW1wdXM=');
+
+@$core.Deprecated('Use organisationCreateAndCampusCreateRespPbDescriptor instead')
+const OrganisationCreateAndCampusCreateRespPb$json = {
+  '1': 'OrganisationCreateAndCampusCreateRespPb',
+  '2': [
+    {'1': 'organisation', '3': 1, '4': 1, '5': 11, '6': '.proto.OrganisationPb', '10': 'organisation'},
+    {'1': 'campus', '3': 2, '4': 1, '5': 11, '6': '.proto.CampusPb', '10': 'campus'},
+  ],
+};
+
+/// Descriptor for `OrganisationCreateAndCampusCreateRespPb`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List organisationCreateAndCampusCreateRespPbDescriptor = $convert.base64Decode(
+    'CidPcmdhbmlzYXRpb25DcmVhdGVBbmRDYW1wdXNDcmVhdGVSZXNwUGISOQoMb3JnYW5pc2F0aW'
+    '9uGAEgASgLMhUucHJvdG8uT3JnYW5pc2F0aW9uUGJSDG9yZ2FuaXNhdGlvbhInCgZjYW1wdXMY'
+    'AiABKAsyDy5wcm90by5DYW1wdXNQYlIGY2FtcHVz');
+

@@ -34,6 +34,7 @@ class LoginPb extends $pb.GeneratedMessage {
     ..aOM<$2.MobileNumberPb>(4, _omitFieldNames ? '' : 'mobileNo', protoName: 'mobileNo', subBuilder: $2.MobileNumberPb.create)
     ..aOM<$2.EmailPb>(5, _omitFieldNames ? '' : 'emailId', protoName: 'emailId', subBuilder: $2.EmailPb.create)
     ..aOS(6, _omitFieldNames ? '' : 'encryptedPassword', protoName: 'encryptedPassword')
+    ..aOS(7, _omitFieldNames ? '' : 'firebaseToken')
     ..hasRequiredFields = false
   ;
 
@@ -119,6 +120,15 @@ class LoginPb extends $pb.GeneratedMessage {
   $core.bool hasEncryptedPassword() => $_has(5);
   @$pb.TagNumber(6)
   void clearEncryptedPassword() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get firebaseToken => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set firebaseToken($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasFirebaseToken() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearFirebaseToken() => clearField(7);
 }
 
 class LoginSearchReqPb extends $pb.GeneratedMessage {
@@ -130,7 +140,6 @@ class LoginSearchReqPb extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LoginSearchReqPb', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'mobileNo', protoName: 'mobileNo')
     ..aOS(2, _omitFieldNames ? '' : 'emailId', protoName: 'emailId')
-    ..aOM<$3.NextTokenPb>(3, _omitFieldNames ? '' : 'nextToken', protoName: 'nextToken', subBuilder: $3.NextTokenPb.create)
     ..hasRequiredFields = false
   ;
 
@@ -172,17 +181,54 @@ class LoginSearchReqPb extends $pb.GeneratedMessage {
   $core.bool hasEmailId() => $_has(1);
   @$pb.TagNumber(2)
   void clearEmailId() => clearField(2);
+}
 
-  @$pb.TagNumber(3)
-  $3.NextTokenPb get nextToken => $_getN(2);
-  @$pb.TagNumber(3)
-  set nextToken($3.NextTokenPb v) { setField(3, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasNextToken() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearNextToken() => clearField(3);
-  @$pb.TagNumber(3)
-  $3.NextTokenPb ensureNextToken() => $_ensure(2);
+class LoginSearchRespPb extends $pb.GeneratedMessage {
+  factory LoginSearchRespPb() => create();
+  LoginSearchRespPb._() : super();
+  factory LoginSearchRespPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory LoginSearchRespPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LoginSearchRespPb', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto'), createEmptyInstance: create)
+    ..aOM<$3.SummaryPb>(1, _omitFieldNames ? '' : 'summary', subBuilder: $3.SummaryPb.create)
+    ..pc<LoginPb>(2, _omitFieldNames ? '' : 'results', $pb.PbFieldType.PM, subBuilder: LoginPb.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  LoginSearchRespPb clone() => LoginSearchRespPb()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  LoginSearchRespPb copyWith(void Function(LoginSearchRespPb) updates) => super.copyWith((message) => updates(message as LoginSearchRespPb)) as LoginSearchRespPb;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LoginSearchRespPb create() => LoginSearchRespPb._();
+  LoginSearchRespPb createEmptyInstance() => create();
+  static $pb.PbList<LoginSearchRespPb> createRepeated() => $pb.PbList<LoginSearchRespPb>();
+  @$core.pragma('dart2js:noInline')
+  static LoginSearchRespPb getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LoginSearchRespPb>(create);
+  static LoginSearchRespPb? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $3.SummaryPb get summary => $_getN(0);
+  @$pb.TagNumber(1)
+  set summary($3.SummaryPb v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasSummary() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSummary() => clearField(1);
+  @$pb.TagNumber(1)
+  $3.SummaryPb ensureSummary() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.List<LoginPb> get results => $_getList(1);
 }
 
 class LoginReqUiPb extends $pb.GeneratedMessage {
@@ -255,6 +301,8 @@ class LoginRespUiPb extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LoginRespUiPb', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto'), createEmptyInstance: create)
     ..aOM<LoginPb>(1, _omitFieldNames ? '' : 'login', subBuilder: LoginPb.create)
+    ..aOS(2, _omitFieldNames ? '' : 'sesssionId', protoName: 'sesssionId')
+    ..aOS(3, _omitFieldNames ? '' : 'sesssionToken', protoName: 'sesssionToken')
     ..hasRequiredFields = false
   ;
 
@@ -289,54 +337,24 @@ class LoginRespUiPb extends $pb.GeneratedMessage {
   void clearLogin() => clearField(1);
   @$pb.TagNumber(1)
   LoginPb ensureLogin() => $_ensure(0);
-}
-
-class LoginSearchRespPb extends $pb.GeneratedMessage {
-  factory LoginSearchRespPb() => create();
-  LoginSearchRespPb._() : super();
-  factory LoginSearchRespPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory LoginSearchRespPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LoginSearchRespPb', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto'), createEmptyInstance: create)
-    ..aOM<$3.SummaryPb>(1, _omitFieldNames ? '' : 'summary', subBuilder: $3.SummaryPb.create)
-    ..pc<LoginPb>(2, _omitFieldNames ? '' : 'results', $pb.PbFieldType.PM, subBuilder: LoginPb.create)
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  LoginSearchRespPb clone() => LoginSearchRespPb()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  LoginSearchRespPb copyWith(void Function(LoginSearchRespPb) updates) => super.copyWith((message) => updates(message as LoginSearchRespPb)) as LoginSearchRespPb;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static LoginSearchRespPb create() => LoginSearchRespPb._();
-  LoginSearchRespPb createEmptyInstance() => create();
-  static $pb.PbList<LoginSearchRespPb> createRepeated() => $pb.PbList<LoginSearchRespPb>();
-  @$core.pragma('dart2js:noInline')
-  static LoginSearchRespPb getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LoginSearchRespPb>(create);
-  static LoginSearchRespPb? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $3.SummaryPb get summary => $_getN(0);
-  @$pb.TagNumber(1)
-  set summary($3.SummaryPb v) { setField(1, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasSummary() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearSummary() => clearField(1);
-  @$pb.TagNumber(1)
-  $3.SummaryPb ensureSummary() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.List<LoginPb> get results => $_getList(1);
+  $core.String get sesssionId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set sesssionId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasSesssionId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSesssionId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get sesssionToken => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set sesssionToken($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasSesssionToken() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSesssionToken() => clearField(3);
 }
 
 

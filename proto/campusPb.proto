@@ -37,3 +37,12 @@ message CampusSearchRespPb{
   repeated CampusPb results = 2;
 }
 
+message OrganisationCreateAndCampusCreateReqPb {
+  OrganisationPb organisation =1;
+    CampusPb campus =2;
+}
+
+message OrganisationCreateAndCampusCreateRespPb {
+  OrganisationPb organisation =1;
+  CampusPb campus =2;
+}

@@ -1,0 +1,43 @@
+// Copyright (c) 2022, All Right Reserved, Shubham Tiwari
+
+syntax = "proto3";
+
+package proto;
+
+
+import "entityPb.proto";
+import "genericRefPb.proto";
+import "summaryPb.proto";
+
+
+
+//The following protos are reserved 12,13,14,15,16.You shd not use them
+
+message PushNotificationPb{
+  EntityPb dbInfo =1;
+  string token= 2;
+  GenericRefPb orgRef =3;
+  GenericRefPb campusRef =4;
+  GenericRefPb deviceRef =5;
+  GenericRefPb loginRef =6;
+}
+
+message PushNotificationRefPb{
+  string dbInfoId =1;
+  string token= 2;
+}
+
+message PushNotificationSearchReqPb{
+  string token = 1;
+  string orgRefId =2;
+  string campusRefId = 3;
+  string deviceRefId = 4;
+  string loginRefId = 5;
+}
+
+
+message PushNotificationSearchRespPb{
+  SummaryPb summary =1;
+  repeated PushNotificationPb results = 2;
+}
+
