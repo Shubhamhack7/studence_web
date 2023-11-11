@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:studence_mvc/common_comfig/DeviceDetails.dart';
-
 import 'package:studence_mvc/common_comfig/ServerEnvironmentType.dart';
 import 'package:studence_mvc/session/StudenceClientSession.dart';
 
@@ -19,6 +18,7 @@ class StudenceAppConfig {
   StudenceAppConfig._internal() {
     StudenceClientSession().setLoginDeviceData(deviceDetails.getDeviceDetails);
     setServerEnvironmentUrl();
+
   }
 
   void setServerEnvironmentUrl() {

@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/widgets.dart';
 import 'package:studence_mvc/Pages/LoginPage/LoginWIdgetController.dart';
 import 'package:studence_mvc/common_route/StudenceRouteEnum.dart';
@@ -9,6 +10,8 @@ import 'package:studence_mvc/login/LoginRespUiPbWrapper.dart';
 import 'package:studence_mvc/mvc/model/SimpleModel.dart';
 import 'package:studence_mvc/mvc/model/interfaces/IModelUpdateListener.dart';
 import 'package:studence_mvc/session/StudenceClientSession.dart';
+
+import '../../common_firebase/FirebaseInit.dart';
 
 class LoginController extends LoginWIdgetController {
   static late final BuildContext m_context;
@@ -27,11 +30,14 @@ class LoginController extends LoginWIdgetController {
   bool get getisLoading => isLoading;
 
   Future<void> performLogin() async {
+    UserCredential user  = await FirebaseInit().firebaseAuth().signInWithEmailAndPassword(email: "test@studence.com", password: "test@123");
+    LoginPb loginPb = await m_service.get(user.user!.displayName!);
+    print(loginPb);
     isLoading = true;
     // Simulate a login process here
     await Future.delayed(Duration(seconds: 2));
     isLoading = false;
-    LoginReqUiPb loginPb = LoginReqUiPb();
+   /* LoginReqUiPb loginPb = LoginReqUiPb();
     loginPb.emailId = getEmailController.text;
     loginPb.password = getPasswordController.text;
     m_service
@@ -43,7 +49,7 @@ class LoginController extends LoginWIdgetController {
     }).whenComplete(() {
       print(
           'The Future is completed!'); // This message will be printed regardless of whether the Future succeeded or failed
-    });
+    });*/
   }
 }
 

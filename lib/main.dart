@@ -12,7 +12,11 @@ import 'package:studence_mvc/Pages/AboutPage.dart';
 import 'package:studence_mvc/mvc/Listener/ListenerProvider.dart';
 import 'package:studence_mvc/mvc/future/IFuture.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'common_firebase/FirebaseInit.dart';
 import 'firebase_options.dart';
+import 'dart:html';
+import 'dart:ui' as ui;
+import 'dart:ui_web' as ui_web;
 import 'package:studence_mvc/mvc/future/SyncFuture.dart';
 import 'package:studence_mvc/mvc/handlers/EventHandler.dart';
 import 'package:studence_mvc/mvc/handlers/InputHandler.dart';
@@ -24,10 +28,12 @@ Future<void> main() async {
   StudenceRouterConfig.router = router;
   StudenceRouterConfig.defineRoutes();
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
+  await FirebaseInit().init();
+  FirebaseInit().firebaseMessesing().requestPermission();
+ /* await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
-  );
-  final DatabaseReference databaseRef = FirebaseDatabase.instance.reference();
+  );*/
+/*  final DatabaseReference databaseRef = FirebaseInit().firebaseDatabaseRef();
   databaseRef.child('users').child('user_id').set({
     'name': 'John Doe',
     'email': 'johndoe@example.com',
@@ -43,7 +49,7 @@ Future<void> main() async {
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
   UserCredential user = await _firebaseAuth.signInWithEmailAndPassword(
       email: "test@studence.com", password: "test@123");
-  print(user.user!.uid);
+  print(" HERE ${user.user!.uid}");
 
   FirebaseMessaging.onBackgroundMessage((message) {
     // Handle the message when the app is in the background or terminated state.
@@ -53,7 +59,12 @@ Future<void> main() async {
   });
   FirebaseMessaging.onMessage.listen((message) {
     print(message);
-  });
+  });*/
+ /* ui_web.bootstrapEngine(
+    runApp: () {
+      runApp(MyApp(router: router));
+    },
+  );*/
   runApp(MyApp(router: router));
   /*SimpleModel<InputHandler<String>, ListenerProvider<InputHandler<String>>>
       model = SimpleModel<InputHandler<String>, StringIListenerPRovider>(
@@ -108,7 +119,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Studence App',
       // initialRoute: StudenceRouterConfig.initRoute(),
-      initialRoute: '/HOME',
+      initialRoute: '/LOGIN_SIGNUP',
       onGenerateRoute: router.generator, // Use the router's generator here
     );
   }
