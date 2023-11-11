@@ -9,10 +9,10 @@ import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:studence_mvc/generted/proto/deviceDetailsPb.pb.dart';
 
 class DeviceDetails {
-  static final DeviceDeatilsPb deviceDeatilsPb = DeviceDeatilsPb.create();
+  static final DeviceDetailsPb deviceDeatilsPb = DeviceDetailsPb.create();
   static final DeviceInfoPlugin deviceInfoPlugin = DeviceInfoPlugin();
 
-  DeviceDeatilsPb get getDeviceDetails => deviceDeatilsPb;
+  DeviceDetailsPb get getDeviceDetails => deviceDeatilsPb;
 
   DeviceDetails() {
     collectDeviceDetails();
@@ -47,7 +47,7 @@ class DeviceDetails {
         deviceDeatilsPb.mode = DeviceAppMode.WEB_APP;
       }
       String ipAddr = await getIpAddress();
-      deviceDeatilsPb.deviceIpAddress = ipAddr.toString();
+      deviceDeatilsPb.deviceIpAddress = DeviceIpAddress().createEmptyInstance();//ipAddr.toString() as DeviceIpAddress;
 
       print(deviceDeatilsPb.toProto3Json());
     } catch (e, stackTrace) {
@@ -63,7 +63,7 @@ class DeviceDetails {
   }
 
   void readLinuxData(
-      DeviceDeatilsPb deviceDeatilsPb, LinuxDeviceInfo linuxDeviceInfo) {
+      DeviceDetailsPb deviceDeatilsPb, LinuxDeviceInfo linuxDeviceInfo) {
     /* DeviceDeatilsPb builder = deviceDeatilsPb.toBuilder() as DeviceDeatilsPb;
     builder.linuxDevice.name = linuxDeviceInfo.name;
     builder.linuxDevice.version = linuxDeviceInfo.version!;
@@ -79,8 +79,8 @@ class DeviceDetails {
   }
 
   void readAndroidData(
-      DeviceDeatilsPb deviceDeatilsPb, AndroidDeviceInfo androidDevice) {
-    DeviceDeatilsPb builder = deviceDeatilsPb.toBuilder() as DeviceDeatilsPb;
+      DeviceDetailsPb deviceDeatilsPb, AndroidDeviceInfo androidDevice) {
+    DeviceDetailsPb builder = deviceDeatilsPb.toBuilder() as DeviceDetailsPb;
     builder.androidDevice.securityPatch = androidDevice.version.securityPatch!;
     builder.androidDevice.sdkInt = androidDevice.version.sdkInt;
     builder.androidDevice.release = androidDevice.version.release;
@@ -127,8 +127,8 @@ class DeviceDetails {
   }
 
   void readIosData(
-      DeviceDeatilsPb deviceDeatilsPb, IosDeviceInfo iosDeviceInfo) {
-    DeviceDeatilsPb builder = deviceDeatilsPb.toBuilder() as DeviceDeatilsPb;
+      DeviceDetailsPb deviceDeatilsPb, IosDeviceInfo iosDeviceInfo) {
+    DeviceDetailsPb builder = deviceDeatilsPb.toBuilder() as DeviceDetailsPb;
     builder.iosDevice.name = iosDeviceInfo.name!;
     builder.iosDevice.systemName = iosDeviceInfo.systemName!;
     builder.iosDevice.systemVersion = iosDeviceInfo.systemVersion!;
@@ -144,8 +144,8 @@ class DeviceDetails {
   }
 
   void readMacOsData(
-      DeviceDeatilsPb deviceDeatilsPb, MacOsDeviceInfo macOsDeviceInfo) {
-    DeviceDeatilsPb builder = deviceDeatilsPb.toBuilder() as DeviceDeatilsPb;
+      DeviceDetailsPb deviceDeatilsPb, MacOsDeviceInfo macOsDeviceInfo) {
+    DeviceDetailsPb builder = deviceDeatilsPb.toBuilder() as DeviceDetailsPb;
     builder.macOsDevice.computerName = macOsDeviceInfo.computerName;
     builder.macOsDevice.hostName = macOsDeviceInfo.hostName;
     builder.macOsDevice.arch = macOsDeviceInfo.arch;

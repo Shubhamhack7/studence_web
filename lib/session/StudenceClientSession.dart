@@ -22,7 +22,7 @@ class StudenceClientSession extends SessionManager<StudenceSession> {
 
   }
 
-  Future<void> setLoginDeviceData(DeviceDeatilsPb data) {
+  Future<void> setLoginDeviceData(DeviceDetailsPb data) {
     StudenceSession? sessionData =
         getInstance.getData(() => StudenceSession().createEmptyInstance());
     StudenceSessionHelper helper = StudenceSessionHelper(sessionData!);

@@ -32,8 +32,8 @@ class StudenceSessionHelper {
   }
 
   StudenceSession getSessionWithUpdateDeviceDetails(
-      DeviceDeatilsPb deviceDeatils) {
-    m_studenceSession.deviceInfo = deviceDeatils;
+      DeviceDetailsPb deviceDeatils) {
+    m_studenceSession.deviceInfo ;//deviceDeatils;
     return m_studenceSession;
   }
 }
