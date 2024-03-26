@@ -1,4 +1,5 @@
-import 'package:studence_mvc/Pages/Campus/Service/CampusPathProvider.dart';
+
+import 'package:studence_mvc/Service/Campus/CampusPathProvider.dart';
 import 'package:studence_mvc/common_service/AClientService.dart';
 import 'package:studence_mvc/generted/proto/campusPb.pb.dart';
 

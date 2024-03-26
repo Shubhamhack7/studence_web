@@ -24,9 +24,26 @@ abstract class AModel implements IModel {
     listener.onRefresh();
   }
 
+  void addregisterModelUpdateListener(List<IModelUpdateListener> listener) {
+    Preconditions.check(listener != null);
+    //Preconditions.check(!mModelUpdateListeners.contains(listener));
+    for (IModelUpdateListener listen in listener){
+      if(mModelUpdateListeners.contains(listen)){
+        continue;
+      }else{
+        mModelUpdateListeners.add(listen);
+        registerRecursive(listen);
+        listen.onRefresh();
+      }
+    }
+  }
+
   void registerRecursive(IModelUpdateListener listener);
 
   List<IUpdateListener> getListeners() {
+    return mModelUpdateListeners;
+  }
+  List<IModelUpdateListener> getModelListeners() {
     return mModelUpdateListeners;
   }
 }

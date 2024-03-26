@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
-import 'package:studence_mvc/Pages/HomePage/AdminPageController.dart';
+import 'package:studence_mvc/Pages/HomePage/PController.dart';
 import 'package:studence_mvc/Pages/Organisation/OrganisationCreate/OrganisationAndCampusCreate.dart';
 import 'package:studence_mvc/common_route/StudenceRouteEnum.dart';
 import 'package:studence_mvc/common_route/StudenceRouterConfig.dart';
@@ -24,16 +24,16 @@ import 'package:studence_mvc/mvc/handlers/EventHandler.dart';
 import 'package:studence_mvc/mvc/handlers/InputHandler.dart';
 import 'package:studence_mvc/typeAhead/TypeAheadController.dart';
 
-class AdminHomePage extends StatefulWidget {
-  const AdminHomePage({super.key});
+class Page extends StatefulWidget {
+  const Page({super.key});
 
   @override
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<AdminHomePage> {
+class _HomePageState extends State<Page> {
   late final TypeAheadController _typeAheadController;
-  late final AdminPageController _adminPageController;
+  late final PController _adminPageController;
   List<OrganisationRefPb> orgList = Lists.newArrayList<OrganisationRefPb>();
   OrganisationRefPb refPb = OrganisationRefPb()
     ..dbInfoId = "123"
@@ -44,7 +44,7 @@ class _HomePageState extends State<AdminHomePage> {
 
   @override
   void initState() {
-    _adminPageController = AdminPageController();
+    _adminPageController = PController();
     super.initState();
     orgList.add(refPb);
     orgList.add(refPb1);
@@ -110,11 +110,6 @@ class _HomePageState extends State<AdminHomePage> {
             ),
           ],
         ),
-      ),
-      body: StudenceDropdown<CountryStateEnum>(
-        items: CountryStateEnum.values,
-        formatter: CountryStateEnumFormatter(),
-        model: _adminPageController.getDropDownModel,
       ),
     );
   }

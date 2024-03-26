@@ -3,6 +3,7 @@ enum StudenceRouteEnum {
   LOGIN_SIGNUP,
   ORGANISATION_CREATE_PAGE,
   ORGANISATION_LIST_PAGE,
+  ADMIN_PAGE,
 }
 
 class StudenceRoute {

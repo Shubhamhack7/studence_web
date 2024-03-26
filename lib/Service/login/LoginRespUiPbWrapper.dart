@@ -10,6 +10,6 @@ class LoginRespUiPbWrapper
 
   @override
   LoginRespUiPb createWrapperFromPb(LoginRespUiPb pb) {
-    return LoginRespUiPb();
+    return pb;
   }
 }

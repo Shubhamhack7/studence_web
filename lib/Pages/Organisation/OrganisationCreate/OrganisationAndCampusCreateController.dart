@@ -2,6 +2,8 @@ import 'package:flutter/src/foundation/change_notifier.dart';
 import 'package:studence_mvc/Pages/Organisation/OrganisationCreate/OrganisationAndCampusCreateWidgetController.dart';
 import 'package:studence_mvc/Pages/Organisation/OrganisationCreate/PageIdentifierEnum.dart';
 import 'package:studence_mvc/Pages/Organisation/OrganisationCreate/PageIdentifierEnumProvider.dart';
+import 'package:studence_mvc/Wrapper/OrganisationCreateAndCampusCreateWrapperProvider.dart';
+import 'package:studence_mvc/generted/proto/campusPb.pb.dart';
 import 'package:studence_mvc/generted/proto/contactDetailsPb.pbenum.dart';
 import 'package:studence_mvc/model/StudenceEmailPhoneModel.dart';
 import 'package:studence_mvc/mvc/Listener/ListenerProvider.dart';
@@ -14,38 +16,48 @@ class OrganisationAndCampusCreateController
     extends OrganisationAndCampusCreateWidgetController {
   late List<StudenceEmailPhoneModel> mList;
   late SimpleModel<EventHandler, ListenerProvider<EventHandler>> eventModel =
-      SimpleModel<EventHandler, EvelentListnerProvider>(
-          EvelentListnerProvider(EventHandler()));
+  SimpleModel<EventHandler, EvelentListnerProvider>(
+      EvelentListnerProvider(EventHandler()));
   late SimpleModel<EventHandler, ListenerProvider<EventHandler>>
-      eventAddressModel = SimpleModel<EventHandler, EvelentListnerProvider>(
-          EvelentListnerProvider(EventHandler()));
+  eventAddressModel = SimpleModel<EventHandler, EvelentListnerProvider>(
+      EvelentListnerProvider(EventHandler()));
   late SimpleModel<EventHandler, ListenerProvider<EventHandler>>
-      negativeButtonModel = SimpleModel<EventHandler, EvelentListnerProvider>(
-          EvelentListnerProvider(EventHandler()));
+  negativeButtonModel = SimpleModel<EventHandler, EvelentListnerProvider>(
+      EvelentListnerProvider(EventHandler()));
   late SimpleModel<EventHandler, ListenerProvider<EventHandler>>
-      positiveButtonModel = SimpleModel<EventHandler, EvelentListnerProvider>(
-          EvelentListnerProvider(EventHandler()));
+  positiveButtonModel = SimpleModel<EventHandler, EvelentListnerProvider>(
+      EvelentListnerProvider(EventHandler()));
   late SimpleModel<PageIdentifierEnum, PageIdentifierEnumProvider>
-      pageIdentifierModel =
-      SimpleModel<PageIdentifierEnum, PageIdentifierEnumProvider>(
-          PageIdentifierEnumProvider());
+  pageIdentifierModel =
+  SimpleModel<PageIdentifierEnum, PageIdentifierEnumProvider>(
+      PageIdentifierEnumProvider());
+  late SimpleModel<
+      OrganisationCreateAndCampusCreateReqPb,
+      OrganisationCreateAndCampusCreateWrapperProvider> organisationCreateAndCampusCreate = SimpleModel<
+      OrganisationCreateAndCampusCreateReqPb,
+      OrganisationCreateAndCampusCreateWrapperProvider>(
+      OrganisationCreateAndCampusCreateWrapperProvider());
 
   List<StudenceEmailPhoneModel> get StudenceEmailPhoneModelList => mList;
+
   SimpleModel<EventHandler, ListenerProvider<EventHandler>> get getEventModel =>
       eventModel;
+
   SimpleModel<EventHandler, ListenerProvider<EventHandler>>
-      get getAddressEventModel => eventAddressModel;
+  get getAddressEventModel => eventAddressModel;
+
   SimpleModel<EventHandler, ListenerProvider<EventHandler>>
-      get getNegativeEventModel => negativeButtonModel;
+  get getNegativeEventModel => negativeButtonModel;
+
   SimpleModel<EventHandler, ListenerProvider<EventHandler>>
-      get getPositiveEventModel => positiveButtonModel;
+  get getPositiveEventModel => positiveButtonModel;
+
   SimpleModel<PageIdentifierEnum, PageIdentifierEnumProvider>
-      get getPageIdentifierModel => pageIdentifierModel;
+  get getPageIdentifierModel => pageIdentifierModel;
 
   OrganisationAndCampusCreateController() {
     mList = Lists.newArrayList();
     eventModel.setDataOrWrapper(OrganisationEventHandler(isdcodeNotify, mList));
-    // eventAddressModel.setDataOrWrapper();
     negativeButtonModel.setDataOrWrapper(NegativeButtonModel());
     positiveButtonModel.setDataOrWrapper(PositiveButtonModel());
   }
@@ -61,6 +73,11 @@ class OrganisationAndCampusCreateController
       return false;
     }
   }
+
+  populateValueToOrganisationPb() {
+
+  }
+
 }
 
 class NegativeButtonModel implements EventHandler {
@@ -82,6 +99,7 @@ class PositiveButtonModel implements EventHandler {
 class OrganisationEventHandler implements EventHandler {
   late ValueNotifier<ISDCode> m_isdcodeNotify;
   late List<StudenceEmailPhoneModel> mList;
+
   OrganisationEventHandler(ValueNotifier<ISDCode> isdcodeNotify,
       List<StudenceEmailPhoneModel> list) {
     m_isdcodeNotify = isdcodeNotify;

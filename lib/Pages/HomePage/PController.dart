@@ -7,7 +7,7 @@ import 'package:studence_mvc/mvc/handlers/InputHandler.dart';
 import 'package:studence_mvc/mvc/model/SimpleModel.dart';
 import 'package:studence_mvc/providers/CountryStateEnumProvider.dart';
 
-class AdminPageController {
+class PController {
   final SimpleModel<InputHandler<OrganisationRefPb>,
           ListenerProvider<InputHandler<OrganisationRefPb>>> m_editModel =
       SimpleModel<InputHandler<OrganisationRefPb>,
@@ -29,7 +29,7 @@ class AdminPageController {
           ListenerProvider<InputHandler<CountryStateEnum>>>
       get getDropDownModel => m_dropdownModel;
 
-  AdminPageController() {
+  PController() {
     m_editModel.setDataOrWrapper(EditModelListenter());
     m_dropdownModel.setDataOrWrapper(DorpdownInputModelListenter());
   }

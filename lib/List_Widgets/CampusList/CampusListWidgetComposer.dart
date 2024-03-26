@@ -1,5 +1,5 @@
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:studence_mvc/Pages/Campus/CampusCardView.dart';
+import 'package:studence_mvc/List_Widgets/CampusList/CampusCardView.dart';
 import 'package:studence_mvc/common_utility/EntityHelper.dart';
 import 'package:studence_mvc/common_utility/Strings.dart';
 import 'package:studence_mvc/common_widget/WidgetComposer/WidgetComposer.dart';

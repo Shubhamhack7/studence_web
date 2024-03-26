@@ -25,7 +25,7 @@ class UipbService<Lreq extends GeneratedMessage, Lresp extends GeneratedMessage,
     m_handler = new HttpReqRespHandler();
   }
 
-  Future<Lresp> callingUiPbRequestToServer() async {
+  Future<Lresp> getCallingUiPbRequestToServer() async {
     Future<Lresp> a = m_handler
         .docall(
             HttpRequestTypeEnum.GET,
@@ -33,6 +33,23 @@ class UipbService<Lreq extends GeneratedMessage, Lresp extends GeneratedMessage,
                 StudenceAppConfig().m_serverUrl,
                 m_pathProvider.getServiceServletPath(),
                 json.encode(m_reqPb.toProto3Json())),
+            m_reqPb)
+        .then((value) =>
+            ProtobufConvertor.fromJsonToProto(value, m_respPb) as Lresp);
+
+    //ProtobufConvertor.fromJsonToProto(respJson, m_pb);
+    // m_pb = ProtobufConvertor.fromJsonToProto(respJson, m_pb) as P;
+    return a;
+  }
+
+  Future<Lresp> createCallingUiPbRequestToServer() async {
+    Future<Lresp> a = m_handler
+        .docall(
+            HttpRequestTypeEnum.POST,
+            m_helper.createServiceUrl(
+              StudenceAppConfig().m_serverUrl,
+              m_pathProvider.getServiceServletPath(),
+            ),
             m_reqPb)
         .then((value) =>
             ProtobufConvertor.fromJsonToProto(value, m_respPb) as Lresp);

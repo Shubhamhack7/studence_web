@@ -49,6 +49,7 @@ class SimpleModel<O, OP extends ADefaultWrapperProvider<O, dynamic>>
 
   void setDataOrWrapperModel(SimpleModel<O, OP> model) {
     this._setDataOrWrapper(model.getDataOrWrapper() as O, false);
+    addregisterModelUpdateListener(model.getModelListeners());
     this.mDefaultProvider = model.mDefaultProvider;
   }
 

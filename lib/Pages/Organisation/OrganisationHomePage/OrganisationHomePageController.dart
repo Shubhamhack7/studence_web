@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:studence_mvc/Pages/Campus/Service/CampusClientService.dart';
+import 'package:studence_mvc/Service/Campus/CampusClientService.dart';
 import 'package:studence_mvc/Pages/Organisation/OrganisationHomePage/OrganisationPageIdentifierEnum.dart';
 import 'package:studence_mvc/Pages/Organisation/OrganisationHomePage/OrganisationPageIdentifierEnumProvider.dart';
 import 'package:studence_mvc/generted/proto/campusPb.pb.dart';

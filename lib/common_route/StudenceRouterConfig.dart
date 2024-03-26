@@ -1,6 +1,7 @@
 import 'package:fluro/fluro.dart';
 import 'package:studence_mvc/Pages/AboutPage.dart';
-import 'package:studence_mvc/Pages/HomePage/AdminHomePage.dart';
+import 'package:studence_mvc/Pages/AdminHomePage/AdminHomePage.dart';
+import 'package:studence_mvc/Pages/HomePage/Page.dart';
 import 'package:studence_mvc/Pages/LoginPage/LoginPage.dart';
 import 'package:studence_mvc/Pages/NotFoundPage.dart';
 import 'package:studence_mvc/Pages/Organisation/OrganisationCreate/OrganisationAndCampusCreate.dart';
@@ -16,6 +17,12 @@ class StudenceRouterConfig {
       StudenceRoute.getPath(StudenceRouteEnum.HOME),
       handler: Handler(
         handlerFunc: (context, parameters) => OrganisationHomePage(),
+      ),
+    );
+    router.define(
+      StudenceRoute.getPath(StudenceRouteEnum.ADMIN_PAGE),
+      handler: Handler(
+        handlerFunc: (context, parameters) => AdminHomePage(),
       ),
     );
     router.define(

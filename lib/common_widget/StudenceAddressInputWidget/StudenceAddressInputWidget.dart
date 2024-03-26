@@ -1,34 +1,86 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:studence_mvc/commom_interfaces/IController.dart';
+import 'package:studence_mvc/common_utility/ModelUtility.dart';
+import 'package:studence_mvc/common_widget/StudenceAddressInputWidget/StudenceAddressInputController.dart';
+import 'package:studence_mvc/common_widget/StudenceDropdown/StudenceDropdown.dart';
+import 'package:studence_mvc/common_widget/StudenceTextBox/StudenceTextBox.dart';
+import 'package:studence_mvc/common_widget/StudenceTextBox/StudenceTextBoxController.dart';
+import 'package:studence_mvc/common_wrapper/StringWrapper.dart';
+import 'package:studence_mvc/formatter/CountryStateEnumFormatter.dart';
+import 'package:studence_mvc/generted/proto/contactDetailsPb.pb.dart';
+import 'package:studence_mvc/generted/proto/voidPb.pb.dart';
+import 'package:studence_mvc/mvc/model/GModelAndListener.dart';
+import 'package:studence_mvc/providers/CountryStateDropdownProvider.dart';
+import 'package:studence_mvc/providers/CountryStateEnumProvider.dart';
+import 'package:studence_mvc/providers/CountryStateEnumWrapperProvider.dart';
+import 'package:studence_mvc/providers/StringIListenerPRovider.dart';
+import 'package:studence_mvc/providers/VoidPbDefaultWrapperProvider.dart';
+import 'package:studence_mvc/providers/VoidPbListenerProvider.dart';
 
-class StudenceAddressInputWidget extends StatefulWidget {
-  final TextEditingController streetController;
-  final TextEditingController areaController;
-  final TextEditingController landmarkController;
-  final TextEditingController cityController;
-  final TextEditingController pincodeController;
-  final TextEditingController stateController;
-  final TextEditingController countryController;
-  final TextEditingController canonicalAddressController;
+class StudenceAddressInputWidget extends StatefulWidget
+    implements
+        IController<StudenceAddressInputWidget,
+            StudenceAddressInputController> {
+  late GModelAndListener<String, StringIListenerPRovider, StringWrapper> street;
+  late GModelAndListener<String, StringIListenerPRovider, StringWrapper> area;
+  late GModelAndListener<String, StringIListenerPRovider, StringWrapper> city;
+  late GModelAndListener<String, StringIListenerPRovider, StringWrapper>
+      landmark;
+  late GModelAndListener<String, StringIListenerPRovider, StringWrapper>
+      country;
+  late GModelAndListener<String, StringIListenerPRovider, StringWrapper>
+      pincode;
+  late GModelAndListener<CountryStateEnum, CountryStateEnumProvider,
+      CountryStateEnumWrapperProvider> state;
+  late StudenceAddressInputController m_controller;
 
   StudenceAddressInputWidget({
-    required this.streetController,
-    required this.areaController,
-    required this.landmarkController,
-    required this.cityController,
-    required this.pincodeController,
-    required this.stateController,
-    required this.countryController,
-    required this.canonicalAddressController,
+    required this.street,
+    required this.area,
+    required this.landmark,
+    required this.city,
+    required this.country,
+    required this.pincode,
+    required this.state,
   });
 
   @override
   _StudenceAddressInputWidgetState createState() =>
       _StudenceAddressInputWidgetState();
+
+  @override
+  StudenceAddressInputController getController() {
+    return m_controller;
+  }
+
+  @override
+  StudenceAddressInputWidget getWidget() {
+    return _StudenceAddressInputWidgetState().widget;
+  }
+
+  _StudenceAddressInputWidgetState getWidgetState() {
+    return _StudenceAddressInputWidgetState();
+  }
 }
 
 class _StudenceAddressInputWidgetState
     extends State<StudenceAddressInputWidget> {
+  @override
+  void initState() {
+    widget.m_controller = StudenceAddressInputController();
+    widget.getController().street = widget.street;
+    widget.getController().area = widget.area;
+    widget.getController().city = widget.city;
+    widget.getController().landmark = widget.landmark;
+    widget.getController().country = widget.country;
+    widget.getController().landmark = widget.landmark;
+    widget.getController().state = widget.state;
+    widget.getController().pincode = widget.pincode;
+    widget.getController().country = widget.country;
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -36,22 +88,16 @@ class _StudenceAddressInputWidgetState
         Row(
           children: <Widget>[
             Expanded(
-              child: TextField(
-                controller: widget.streetController,
-                decoration: const InputDecoration(
-                  hintText: 'Street',
-                  border: OutlineInputBorder(),
-                ),
+              child: StudenceTextBox(
+                placeholder: 'Street',
+                stringModelAndListener: widget.street,
               ),
             ),
             const SizedBox(width: 10),
             Expanded(
-              child: TextField(
-                controller: widget.areaController,
-                decoration: const InputDecoration(
-                  hintText: 'Area',
-                  border: OutlineInputBorder(),
-                ),
+              child: StudenceTextBox(
+                placeholder: 'Area',
+                stringModelAndListener: widget.area,
               ),
             ),
           ],
@@ -60,22 +106,16 @@ class _StudenceAddressInputWidgetState
         Row(
           children: <Widget>[
             Expanded(
-              child: TextField(
-                controller: widget.landmarkController,
-                decoration: const InputDecoration(
-                  hintText: 'Landmark',
-                  border: OutlineInputBorder(),
-                ),
+              child: StudenceTextBox(
+                placeholder: 'Landmark',
+                stringModelAndListener: widget.landmark,
               ),
             ),
             const SizedBox(width: 10),
             Expanded(
-              child: TextField(
-                controller: widget.cityController,
-                decoration: const InputDecoration(
-                  hintText: 'City',
-                  border: OutlineInputBorder(),
-                ),
+              child: StudenceTextBox(
+                placeholder: 'City',
+                stringModelAndListener: widget.city,
               ),
             ),
           ],
@@ -84,41 +124,34 @@ class _StudenceAddressInputWidgetState
         Row(
           children: <Widget>[
             Expanded(
-              child: TextField(
-                controller: widget.pincodeController,
-                decoration: const InputDecoration(
-                  hintText: 'Pincode',
-                  border: OutlineInputBorder(),
-                ),
-                keyboardType: TextInputType.number,
+              child: StudenceTextBox(
+                placeholder: 'Pincode',
+                stringModelAndListener: widget.pincode,
+                textInputType: TextInputType.number,
               ),
             ),
             const SizedBox(width: 10),
             Expanded(
-              child: TextField(
-                controller: widget.stateController,
-                decoration: const InputDecoration(
-                  hintText: 'State',
-                  border: OutlineInputBorder(),
-                ),
-              ),
+              child: StudenceDropdown<
+                      CountryStateEnum,
+                      CountryStateEnumWrapperProvider,
+                      VoidPb,
+                      CountryStateEnumFormatter,
+                      CountryStateEnumProvider,
+                      VoidPbDefaultWrapperProvider,
+                      VoidPbListenerProvider>(
+                  composer: CountryStateDropdownProvider(),
+                  provider: CountryStateEnumWrapperProvider(),
+                  keyModelAndListener: widget.getController().state,
+                  pbModelAndListener: ModelUtility.empltyModel),
             ),
           ],
         ),
         const SizedBox(height: 10),
-        TextField(
-          controller: widget.countryController,
-          decoration: const InputDecoration(
-            hintText: 'Country',
-            border: OutlineInputBorder(),
-          ),
-        ),
-        const SizedBox(height: 10),
-        TextField(
-          controller: widget.canonicalAddressController,
-          decoration: const InputDecoration(
-            hintText: 'Canonical Address',
-            border: OutlineInputBorder(),
+        Expanded(
+          child: StudenceTextBox(
+            placeholder: 'Country',
+            stringModelAndListener: widget.country,
           ),
         ),
       ],

@@ -5,9 +5,10 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:fluro/fluro.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:studence_mvc/common_firebase/StudenceFirebaseService.dart';
 import 'package:studence_mvc/common_route/StudenceRouteEnum.dart';
 import 'package:studence_mvc/common_route/StudenceRouterConfig.dart';
-import 'package:studence_mvc/Pages/HomePage/AdminHomePage.dart';
+import 'package:studence_mvc/Pages/HomePage/Page.dart';
 import 'package:studence_mvc/Pages/AboutPage.dart';
 import 'package:studence_mvc/mvc/Listener/ListenerProvider.dart';
 import 'package:studence_mvc/mvc/future/IFuture.dart';
@@ -33,12 +34,15 @@ Future<void> main() async {
  /* await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );*/
-/*  final DatabaseReference databaseRef = FirebaseInit().firebaseDatabaseRef();
-  databaseRef.child('users').child('user_id').set({
+  StudenceFirebaseService firebaseService = StudenceFirebaseService();
+  User?  user  = await firebaseService.signIn("studence_web@studence.com", "studence_web");
+  print(user);
+  final DatabaseReference databaseRef = FirebaseInit().firebaseDatabaseRef();
+  databaseRef.child('users').child('user_id_2').set({
     'name': 'John Doe',
     'email': 'johndoe@example.com',
   });
-  final FirebaseMessaging _firebaseMessaging = FirebaseMessaging.instance;
+  /*final FirebaseMessaging _firebaseMessaging = FirebaseMessaging.instance;
   _firebaseMessaging.requestPermission();
   _firebaseMessaging.getToken().then((value) {
     print(value);
@@ -65,6 +69,8 @@ Future<void> main() async {
       runApp(MyApp(router: router));
     },
   );*/
+
+
   runApp(MyApp(router: router));
   /*SimpleModel<InputHandler<String>, ListenerProvider<InputHandler<String>>>
       model = SimpleModel<InputHandler<String>, StringIListenerPRovider>(
@@ -119,7 +125,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Studence App',
       // initialRoute: StudenceRouterConfig.initRoute(),
-      initialRoute: '/LOGIN_SIGNUP',
+      initialRoute: '/ADMIN_PAGE',
       onGenerateRoute: router.generator, // Use the router's generator here
     );
   }

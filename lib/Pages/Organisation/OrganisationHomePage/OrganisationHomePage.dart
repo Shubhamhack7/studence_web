@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:studence_mvc/Pages/Campus/CampusLIstPage.dart';
-import 'package:studence_mvc/Pages/Organisation/OrganisationCreate/AddCampus.dart';
+import 'package:studence_mvc/List_Widgets/CampusList/CampusLIstPage.dart';
 import 'package:studence_mvc/Pages/Organisation/OrganisationHomePage/OrganisationHomePageController.dart';
 import 'package:studence_mvc/Pages/Organisation/OrganisationHomePage/OrganisationPageIdentifierEnum.dart';
+import 'package:studence_mvc/common_widget/widget_utility/VoidWidget.dart';
 import 'package:studence_mvc/generted/proto/campusPb.pb.dart';
 
 class OrganisationHomePage extends StatefulWidget {
@@ -156,21 +156,7 @@ class _OrganisationHomePageState extends State<OrganisationHomePage> {
             Visibility(
                 visible: _organisationHomePageController.getWidgtVisibility(
                     OrganisationPageIdentifierEnum.ADD_CAMPUS),
-                child: AddCampus(
-                  areaController: TextEditingController(),
-                  canonicalAddressController: TextEditingController(),
-                  cityController: TextEditingController(),
-                  countryController: TextEditingController(),
-                  emailController: TextEditingController(),
-                  firstNameController: TextEditingController(),
-                  landmarkController: TextEditingController(),
-                  lastNameController: TextEditingController(),
-                  middleNameController: TextEditingController(),
-                  mobileController: TextEditingController(),
-                  pincodeController: TextEditingController(),
-                  stateController: TextEditingController(),
-                  streetController: TextEditingController(),
-                )),
+                child: VoidWidget()),
           ],
         ),
       ),

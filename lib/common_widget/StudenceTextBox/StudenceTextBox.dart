@@ -77,31 +77,61 @@ class _StudenceTextBoxState extends State<StudenceTextBox> {
 }*/
 
 import 'package:flutter/material.dart';
+import 'package:studence_mvc/commom_interfaces/IController.dart';
+import 'package:studence_mvc/common_widget/StudenceTextBox/StudenceTextBoxController.dart';
+import 'package:studence_mvc/common_wrapper/StringWrapper.dart';
+import 'package:studence_mvc/mvc/Listener/ListenerProvider.dart';
+import 'package:studence_mvc/mvc/handlers/InputHandler.dart';
+import 'package:studence_mvc/mvc/model/GModelAndListener.dart';
+import 'package:studence_mvc/mvc/model/SimpleModel.dart';
+import 'package:studence_mvc/providers/StringIListenerPRovider.dart';
 
-class StudenceTextBox extends StatefulWidget {
+class StudenceTextBox extends StatefulWidget
+    implements IController<StudenceTextBox, StudenceTextBoxController> {
   final String placeholder;
+  final String hintText;
   final double leftPadding;
   final double rightPadding;
   final double upperPadding;
   final double lowerPadding;
+  final TextInputType textInputType;
+  final InputDecoration inputDecoration;
   final double width;
   final double height;
-  final TextEditingController? controller;
+  final GModelAndListener<String, StringIListenerPRovider, StringWrapper>
+      stringModelAndListener;
+  late StudenceTextBoxController m_controller;
 
-  const StudenceTextBox({
+  StudenceTextBox({
     Key? key,
     required this.placeholder,
+    required this.stringModelAndListener,
     this.leftPadding = 0,
     this.rightPadding = 0,
     this.upperPadding = 0,
     this.lowerPadding = 0,
     this.width = 250,
     this.height = 50,
-    required this.controller,
+    this.hintText = "",
+    this.textInputType = TextInputType.phone,
+    this.inputDecoration = const InputDecoration(
+      hintText: "Text Here",
+      border: OutlineInputBorder(),
+    ),
   }) : super(key: key);
 
   @override
   _StudenceTextBoxState createState() => _StudenceTextBoxState();
+
+  @override
+  StudenceTextBoxController getController() {
+    return m_controller;
+  }
+
+  @override
+  StudenceTextBox getWidget() {
+    return _StudenceTextBoxState().widget;
+  }
 }
 
 class _StudenceTextBoxState extends State<StudenceTextBox> {
@@ -109,6 +139,9 @@ class _StudenceTextBoxState extends State<StudenceTextBox> {
 
   @override
   void initState() {
+    widget.m_controller = StudenceTextBoxController();
+    widget.getController().stringModelAndListener =
+        widget.stringModelAndListener;
     super.initState();
   }
 
@@ -129,18 +162,25 @@ class _StudenceTextBoxState extends State<StudenceTextBox> {
       width: widget.width,
       height: widget.height,
       child: TextField(
-        controller: widget.controller,
-        obscureText: true,
-        decoration: InputDecoration(
-          border: OutlineInputBorder(),
-          labelText: widget.placeholder,
-        ),
+        controller: widget.getController().gettextController,
+        keyboardType: widget.textInputType,
+        obscureText: false,
+        onChanged: (text) {
+          widget.getController().stringModelAndListener.model.setDataOrWrapper(text);
+        },
+        decoration: widget.placeholder != ""
+            ? InputDecoration(
+                border: const OutlineInputBorder(),
+                labelText: widget.placeholder,
+              )
+            : const InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: "Text Here",
+              ),
       ),
     );
   }
 }
-
-
 
 //How to use See below..
 

@@ -3,15 +3,6 @@ import 'package:studence_mvc/Pages/Organisation/OrganisationCreate/CampusCreate.
 import 'package:studence_mvc/Pages/Organisation/OrganisationCreate/OrganisationAndCampusCreateController.dart';
 import 'package:studence_mvc/Pages/Organisation/OrganisationCreate/OrganisationCreate.dart';
 import 'package:studence_mvc/Pages/Organisation/OrganisationCreate/PageIdentifierEnum.dart';
-import 'package:studence_mvc/common_formatter/ISDCodesFormatter.dart';
-import 'package:studence_mvc/common_widget/StudecnceListCreateWidget/StudecnceListCreateWidget.dart';
-import 'package:studence_mvc/common_widget/StudenceAddressInputWidget/StudenceAddressInputWidget.dart';
-import 'package:studence_mvc/common_widget/StudenceAlertDailogWidget/StudenceAlertDailogWidget.dart';
-import 'package:studence_mvc/common_widget/StudenceCustomWidgetDialogBoxWidget/StudenceCustomWidgetDialogBoxWidget.dart';
-import 'package:studence_mvc/common_widget/StudencePhoneNumberInputWidget/StudencePhoneNumberInputWidget.dart';
-import 'package:studence_mvc/common_widget/StudenceTextBox/StudenceTextBox.dart';
-import 'package:studence_mvc/common_widget/WidgetComposer/StudenceAddressComposer.dart';
-import 'package:studence_mvc/common_widget/WidgetComposer/StudenceMobileAndEmailComposer.dart';
 
 class OrganisationAndCampusCreate extends StatefulWidget {
   late OrganisationAndCampusCreateController
@@ -47,9 +38,9 @@ class _OrganisationAndCampusCreateState
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      /*appBar: AppBar(
         title: Text('Create Organisation and Campus'),
-      ),
+      ),*/
       body: SingleChildScrollView(
         padding: EdgeInsets.all(16.0),
         child: Column(
@@ -59,9 +50,7 @@ class _OrganisationAndCampusCreateState
                     .getWidgtVisibility(PageIdentifierEnum.ORGANISATION_PAGE),
                 child: Column(
                   children: [
-                    OrganisationCreate(
-                        organisationAndCampusCreateController:
-                            widget._organisationAndCampusCreateController),
+                    OrganisationCreate(),
                     ElevatedButton(
                       onPressed: () {
                         changeWidget(PageIdentifierEnum.CAMPUS_PAGE);
@@ -76,8 +65,7 @@ class _OrganisationAndCampusCreateState
                 child: Column(
                   children: [
                     CampusCreate(
-                        organisationAndCampusCreateController:
-                            widget._organisationAndCampusCreateController),
+                        ),
                     ElevatedButton(
                       onPressed: () {
                         changeWidget(PageIdentifierEnum.ORGANISATION_PAGE);
@@ -94,36 +82,6 @@ class _OrganisationAndCampusCreateState
                 ))
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          showDialog(
-              context: context,
-              barrierDismissible: false,
-              builder: (BuildContext context) {
-                return StudenceCustomWidgetDialogBoxWidget(
-                  height: 1000,
-                  width: 800,
-                  child: StudecnceListCreateWidget(
-                    composer: StudenceMobileAndEmailComposer(),
-                    model: widget
-                        ._organisationAndCampusCreateController.getEventModel,
-                    datalist: widget._organisationAndCampusCreateController
-                        .getDataList(),
-                    inputWidget: StudencePhoneNumberInputWidget(
-                      formatter: ISDCodesFormatter(),
-                      mobilecontroller:
-                          widget._organisationAndCampusCreateController.mobile,
-                      emailcontroller:
-                          widget._organisationAndCampusCreateController.email,
-                      isdCodeNotifier: widget
-                          ._organisationAndCampusCreateController.isdcodeNotify,
-                    ),
-                  ),
-                );
-              });
-        },
-        child: Icon(Icons.save),
       ),
     );
   }

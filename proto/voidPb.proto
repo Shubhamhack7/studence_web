@@ -9,3 +9,10 @@ message VoidPb{
 
 }
 
+message VoidSearchReqPb{
+
+}
+message VoidSearchRespPb{
+
+}
+

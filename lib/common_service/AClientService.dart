@@ -58,6 +58,13 @@ class AClientService<
   Future<Lresp> getUiPb(Lreq pb) {
     UipbService<Lreq, Lresp, PP> uipbService =
         new UipbService(pb, m_responsePb, m_pathProvider);
-    return uipbService.callingUiPbRequestToServer();
+    return uipbService.getCallingUiPbRequestToServer();
+  }
+
+  @override
+  Future<Lresp> createUiPb(Lreq pb) {
+    UipbService<Lreq, Lresp, PP> uipbService =
+        new UipbService(pb, m_responsePb, m_pathProvider);
+    return uipbService.createCallingUiPbRequestToServer();
   }
 }
