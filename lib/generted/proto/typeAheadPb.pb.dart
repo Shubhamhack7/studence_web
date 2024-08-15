@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -19,7 +19,23 @@ import 'loginPb.pbenum.dart' as $3;
 import 'summaryPb.pb.dart' as $2;
 
 class TypeAheadPb extends $pb.GeneratedMessage {
-  factory TypeAheadPb() => create();
+  factory TypeAheadPb({
+    $0.EntityPb? dbInfo,
+    $1.GenericRefPb? context,
+    $3.ProfileTypeEnum? typeAheadType,
+  }) {
+    final $result = create();
+    if (dbInfo != null) {
+      $result.dbInfo = dbInfo;
+    }
+    if (context != null) {
+      $result.context = context;
+    }
+    if (typeAheadType != null) {
+      $result.typeAheadType = typeAheadType;
+    }
+    return $result;
+  }
   TypeAheadPb._() : super();
   factory TypeAheadPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TypeAheadPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -85,7 +101,23 @@ class TypeAheadPb extends $pb.GeneratedMessage {
 }
 
 class TypeAheadSearchReqPb extends $pb.GeneratedMessage {
-  factory TypeAheadSearchReqPb() => create();
+  factory TypeAheadSearchReqPb({
+    $core.String? context,
+    $3.ProfileTypeEnum? typeAheadType,
+    $2.NextTokenPb? nextToken,
+  }) {
+    final $result = create();
+    if (context != null) {
+      $result.context = context;
+    }
+    if (typeAheadType != null) {
+      $result.typeAheadType = typeAheadType;
+    }
+    if (nextToken != null) {
+      $result.nextToken = nextToken;
+    }
+    return $result;
+  }
   TypeAheadSearchReqPb._() : super();
   factory TypeAheadSearchReqPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TypeAheadSearchReqPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -149,7 +181,19 @@ class TypeAheadSearchReqPb extends $pb.GeneratedMessage {
 }
 
 class TypeAheadSearchRespPb extends $pb.GeneratedMessage {
-  factory TypeAheadSearchRespPb() => create();
+  factory TypeAheadSearchRespPb({
+    $2.SummaryPb? summary,
+    $core.Iterable<TypeAheadPb>? results,
+  }) {
+    final $result = create();
+    if (summary != null) {
+      $result.summary = summary;
+    }
+    if (results != null) {
+      $result.results.addAll(results);
+    }
+    return $result;
+  }
   TypeAheadSearchRespPb._() : super();
   factory TypeAheadSearchRespPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TypeAheadSearchRespPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

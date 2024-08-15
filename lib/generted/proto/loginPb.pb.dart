@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -22,7 +22,39 @@ import 'summaryPb.pb.dart' as $3;
 export 'loginPb.pbenum.dart';
 
 class LoginPb extends $pb.GeneratedMessage {
-  factory LoginPb() => create();
+  factory LoginPb({
+    $0.EntityPb? dbInfo,
+    ProfileTypeEnum? type,
+    $1.GenericRefPb? ref,
+    $2.MobileNumberPb? mobileNo,
+    $2.EmailPb? emailId,
+    $core.String? encryptedPassword,
+    $core.String? firebaseToken,
+  }) {
+    final $result = create();
+    if (dbInfo != null) {
+      $result.dbInfo = dbInfo;
+    }
+    if (type != null) {
+      $result.type = type;
+    }
+    if (ref != null) {
+      $result.ref = ref;
+    }
+    if (mobileNo != null) {
+      $result.mobileNo = mobileNo;
+    }
+    if (emailId != null) {
+      $result.emailId = emailId;
+    }
+    if (encryptedPassword != null) {
+      $result.encryptedPassword = encryptedPassword;
+    }
+    if (firebaseToken != null) {
+      $result.firebaseToken = firebaseToken;
+    }
+    return $result;
+  }
   LoginPb._() : super();
   factory LoginPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory LoginPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -132,7 +164,19 @@ class LoginPb extends $pb.GeneratedMessage {
 }
 
 class LoginSearchReqPb extends $pb.GeneratedMessage {
-  factory LoginSearchReqPb() => create();
+  factory LoginSearchReqPb({
+    $core.String? mobileNo,
+    $core.String? emailId,
+  }) {
+    final $result = create();
+    if (mobileNo != null) {
+      $result.mobileNo = mobileNo;
+    }
+    if (emailId != null) {
+      $result.emailId = emailId;
+    }
+    return $result;
+  }
   LoginSearchReqPb._() : super();
   factory LoginSearchReqPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory LoginSearchReqPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -184,7 +228,19 @@ class LoginSearchReqPb extends $pb.GeneratedMessage {
 }
 
 class LoginSearchRespPb extends $pb.GeneratedMessage {
-  factory LoginSearchRespPb() => create();
+  factory LoginSearchRespPb({
+    $3.SummaryPb? summary,
+    $core.Iterable<LoginPb>? results,
+  }) {
+    final $result = create();
+    if (summary != null) {
+      $result.summary = summary;
+    }
+    if (results != null) {
+      $result.results.addAll(results);
+    }
+    return $result;
+  }
   LoginSearchRespPb._() : super();
   factory LoginSearchRespPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory LoginSearchRespPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -232,7 +288,23 @@ class LoginSearchRespPb extends $pb.GeneratedMessage {
 }
 
 class LoginReqUiPb extends $pb.GeneratedMessage {
-  factory LoginReqUiPb() => create();
+  factory LoginReqUiPb({
+    $core.String? mobileNo,
+    $core.String? emailId,
+    $core.String? password,
+  }) {
+    final $result = create();
+    if (mobileNo != null) {
+      $result.mobileNo = mobileNo;
+    }
+    if (emailId != null) {
+      $result.emailId = emailId;
+    }
+    if (password != null) {
+      $result.password = password;
+    }
+    return $result;
+  }
   LoginReqUiPb._() : super();
   factory LoginReqUiPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory LoginReqUiPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -294,7 +366,23 @@ class LoginReqUiPb extends $pb.GeneratedMessage {
 }
 
 class LoginRespUiPb extends $pb.GeneratedMessage {
-  factory LoginRespUiPb() => create();
+  factory LoginRespUiPb({
+    LoginPb? login,
+    $core.String? sesssionId,
+    $core.String? sesssionToken,
+  }) {
+    final $result = create();
+    if (login != null) {
+      $result.login = login;
+    }
+    if (sesssionId != null) {
+      $result.sesssionId = sesssionId;
+    }
+    if (sesssionToken != null) {
+      $result.sesssionToken = sesssionToken;
+    }
+    return $result;
+  }
   LoginRespUiPb._() : super();
   factory LoginRespUiPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory LoginRespUiPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

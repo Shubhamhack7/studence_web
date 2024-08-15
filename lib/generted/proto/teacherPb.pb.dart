@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -21,7 +21,31 @@ import 'namePb.pb.dart' as $1;
 import 'summaryPb.pb.dart' as $5;
 
 class TeacherPb extends $pb.GeneratedMessage {
-  factory TeacherPb() => create();
+  factory TeacherPb({
+    $0.EntityPb? dbInfo,
+    $1.NamePb? name,
+    $2.ContactDetailsPb? contactDetails,
+    $3.CampusRefPb? campusRef,
+    $4.ClassesRefPb? classTeacher,
+  }) {
+    final $result = create();
+    if (dbInfo != null) {
+      $result.dbInfo = dbInfo;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (contactDetails != null) {
+      $result.contactDetails = contactDetails;
+    }
+    if (campusRef != null) {
+      $result.campusRef = campusRef;
+    }
+    if (classTeacher != null) {
+      $result.classTeacher = classTeacher;
+    }
+    return $result;
+  }
   TeacherPb._() : super();
   factory TeacherPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TeacherPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -113,7 +137,27 @@ class TeacherPb extends $pb.GeneratedMessage {
 }
 
 class TeacherRefPb extends $pb.GeneratedMessage {
-  factory TeacherRefPb() => create();
+  factory TeacherRefPb({
+    $core.String? dbInfoId,
+    $core.String? name,
+    $core.String? campusRefId,
+    $core.String? classRef,
+  }) {
+    final $result = create();
+    if (dbInfoId != null) {
+      $result.dbInfoId = dbInfoId;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (campusRefId != null) {
+      $result.campusRefId = campusRefId;
+    }
+    if (classRef != null) {
+      $result.classRef = classRef;
+    }
+    return $result;
+  }
   TeacherRefPb._() : super();
   factory TeacherRefPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TeacherRefPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -185,7 +229,15 @@ class TeacherRefPb extends $pb.GeneratedMessage {
 }
 
 class TeacherSearchReqPb extends $pb.GeneratedMessage {
-  factory TeacherSearchReqPb() => create();
+  factory TeacherSearchReqPb({
+    $core.String? name,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    return $result;
+  }
   TeacherSearchReqPb._() : super();
   factory TeacherSearchReqPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TeacherSearchReqPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -227,7 +279,19 @@ class TeacherSearchReqPb extends $pb.GeneratedMessage {
 }
 
 class TeacherSearchRespPb extends $pb.GeneratedMessage {
-  factory TeacherSearchRespPb() => create();
+  factory TeacherSearchRespPb({
+    $5.SummaryPb? summary,
+    $core.Iterable<TeacherPb>? results,
+  }) {
+    final $result = create();
+    if (summary != null) {
+      $result.summary = summary;
+    }
+    if (results != null) {
+      $result.results.addAll(results);
+    }
+    return $result;
+  }
   TeacherSearchRespPb._() : super();
   factory TeacherSearchRespPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TeacherSearchRespPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

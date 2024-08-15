@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -18,7 +18,23 @@ import 'contactDetailsPb.pbenum.dart';
 export 'contactDetailsPb.pbenum.dart';
 
 class MobileNumberPb extends $pb.GeneratedMessage {
-  factory MobileNumberPb() => create();
+  factory MobileNumberPb({
+    ISDCode? code,
+    $core.String? number,
+    $core.String? canonicalNumber,
+  }) {
+    final $result = create();
+    if (code != null) {
+      $result.code = code;
+    }
+    if (number != null) {
+      $result.number = number;
+    }
+    if (canonicalNumber != null) {
+      $result.canonicalNumber = canonicalNumber;
+    }
+    return $result;
+  }
   MobileNumberPb._() : super();
   factory MobileNumberPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory MobileNumberPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -80,7 +96,19 @@ class MobileNumberPb extends $pb.GeneratedMessage {
 }
 
 class MobileNumbersPb extends $pb.GeneratedMessage {
-  factory MobileNumbersPb() => create();
+  factory MobileNumbersPb({
+    MobileNumberPb? primary,
+    $core.Iterable<MobileNumberPb>? others,
+  }) {
+    final $result = create();
+    if (primary != null) {
+      $result.primary = primary;
+    }
+    if (others != null) {
+      $result.others.addAll(others);
+    }
+    return $result;
+  }
   MobileNumbersPb._() : super();
   factory MobileNumbersPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory MobileNumbersPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -128,7 +156,23 @@ class MobileNumbersPb extends $pb.GeneratedMessage {
 }
 
 class EmailPb extends $pb.GeneratedMessage {
-  factory EmailPb() => create();
+  factory EmailPb({
+    $core.String? localPart,
+    $core.String? domainPart,
+    $core.String? canonicalEmail,
+  }) {
+    final $result = create();
+    if (localPart != null) {
+      $result.localPart = localPart;
+    }
+    if (domainPart != null) {
+      $result.domainPart = domainPart;
+    }
+    if (canonicalEmail != null) {
+      $result.canonicalEmail = canonicalEmail;
+    }
+    return $result;
+  }
   EmailPb._() : super();
   factory EmailPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory EmailPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -190,7 +234,19 @@ class EmailPb extends $pb.GeneratedMessage {
 }
 
 class EmailsPb extends $pb.GeneratedMessage {
-  factory EmailsPb() => create();
+  factory EmailsPb({
+    EmailPb? primary,
+    $core.Iterable<EmailPb>? others,
+  }) {
+    final $result = create();
+    if (primary != null) {
+      $result.primary = primary;
+    }
+    if (others != null) {
+      $result.others.addAll(others);
+    }
+    return $result;
+  }
   EmailsPb._() : super();
   factory EmailsPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory EmailsPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -238,7 +294,43 @@ class EmailsPb extends $pb.GeneratedMessage {
 }
 
 class AddressPb extends $pb.GeneratedMessage {
-  factory AddressPb() => create();
+  factory AddressPb({
+    $core.String? street,
+    $core.String? area,
+    $core.String? landmark,
+    $core.String? city,
+    $core.String? pincode,
+    $core.String? state,
+    $core.String? country,
+    $core.String? canonicalAddress,
+  }) {
+    final $result = create();
+    if (street != null) {
+      $result.street = street;
+    }
+    if (area != null) {
+      $result.area = area;
+    }
+    if (landmark != null) {
+      $result.landmark = landmark;
+    }
+    if (city != null) {
+      $result.city = city;
+    }
+    if (pincode != null) {
+      $result.pincode = pincode;
+    }
+    if (state != null) {
+      $result.state = state;
+    }
+    if (country != null) {
+      $result.country = country;
+    }
+    if (canonicalAddress != null) {
+      $result.canonicalAddress = canonicalAddress;
+    }
+    return $result;
+  }
   AddressPb._() : super();
   factory AddressPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AddressPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -350,7 +442,19 @@ class AddressPb extends $pb.GeneratedMessage {
 }
 
 class AddressesPb extends $pb.GeneratedMessage {
-  factory AddressesPb() => create();
+  factory AddressesPb({
+    AddressPb? primary,
+    $core.Iterable<AddressPb>? others,
+  }) {
+    final $result = create();
+    if (primary != null) {
+      $result.primary = primary;
+    }
+    if (others != null) {
+      $result.others.addAll(others);
+    }
+    return $result;
+  }
   AddressesPb._() : super();
   factory AddressesPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AddressesPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -398,7 +502,23 @@ class AddressesPb extends $pb.GeneratedMessage {
 }
 
 class ContactDetailsPb extends $pb.GeneratedMessage {
-  factory ContactDetailsPb() => create();
+  factory ContactDetailsPb({
+    MobileNumbersPb? mobileNumbers,
+    EmailsPb? emails,
+    AddressesPb? address,
+  }) {
+    final $result = create();
+    if (mobileNumbers != null) {
+      $result.mobileNumbers = mobileNumbers;
+    }
+    if (emails != null) {
+      $result.emails = emails;
+    }
+    if (address != null) {
+      $result.address = address;
+    }
+    return $result;
+  }
   ContactDetailsPb._() : super();
   factory ContactDetailsPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ContactDetailsPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

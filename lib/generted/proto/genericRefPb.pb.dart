@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -16,7 +16,19 @@ import 'package:protobuf/protobuf.dart' as $pb;
 import 'dataTypesPb.pb.dart' as $0;
 
 class GenericRefPb extends $pb.GeneratedMessage {
-  factory GenericRefPb() => create();
+  factory GenericRefPb({
+    $core.String? dbInfoId,
+    $core.String? name,
+  }) {
+    final $result = create();
+    if (dbInfoId != null) {
+      $result.dbInfoId = dbInfoId;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    return $result;
+  }
   GenericRefPb._() : super();
   factory GenericRefPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GenericRefPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -68,7 +80,23 @@ class GenericRefPb extends $pb.GeneratedMessage {
 }
 
 class GenericRefPbWithBoolean extends $pb.GeneratedMessage {
-  factory GenericRefPbWithBoolean() => create();
+  factory GenericRefPbWithBoolean({
+    $core.String? dbInfoId,
+    $core.String? name,
+    $0.BooleanPb? isActive,
+  }) {
+    final $result = create();
+    if (dbInfoId != null) {
+      $result.dbInfoId = dbInfoId;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (isActive != null) {
+      $result.isActive = isActive;
+    }
+    return $result;
+  }
   GenericRefPbWithBoolean._() : super();
   factory GenericRefPbWithBoolean.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GenericRefPbWithBoolean.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

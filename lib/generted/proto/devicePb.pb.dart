@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -22,7 +22,39 @@ import 'summaryPb.pb.dart' as $2;
 export 'devicePb.pbenum.dart';
 
 class AndroidDisplayInfo extends $pb.GeneratedMessage {
-  factory AndroidDisplayInfo() => create();
+  factory AndroidDisplayInfo({
+    $core.double? displaySizeInches,
+    $core.int? displayWidthPixels,
+    $core.double? displayWidthInches,
+    $core.int? displayHeightPixels,
+    $core.double? displayHeightInches,
+    $core.double? displayXDpi,
+    $core.double? displayYDpi,
+  }) {
+    final $result = create();
+    if (displaySizeInches != null) {
+      $result.displaySizeInches = displaySizeInches;
+    }
+    if (displayWidthPixels != null) {
+      $result.displayWidthPixels = displayWidthPixels;
+    }
+    if (displayWidthInches != null) {
+      $result.displayWidthInches = displayWidthInches;
+    }
+    if (displayHeightPixels != null) {
+      $result.displayHeightPixels = displayHeightPixels;
+    }
+    if (displayHeightInches != null) {
+      $result.displayHeightInches = displayHeightInches;
+    }
+    if (displayXDpi != null) {
+      $result.displayXDpi = displayXDpi;
+    }
+    if (displayYDpi != null) {
+      $result.displayYDpi = displayYDpi;
+    }
+    return $result;
+  }
   AndroidDisplayInfo._() : super();
   factory AndroidDisplayInfo.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AndroidDisplayInfo.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -124,7 +156,123 @@ class AndroidDisplayInfo extends $pb.GeneratedMessage {
 }
 
 class AndroidDeviceDetails extends $pb.GeneratedMessage {
-  factory AndroidDeviceDetails() => create();
+  factory AndroidDeviceDetails({
+    $core.String? securityPatch,
+    $core.int? sdkInt,
+    $core.String? release,
+    $core.int? previewSdkInt,
+    $core.String? incremental,
+    $core.String? codename,
+    $core.String? baseOs,
+    $core.String? board,
+    $core.String? bootloader,
+    $core.String? brand,
+    $core.String? device,
+    $core.String? display,
+    $core.String? fingerprint,
+    $core.String? hardware,
+    $core.String? host,
+    $core.String? id,
+    $core.String? manufacturer,
+    $core.String? model,
+    $core.String? product,
+    $core.Iterable<$core.String>? supported32BitAbis,
+    $core.Iterable<$core.String>? supported64BitAbis,
+    $core.Iterable<$core.String>? supportedAbis,
+    $core.String? tags,
+    $core.String? type,
+    $core.bool? isPhysicalDevice,
+    $core.Iterable<$core.String>? systemFeatures,
+    AndroidDisplayInfo? displayInfo,
+    $core.String? serialNumber,
+  }) {
+    final $result = create();
+    if (securityPatch != null) {
+      $result.securityPatch = securityPatch;
+    }
+    if (sdkInt != null) {
+      $result.sdkInt = sdkInt;
+    }
+    if (release != null) {
+      $result.release = release;
+    }
+    if (previewSdkInt != null) {
+      $result.previewSdkInt = previewSdkInt;
+    }
+    if (incremental != null) {
+      $result.incremental = incremental;
+    }
+    if (codename != null) {
+      $result.codename = codename;
+    }
+    if (baseOs != null) {
+      $result.baseOs = baseOs;
+    }
+    if (board != null) {
+      $result.board = board;
+    }
+    if (bootloader != null) {
+      $result.bootloader = bootloader;
+    }
+    if (brand != null) {
+      $result.brand = brand;
+    }
+    if (device != null) {
+      $result.device = device;
+    }
+    if (display != null) {
+      $result.display = display;
+    }
+    if (fingerprint != null) {
+      $result.fingerprint = fingerprint;
+    }
+    if (hardware != null) {
+      $result.hardware = hardware;
+    }
+    if (host != null) {
+      $result.host = host;
+    }
+    if (id != null) {
+      $result.id = id;
+    }
+    if (manufacturer != null) {
+      $result.manufacturer = manufacturer;
+    }
+    if (model != null) {
+      $result.model = model;
+    }
+    if (product != null) {
+      $result.product = product;
+    }
+    if (supported32BitAbis != null) {
+      $result.supported32BitAbis.addAll(supported32BitAbis);
+    }
+    if (supported64BitAbis != null) {
+      $result.supported64BitAbis.addAll(supported64BitAbis);
+    }
+    if (supportedAbis != null) {
+      $result.supportedAbis.addAll(supportedAbis);
+    }
+    if (tags != null) {
+      $result.tags = tags;
+    }
+    if (type != null) {
+      $result.type = type;
+    }
+    if (isPhysicalDevice != null) {
+      $result.isPhysicalDevice = isPhysicalDevice;
+    }
+    if (systemFeatures != null) {
+      $result.systemFeatures.addAll(systemFeatures);
+    }
+    if (displayInfo != null) {
+      $result.displayInfo = displayInfo;
+    }
+    if (serialNumber != null) {
+      $result.serialNumber = serialNumber;
+    }
+    return $result;
+  }
   AndroidDeviceDetails._() : super();
   factory AndroidDeviceDetails.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AndroidDeviceDetails.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -414,7 +562,43 @@ class AndroidDeviceDetails extends $pb.GeneratedMessage {
 }
 
 class IOSDeviceDetails extends $pb.GeneratedMessage {
-  factory IOSDeviceDetails() => create();
+  factory IOSDeviceDetails({
+    $core.String? name,
+    $core.String? systemName,
+    $core.String? systemVersion,
+    $core.String? model,
+    $core.String? localizedModel,
+    $core.String? identifierForVendor,
+    $core.bool? isPhysicalDevice,
+    Utsname? utsname,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (systemName != null) {
+      $result.systemName = systemName;
+    }
+    if (systemVersion != null) {
+      $result.systemVersion = systemVersion;
+    }
+    if (model != null) {
+      $result.model = model;
+    }
+    if (localizedModel != null) {
+      $result.localizedModel = localizedModel;
+    }
+    if (identifierForVendor != null) {
+      $result.identifierForVendor = identifierForVendor;
+    }
+    if (isPhysicalDevice != null) {
+      $result.isPhysicalDevice = isPhysicalDevice;
+    }
+    if (utsname != null) {
+      $result.utsname = utsname;
+    }
+    return $result;
+  }
   IOSDeviceDetails._() : super();
   factory IOSDeviceDetails.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory IOSDeviceDetails.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -528,7 +712,31 @@ class IOSDeviceDetails extends $pb.GeneratedMessage {
 }
 
 class Utsname extends $pb.GeneratedMessage {
-  factory Utsname() => create();
+  factory Utsname({
+    $core.String? sysname,
+    $core.String? nodename,
+    $core.String? release,
+    $core.String? version,
+    $core.String? machine,
+  }) {
+    final $result = create();
+    if (sysname != null) {
+      $result.sysname = sysname;
+    }
+    if (nodename != null) {
+      $result.nodename = nodename;
+    }
+    if (release != null) {
+      $result.release = release;
+    }
+    if (version != null) {
+      $result.version = version;
+    }
+    if (machine != null) {
+      $result.machine = machine;
+    }
+    return $result;
+  }
   Utsname._() : super();
   factory Utsname.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Utsname.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -610,7 +818,111 @@ class Utsname extends $pb.GeneratedMessage {
 }
 
 class WindowsDeviceDetails extends $pb.GeneratedMessage {
-  factory WindowsDeviceDetails() => create();
+  factory WindowsDeviceDetails({
+    $core.int? numberOfCores,
+    $core.String? computerName,
+    $core.int? systemMemoryInMegabytes,
+    $core.String? userName,
+    $core.int? majorVersion,
+    $core.int? minorVersion,
+    $core.int? buildNumber,
+    $core.int? platformId,
+    $core.String? csdVersion,
+    $core.int? servicePackMajor,
+    $core.int? servicePackMinor,
+    $core.int? suitMask,
+    $core.int? productType,
+    $core.String? reserved,
+    $core.String? buildLab,
+    $core.String? buildLabEx,
+    $core.String? digitalProductId,
+    $core.String? displayVersion,
+    $core.String? editionId,
+    $core.String? installDate,
+    $core.String? productId,
+    $core.String? productName,
+    $core.String? registeredOwner,
+    $core.String? releaseId,
+    $core.String? deviceId,
+  }) {
+    final $result = create();
+    if (numberOfCores != null) {
+      $result.numberOfCores = numberOfCores;
+    }
+    if (computerName != null) {
+      $result.computerName = computerName;
+    }
+    if (systemMemoryInMegabytes != null) {
+      $result.systemMemoryInMegabytes = systemMemoryInMegabytes;
+    }
+    if (userName != null) {
+      $result.userName = userName;
+    }
+    if (majorVersion != null) {
+      $result.majorVersion = majorVersion;
+    }
+    if (minorVersion != null) {
+      $result.minorVersion = minorVersion;
+    }
+    if (buildNumber != null) {
+      $result.buildNumber = buildNumber;
+    }
+    if (platformId != null) {
+      $result.platformId = platformId;
+    }
+    if (csdVersion != null) {
+      $result.csdVersion = csdVersion;
+    }
+    if (servicePackMajor != null) {
+      $result.servicePackMajor = servicePackMajor;
+    }
+    if (servicePackMinor != null) {
+      $result.servicePackMinor = servicePackMinor;
+    }
+    if (suitMask != null) {
+      $result.suitMask = suitMask;
+    }
+    if (productType != null) {
+      $result.productType = productType;
+    }
+    if (reserved != null) {
+      $result.reserved = reserved;
+    }
+    if (buildLab != null) {
+      $result.buildLab = buildLab;
+    }
+    if (buildLabEx != null) {
+      $result.buildLabEx = buildLabEx;
+    }
+    if (digitalProductId != null) {
+      $result.digitalProductId = digitalProductId;
+    }
+    if (displayVersion != null) {
+      $result.displayVersion = displayVersion;
+    }
+    if (editionId != null) {
+      $result.editionId = editionId;
+    }
+    if (installDate != null) {
+      $result.installDate = installDate;
+    }
+    if (productId != null) {
+      $result.productId = productId;
+    }
+    if (productName != null) {
+      $result.productName = productName;
+    }
+    if (registeredOwner != null) {
+      $result.registeredOwner = registeredOwner;
+    }
+    if (releaseId != null) {
+      $result.releaseId = releaseId;
+    }
+    if (deviceId != null) {
+      $result.deviceId = deviceId;
+    }
+    return $result;
+  }
   WindowsDeviceDetails._() : super();
   factory WindowsDeviceDetails.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory WindowsDeviceDetails.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -892,7 +1204,63 @@ class WindowsDeviceDetails extends $pb.GeneratedMessage {
 }
 
 class MacOSDeviceDetails extends $pb.GeneratedMessage {
-  factory MacOSDeviceDetails() => create();
+  factory MacOSDeviceDetails({
+    $core.String? computerName,
+    $core.String? hostName,
+    $core.String? arch,
+    $core.String? model,
+    $core.String? kernelVersion,
+    $core.int? majorVersion,
+    $core.int? minorVersion,
+    $core.int? patchVersion,
+    $core.String? osRelease,
+    $core.int? activeCpus,
+    $fixnum.Int64? memorySize,
+    $fixnum.Int64? cpuFrequency,
+    $core.String? systemGuid,
+  }) {
+    final $result = create();
+    if (computerName != null) {
+      $result.computerName = computerName;
+    }
+    if (hostName != null) {
+      $result.hostName = hostName;
+    }
+    if (arch != null) {
+      $result.arch = arch;
+    }
+    if (model != null) {
+      $result.model = model;
+    }
+    if (kernelVersion != null) {
+      $result.kernelVersion = kernelVersion;
+    }
+    if (majorVersion != null) {
+      $result.majorVersion = majorVersion;
+    }
+    if (minorVersion != null) {
+      $result.minorVersion = minorVersion;
+    }
+    if (patchVersion != null) {
+      $result.patchVersion = patchVersion;
+    }
+    if (osRelease != null) {
+      $result.osRelease = osRelease;
+    }
+    if (activeCpus != null) {
+      $result.activeCpus = activeCpus;
+    }
+    if (memorySize != null) {
+      $result.memorySize = memorySize;
+    }
+    if (cpuFrequency != null) {
+      $result.cpuFrequency = cpuFrequency;
+    }
+    if (systemGuid != null) {
+      $result.systemGuid = systemGuid;
+    }
+    return $result;
+  }
   MacOSDeviceDetails._() : super();
   factory MacOSDeviceDetails.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory MacOSDeviceDetails.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1054,7 +1422,71 @@ class MacOSDeviceDetails extends $pb.GeneratedMessage {
 }
 
 class WebBrowserInfoDetails extends $pb.GeneratedMessage {
-  factory WebBrowserInfoDetails() => create();
+  factory WebBrowserInfoDetails({
+    $core.String? browserName,
+    $core.String? appCodeName,
+    $core.String? appName,
+    $core.String? appVersion,
+    $core.int? deviceMemory,
+    $core.String? language,
+    $core.Iterable<$core.String>? languages,
+    $core.String? platform,
+    $core.String? product,
+    $core.String? productSub,
+    $core.String? userAgent,
+    $core.String? vendor,
+    $core.String? vendorSub,
+    $core.int? hardwareConcurrency,
+    $core.int? maxTouchPoints,
+  }) {
+    final $result = create();
+    if (browserName != null) {
+      $result.browserName = browserName;
+    }
+    if (appCodeName != null) {
+      $result.appCodeName = appCodeName;
+    }
+    if (appName != null) {
+      $result.appName = appName;
+    }
+    if (appVersion != null) {
+      $result.appVersion = appVersion;
+    }
+    if (deviceMemory != null) {
+      $result.deviceMemory = deviceMemory;
+    }
+    if (language != null) {
+      $result.language = language;
+    }
+    if (languages != null) {
+      $result.languages.addAll(languages);
+    }
+    if (platform != null) {
+      $result.platform = platform;
+    }
+    if (product != null) {
+      $result.product = product;
+    }
+    if (productSub != null) {
+      $result.productSub = productSub;
+    }
+    if (userAgent != null) {
+      $result.userAgent = userAgent;
+    }
+    if (vendor != null) {
+      $result.vendor = vendor;
+    }
+    if (vendorSub != null) {
+      $result.vendorSub = vendorSub;
+    }
+    if (hardwareConcurrency != null) {
+      $result.hardwareConcurrency = hardwareConcurrency;
+    }
+    if (maxTouchPoints != null) {
+      $result.maxTouchPoints = maxTouchPoints;
+    }
+    return $result;
+  }
   WebBrowserInfoDetails._() : super();
   factory WebBrowserInfoDetails.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory WebBrowserInfoDetails.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1230,7 +1662,55 @@ class WebBrowserInfoDetails extends $pb.GeneratedMessage {
 }
 
 class LinuxDeviceInfoDetails extends $pb.GeneratedMessage {
-  factory LinuxDeviceInfoDetails() => create();
+  factory LinuxDeviceInfoDetails({
+    $core.String? name,
+    $core.String? version,
+    $core.String? id,
+    $core.Iterable<$core.String>? idLike,
+    $core.String? versionCodename,
+    $core.String? versionId,
+    $core.String? prettyName,
+    $core.String? buildId,
+    $core.String? variant,
+    $core.String? variantId,
+    $core.String? machineId,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (version != null) {
+      $result.version = version;
+    }
+    if (id != null) {
+      $result.id = id;
+    }
+    if (idLike != null) {
+      $result.idLike.addAll(idLike);
+    }
+    if (versionCodename != null) {
+      $result.versionCodename = versionCodename;
+    }
+    if (versionId != null) {
+      $result.versionId = versionId;
+    }
+    if (prettyName != null) {
+      $result.prettyName = prettyName;
+    }
+    if (buildId != null) {
+      $result.buildId = buildId;
+    }
+    if (variant != null) {
+      $result.variant = variant;
+    }
+    if (variantId != null) {
+      $result.variantId = variantId;
+    }
+    if (machineId != null) {
+      $result.machineId = machineId;
+    }
+    return $result;
+  }
   LinuxDeviceInfoDetails._() : super();
   factory LinuxDeviceInfoDetails.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory LinuxDeviceInfoDetails.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1366,7 +1846,19 @@ class LinuxDeviceInfoDetails extends $pb.GeneratedMessage {
 }
 
 class DeviceScreenSize extends $pb.GeneratedMessage {
-  factory DeviceScreenSize() => create();
+  factory DeviceScreenSize({
+    $core.int? hieght,
+    $core.int? width,
+  }) {
+    final $result = create();
+    if (hieght != null) {
+      $result.hieght = hieght;
+    }
+    if (width != null) {
+      $result.width = width;
+    }
+    return $result;
+  }
   DeviceScreenSize._() : super();
   factory DeviceScreenSize.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DeviceScreenSize.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1418,7 +1910,19 @@ class DeviceScreenSize extends $pb.GeneratedMessage {
 }
 
 class DeviceIpAddress extends $pb.GeneratedMessage {
-  factory DeviceIpAddress() => create();
+  factory DeviceIpAddress({
+    $core.String? deviceIpAddress,
+    DeviceIPAddressType? ipType,
+  }) {
+    final $result = create();
+    if (deviceIpAddress != null) {
+      $result.deviceIpAddress = deviceIpAddress;
+    }
+    if (ipType != null) {
+      $result.ipType = ipType;
+    }
+    return $result;
+  }
   DeviceIpAddress._() : super();
   factory DeviceIpAddress.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DeviceIpAddress.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1470,7 +1974,75 @@ class DeviceIpAddress extends $pb.GeneratedMessage {
 }
 
 class DeviceDetailsPb extends $pb.GeneratedMessage {
-  factory DeviceDetailsPb() => create();
+  factory DeviceDetailsPb({
+    $0.EntityPb? dbInfo,
+    DeviceOSTypeEnum? deviceOsType,
+    AndroidDeviceDetails? androidDevice,
+    IOSDeviceDetails? iosDevice,
+    WindowsDeviceDetails? windowsDevice,
+    MacOSDeviceDetails? macOsDevice,
+    WebBrowserInfoDetails? webBrowserDevice,
+    LinuxDeviceInfoDetails? linuxDevice,
+    DeviceScreenSize? screeSize,
+    $core.String? deviceMacId,
+    DeviceIpAddress? deviceIpAddress,
+    $core.String? uniqueId,
+    DeviceAppMode? mode,
+    DeviceTypeEnum? deviceType,
+    $1.PushNotificationRefPb? pushNotificationRef,
+    $core.String? deviceId,
+  }) {
+    final $result = create();
+    if (dbInfo != null) {
+      $result.dbInfo = dbInfo;
+    }
+    if (deviceOsType != null) {
+      $result.deviceOsType = deviceOsType;
+    }
+    if (androidDevice != null) {
+      $result.androidDevice = androidDevice;
+    }
+    if (iosDevice != null) {
+      $result.iosDevice = iosDevice;
+    }
+    if (windowsDevice != null) {
+      $result.windowsDevice = windowsDevice;
+    }
+    if (macOsDevice != null) {
+      $result.macOsDevice = macOsDevice;
+    }
+    if (webBrowserDevice != null) {
+      $result.webBrowserDevice = webBrowserDevice;
+    }
+    if (linuxDevice != null) {
+      $result.linuxDevice = linuxDevice;
+    }
+    if (screeSize != null) {
+      $result.screeSize = screeSize;
+    }
+    if (deviceMacId != null) {
+      $result.deviceMacId = deviceMacId;
+    }
+    if (deviceIpAddress != null) {
+      $result.deviceIpAddress = deviceIpAddress;
+    }
+    if (uniqueId != null) {
+      $result.uniqueId = uniqueId;
+    }
+    if (mode != null) {
+      $result.mode = mode;
+    }
+    if (deviceType != null) {
+      $result.deviceType = deviceType;
+    }
+    if (pushNotificationRef != null) {
+      $result.pushNotificationRef = pushNotificationRef;
+    }
+    if (deviceId != null) {
+      $result.deviceId = deviceId;
+    }
+    return $result;
+  }
   DeviceDetailsPb._() : super();
   factory DeviceDetailsPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DeviceDetailsPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1682,7 +2254,47 @@ class DeviceDetailsPb extends $pb.GeneratedMessage {
 }
 
 class DeviceDetailsRefPb extends $pb.GeneratedMessage {
-  factory DeviceDetailsRefPb() => create();
+  factory DeviceDetailsRefPb({
+    $core.String? dbInfoId,
+    DeviceOSTypeEnum? deviceOsType,
+    $core.String? deviceMacId,
+    DeviceIpAddress? deviceIpAddress,
+    $core.String? uniqueId,
+    DeviceAppMode? mode,
+    DeviceTypeEnum? deviceType,
+    $core.String? deviceId,
+    DeviceAppPlatformType? platform,
+  }) {
+    final $result = create();
+    if (dbInfoId != null) {
+      $result.dbInfoId = dbInfoId;
+    }
+    if (deviceOsType != null) {
+      $result.deviceOsType = deviceOsType;
+    }
+    if (deviceMacId != null) {
+      $result.deviceMacId = deviceMacId;
+    }
+    if (deviceIpAddress != null) {
+      $result.deviceIpAddress = deviceIpAddress;
+    }
+    if (uniqueId != null) {
+      $result.uniqueId = uniqueId;
+    }
+    if (mode != null) {
+      $result.mode = mode;
+    }
+    if (deviceType != null) {
+      $result.deviceType = deviceType;
+    }
+    if (deviceId != null) {
+      $result.deviceId = deviceId;
+    }
+    if (platform != null) {
+      $result.platform = platform;
+    }
+    return $result;
+  }
   DeviceDetailsRefPb._() : super();
   factory DeviceDetailsRefPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DeviceDetailsRefPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1696,6 +2308,7 @@ class DeviceDetailsRefPb extends $pb.GeneratedMessage {
     ..e<DeviceAppMode>(6, _omitFieldNames ? '' : 'mode', $pb.PbFieldType.OE, defaultOrMaker: DeviceAppMode.UKNOWN_MODE, valueOf: DeviceAppMode.valueOf, enumValues: DeviceAppMode.values)
     ..e<DeviceTypeEnum>(7, _omitFieldNames ? '' : 'deviceType', $pb.PbFieldType.OE, protoName: 'deviceType', defaultOrMaker: DeviceTypeEnum.UNKNOWN_DEVICE_TYPE, valueOf: DeviceTypeEnum.valueOf, enumValues: DeviceTypeEnum.values)
     ..aOS(8, _omitFieldNames ? '' : 'deviceId')
+    ..e<DeviceAppPlatformType>(9, _omitFieldNames ? '' : 'platform', $pb.PbFieldType.OE, defaultOrMaker: DeviceAppPlatformType.UNKNOWN_PLATFORM, valueOf: DeviceAppPlatformType.valueOf, enumValues: DeviceAppPlatformType.values)
     ..hasRequiredFields = false
   ;
 
@@ -1793,10 +2406,27 @@ class DeviceDetailsRefPb extends $pb.GeneratedMessage {
   $core.bool hasDeviceId() => $_has(7);
   @$pb.TagNumber(8)
   void clearDeviceId() => clearField(8);
+
+  @$pb.TagNumber(9)
+  DeviceAppPlatformType get platform => $_getN(8);
+  @$pb.TagNumber(9)
+  set platform(DeviceAppPlatformType v) { setField(9, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasPlatform() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearPlatform() => clearField(9);
 }
 
 class DeviceDetailsSearchReqPb extends $pb.GeneratedMessage {
-  factory DeviceDetailsSearchReqPb() => create();
+  factory DeviceDetailsSearchReqPb({
+    DeviceOSTypeEnum? deviceOsType,
+  }) {
+    final $result = create();
+    if (deviceOsType != null) {
+      $result.deviceOsType = deviceOsType;
+    }
+    return $result;
+  }
   DeviceDetailsSearchReqPb._() : super();
   factory DeviceDetailsSearchReqPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DeviceDetailsSearchReqPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1838,7 +2468,19 @@ class DeviceDetailsSearchReqPb extends $pb.GeneratedMessage {
 }
 
 class DeviceDetailsSearchRespPb extends $pb.GeneratedMessage {
-  factory DeviceDetailsSearchRespPb() => create();
+  factory DeviceDetailsSearchRespPb({
+    $2.SummaryPb? summary,
+    $core.Iterable<DeviceDetailsPb>? results,
+  }) {
+    final $result = create();
+    if (summary != null) {
+      $result.summary = summary;
+    }
+    if (results != null) {
+      $result.results.addAll(results);
+    }
+    return $result;
+  }
   DeviceDetailsSearchRespPb._() : super();
   factory DeviceDetailsSearchRespPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DeviceDetailsSearchRespPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

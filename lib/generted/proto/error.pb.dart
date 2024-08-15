@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -18,7 +18,39 @@ import 'error.pbenum.dart';
 export 'error.pbenum.dart';
 
 class ErrorProtoPb extends $pb.GeneratedMessage {
-  factory ErrorProtoPb() => create();
+  factory ErrorProtoPb({
+    ErrorTypePbEnum? errorTypePbEnum,
+    $core.String? errorEnumClass,
+    $core.String? errorEnumValue,
+    $core.String? errorData,
+    $core.Iterable<$core.String>? serviceId,
+    $core.String? errorDataClass,
+    ErrorCategoryUiEnum? errorCategory,
+  }) {
+    final $result = create();
+    if (errorTypePbEnum != null) {
+      $result.errorTypePbEnum = errorTypePbEnum;
+    }
+    if (errorEnumClass != null) {
+      $result.errorEnumClass = errorEnumClass;
+    }
+    if (errorEnumValue != null) {
+      $result.errorEnumValue = errorEnumValue;
+    }
+    if (errorData != null) {
+      $result.errorData = errorData;
+    }
+    if (serviceId != null) {
+      $result.serviceId.addAll(serviceId);
+    }
+    if (errorDataClass != null) {
+      $result.errorDataClass = errorDataClass;
+    }
+    if (errorCategory != null) {
+      $result.errorCategory = errorCategory;
+    }
+    return $result;
+  }
   ErrorProtoPb._() : super();
   factory ErrorProtoPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ErrorProtoPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -114,7 +146,43 @@ class ErrorProtoPb extends $pb.GeneratedMessage {
 }
 
 class ErrorResponsePb extends $pb.GeneratedMessage {
-  factory ErrorResponsePb() => create();
+  factory ErrorResponsePb({
+    $core.String? uiErrorString,
+    $core.String? errorCode,
+    ErrorCategoryUiEnum? errorCategory,
+    $core.String? exceptionId,
+    $core.String? serviceCode,
+    $core.String? operationId,
+    $core.Iterable<ErrorProtoPb>? errors,
+    $core.String? debugStackTrace,
+  }) {
+    final $result = create();
+    if (uiErrorString != null) {
+      $result.uiErrorString = uiErrorString;
+    }
+    if (errorCode != null) {
+      $result.errorCode = errorCode;
+    }
+    if (errorCategory != null) {
+      $result.errorCategory = errorCategory;
+    }
+    if (exceptionId != null) {
+      $result.exceptionId = exceptionId;
+    }
+    if (serviceCode != null) {
+      $result.serviceCode = serviceCode;
+    }
+    if (operationId != null) {
+      $result.operationId = operationId;
+    }
+    if (errors != null) {
+      $result.errors.addAll(errors);
+    }
+    if (debugStackTrace != null) {
+      $result.debugStackTrace = debugStackTrace;
+    }
+    return $result;
+  }
   ErrorResponsePb._() : super();
   factory ErrorResponsePb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ErrorResponsePb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -220,7 +288,19 @@ class ErrorResponsePb extends $pb.GeneratedMessage {
 }
 
 class ResultPb extends $pb.GeneratedMessage {
-  factory ResultPb() => create();
+  factory ResultPb({
+    ResultStatusUiEnum? status,
+    ErrorResponsePb? error,
+  }) {
+    final $result = create();
+    if (status != null) {
+      $result.status = status;
+    }
+    if (error != null) {
+      $result.error = error;
+    }
+    return $result;
+  }
   ResultPb._() : super();
   factory ResultPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ResultPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -274,7 +354,19 @@ class ResultPb extends $pb.GeneratedMessage {
 }
 
 class RedirectPb extends $pb.GeneratedMessage {
-  factory RedirectPb() => create();
+  factory RedirectPb({
+    RedirectTypeEnum? redirectType,
+    $core.String? location,
+  }) {
+    final $result = create();
+    if (redirectType != null) {
+      $result.redirectType = redirectType;
+    }
+    if (location != null) {
+      $result.location = location;
+    }
+    return $result;
+  }
   RedirectPb._() : super();
   factory RedirectPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory RedirectPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

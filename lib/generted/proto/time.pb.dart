@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -18,7 +18,35 @@ import 'time.pbenum.dart';
 export 'time.pbenum.dart';
 
 class TimeStatsPb extends $pb.GeneratedMessage {
-  factory TimeStatsPb() => create();
+  factory TimeStatsPb({
+    $core.String? id,
+    $core.int? totalValue,
+    $core.int? totalData,
+    $core.int? minValue,
+    $core.int? maxValue,
+    $core.double? avg,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (totalValue != null) {
+      $result.totalValue = totalValue;
+    }
+    if (totalData != null) {
+      $result.totalData = totalData;
+    }
+    if (minValue != null) {
+      $result.minValue = minValue;
+    }
+    if (maxValue != null) {
+      $result.maxValue = maxValue;
+    }
+    if (avg != null) {
+      $result.avg = avg;
+    }
+    return $result;
+  }
   TimeStatsPb._() : super();
   factory TimeStatsPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TimeStatsPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -110,7 +138,19 @@ class TimeStatsPb extends $pb.GeneratedMessage {
 }
 
 class AccumulatedTimeStatsPb extends $pb.GeneratedMessage {
-  factory AccumulatedTimeStatsPb() => create();
+  factory AccumulatedTimeStatsPb({
+    $core.Iterable<TimeStatsPb>? timeStats,
+    AccumulatedTimeStatsIdPb? name,
+  }) {
+    final $result = create();
+    if (timeStats != null) {
+      $result.timeStats.addAll(timeStats);
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    return $result;
+  }
   AccumulatedTimeStatsPb._() : super();
   factory AccumulatedTimeStatsPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AccumulatedTimeStatsPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -158,7 +198,15 @@ class AccumulatedTimeStatsPb extends $pb.GeneratedMessage {
 }
 
 class TimeProfilePb extends $pb.GeneratedMessage {
-  factory TimeProfilePb() => create();
+  factory TimeProfilePb({
+    $core.Iterable<AccumulatedTimeStatsPb>? accTimeStats,
+  }) {
+    final $result = create();
+    if (accTimeStats != null) {
+      $result.accTimeStats.addAll(accTimeStats);
+    }
+    return $result;
+  }
   TimeProfilePb._() : super();
   factory TimeProfilePb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TimeProfilePb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -194,7 +242,15 @@ class TimeProfilePb extends $pb.GeneratedMessage {
 }
 
 class AccumulatedTimeStatsIdPb extends $pb.GeneratedMessage {
-  factory AccumulatedTimeStatsIdPb() => create();
+  factory AccumulatedTimeStatsIdPb({
+    $core.Iterable<TimeProfileDimensionId>? dimensionId,
+  }) {
+    final $result = create();
+    if (dimensionId != null) {
+      $result.dimensionId.addAll(dimensionId);
+    }
+    return $result;
+  }
   AccumulatedTimeStatsIdPb._() : super();
   factory AccumulatedTimeStatsIdPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AccumulatedTimeStatsIdPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -230,7 +286,19 @@ class AccumulatedTimeStatsIdPb extends $pb.GeneratedMessage {
 }
 
 class TimeProfileDimensionId extends $pb.GeneratedMessage {
-  factory TimeProfileDimensionId() => create();
+  factory TimeProfileDimensionId({
+    TimeProfileDimensionEnum? name,
+    $core.String? value,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (value != null) {
+      $result.value = value;
+    }
+    return $result;
+  }
   TimeProfileDimensionId._() : super();
   factory TimeProfileDimensionId.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TimeProfileDimensionId.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

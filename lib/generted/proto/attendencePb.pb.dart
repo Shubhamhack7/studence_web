@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -22,7 +22,35 @@ import 'summaryPb.pb.dart' as $5;
 import 'teacherPb.pb.dart' as $4;
 
 class AttendencePb extends $pb.GeneratedMessage {
-  factory AttendencePb() => create();
+  factory AttendencePb({
+    $0.EntityPb? dbInfo,
+    $1.NamePb? name,
+    $2.StudentRefPb? studentRef,
+    $3.ClassesRefPb? classRef,
+    $4.TeacherRefPb? teacherRef,
+    $6.BooleanEnum? isPresent,
+  }) {
+    final $result = create();
+    if (dbInfo != null) {
+      $result.dbInfo = dbInfo;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (studentRef != null) {
+      $result.studentRef = studentRef;
+    }
+    if (classRef != null) {
+      $result.classRef = classRef;
+    }
+    if (teacherRef != null) {
+      $result.teacherRef = teacherRef;
+    }
+    if (isPresent != null) {
+      $result.isPresent = isPresent;
+    }
+    return $result;
+  }
   AttendencePb._() : super();
   factory AttendencePb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AttendencePb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -124,7 +152,19 @@ class AttendencePb extends $pb.GeneratedMessage {
 }
 
 class AttendenceRefPb extends $pb.GeneratedMessage {
-  factory AttendenceRefPb() => create();
+  factory AttendenceRefPb({
+    $core.String? dbInfoId,
+    $core.String? name,
+  }) {
+    final $result = create();
+    if (dbInfoId != null) {
+      $result.dbInfoId = dbInfoId;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    return $result;
+  }
   AttendenceRefPb._() : super();
   factory AttendenceRefPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AttendenceRefPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -176,7 +216,15 @@ class AttendenceRefPb extends $pb.GeneratedMessage {
 }
 
 class AttendenceSearchReqPb extends $pb.GeneratedMessage {
-  factory AttendenceSearchReqPb() => create();
+  factory AttendenceSearchReqPb({
+    $core.String? name,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    return $result;
+  }
   AttendenceSearchReqPb._() : super();
   factory AttendenceSearchReqPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AttendenceSearchReqPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -218,7 +266,19 @@ class AttendenceSearchReqPb extends $pb.GeneratedMessage {
 }
 
 class AttendenceSearchRespPb extends $pb.GeneratedMessage {
-  factory AttendenceSearchRespPb() => create();
+  factory AttendenceSearchRespPb({
+    $5.SummaryPb? summary,
+    $core.Iterable<AttendencePb>? results,
+  }) {
+    final $result = create();
+    if (summary != null) {
+      $result.summary = summary;
+    }
+    if (results != null) {
+      $result.results.addAll(results);
+    }
+    return $result;
+  }
   AttendenceSearchRespPb._() : super();
   factory AttendenceSearchRespPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AttendenceSearchRespPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

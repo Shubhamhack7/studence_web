@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -20,7 +20,31 @@ import 'organisationPb.pb.dart' as $2;
 import 'timePb.pb.dart' as $4;
 
 class StudenceSession extends $pb.GeneratedMessage {
-  factory StudenceSession() => create();
+  factory StudenceSession({
+    $0.DeviceDetailsPb? deviceInfo,
+    $1.LoginPb? login,
+    $2.OrganisationPb? organisation,
+    $3.CampusPb? campus,
+    $4.TimePb? time,
+  }) {
+    final $result = create();
+    if (deviceInfo != null) {
+      $result.deviceInfo = deviceInfo;
+    }
+    if (login != null) {
+      $result.login = login;
+    }
+    if (organisation != null) {
+      $result.organisation = organisation;
+    }
+    if (campus != null) {
+      $result.campus = campus;
+    }
+    if (time != null) {
+      $result.time = time;
+    }
+    return $result;
+  }
   StudenceSession._() : super();
   factory StudenceSession.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory StudenceSession.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

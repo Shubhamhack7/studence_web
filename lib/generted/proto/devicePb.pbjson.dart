@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -77,6 +77,21 @@ const DeviceIPAddressType$json = {
 final $typed_data.Uint8List deviceIPAddressTypeDescriptor = $convert.base64Decode(
     'ChNEZXZpY2VJUEFkZHJlc3NUeXBlEhoKFlVOS05PV05fSVBBRERSRVNTX1RZUEUQABIICgRJUF'
     'Y0EAESCAoESVBWNhAC');
+
+@$core.Deprecated('Use deviceAppPlatformTypeDescriptor instead')
+const DeviceAppPlatformType$json = {
+  '1': 'DeviceAppPlatformType',
+  '2': [
+    {'1': 'UNKNOWN_PLATFORM', '2': 0},
+    {'1': 'BROWSER', '2': 1},
+    {'1': 'APPLICATION', '2': 2},
+  ],
+};
+
+/// Descriptor for `DeviceAppPlatformType`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List deviceAppPlatformTypeDescriptor = $convert.base64Decode(
+    'ChVEZXZpY2VBcHBQbGF0Zm9ybVR5cGUSFAoQVU5LTk9XTl9QTEFURk9STRAAEgsKB0JST1dTRV'
+    'IQARIPCgtBUFBMSUNBVElPThAC');
 
 @$core.Deprecated('Use androidDisplayInfoDescriptor instead')
 const AndroidDisplayInfo$json = {
@@ -428,6 +443,7 @@ const DeviceDetailsRefPb$json = {
     {'1': 'mode', '3': 6, '4': 1, '5': 14, '6': '.proto.DeviceAppMode', '10': 'mode'},
     {'1': 'deviceType', '3': 7, '4': 1, '5': 14, '6': '.proto.DeviceTypeEnum', '10': 'deviceType'},
     {'1': 'device_id', '3': 8, '4': 1, '5': 9, '10': 'deviceId'},
+    {'1': 'platform', '3': 9, '4': 1, '5': 14, '6': '.proto.DeviceAppPlatformType', '10': 'platform'},
   ],
 };
 
@@ -439,7 +455,8 @@ final $typed_data.Uint8List deviceDetailsRefPbDescriptor = $convert.base64Decode
     'gLMhYucHJvdG8uRGV2aWNlSXBBZGRyZXNzUg9kZXZpY2VJcEFkZHJlc3MSGwoJdW5pcXVlX2lk'
     'GAUgASgJUgh1bmlxdWVJZBIoCgRtb2RlGAYgASgOMhQucHJvdG8uRGV2aWNlQXBwTW9kZVIEbW'
     '9kZRI1CgpkZXZpY2VUeXBlGAcgASgOMhUucHJvdG8uRGV2aWNlVHlwZUVudW1SCmRldmljZVR5'
-    'cGUSGwoJZGV2aWNlX2lkGAggASgJUghkZXZpY2VJZA==');
+    'cGUSGwoJZGV2aWNlX2lkGAggASgJUghkZXZpY2VJZBI4CghwbGF0Zm9ybRgJIAEoDjIcLnByb3'
+    'RvLkRldmljZUFwcFBsYXRmb3JtVHlwZVIIcGxhdGZvcm0=');
 
 @$core.Deprecated('Use deviceDetailsSearchReqPbDescriptor instead')
 const DeviceDetailsSearchReqPb$json = {

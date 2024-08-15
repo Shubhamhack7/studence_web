@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -19,7 +19,31 @@ import 'namePb.pb.dart' as $1;
 import 'summaryPb.pb.dart' as $3;
 
 class GuardianPb extends $pb.GeneratedMessage {
-  factory GuardianPb() => create();
+  factory GuardianPb({
+    $0.EntityPb? dbInfo,
+    $1.NamePb? fatherName,
+    $1.NamePb? motherName,
+    $core.int? noOfChildern,
+    $2.ContactDetailsPb? contactDetails,
+  }) {
+    final $result = create();
+    if (dbInfo != null) {
+      $result.dbInfo = dbInfo;
+    }
+    if (fatherName != null) {
+      $result.fatherName = fatherName;
+    }
+    if (motherName != null) {
+      $result.motherName = motherName;
+    }
+    if (noOfChildern != null) {
+      $result.noOfChildern = noOfChildern;
+    }
+    if (contactDetails != null) {
+      $result.contactDetails = contactDetails;
+    }
+    return $result;
+  }
   GuardianPb._() : super();
   factory GuardianPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GuardianPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -109,7 +133,23 @@ class GuardianPb extends $pb.GeneratedMessage {
 }
 
 class GuardianRefPb extends $pb.GeneratedMessage {
-  factory GuardianRefPb() => create();
+  factory GuardianRefPb({
+    $core.String? dbInfoId,
+    $core.String? fatherName,
+    $core.String? motherName,
+  }) {
+    final $result = create();
+    if (dbInfoId != null) {
+      $result.dbInfoId = dbInfoId;
+    }
+    if (fatherName != null) {
+      $result.fatherName = fatherName;
+    }
+    if (motherName != null) {
+      $result.motherName = motherName;
+    }
+    return $result;
+  }
   GuardianRefPb._() : super();
   factory GuardianRefPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GuardianRefPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -171,7 +211,15 @@ class GuardianRefPb extends $pb.GeneratedMessage {
 }
 
 class GuardianSearchReqPb extends $pb.GeneratedMessage {
-  factory GuardianSearchReqPb() => create();
+  factory GuardianSearchReqPb({
+    $core.String? name,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    return $result;
+  }
   GuardianSearchReqPb._() : super();
   factory GuardianSearchReqPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GuardianSearchReqPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -213,7 +261,19 @@ class GuardianSearchReqPb extends $pb.GeneratedMessage {
 }
 
 class GuardianSearchRespPb extends $pb.GeneratedMessage {
-  factory GuardianSearchRespPb() => create();
+  factory GuardianSearchRespPb({
+    $3.SummaryPb? summary,
+    $core.Iterable<GuardianPb>? results,
+  }) {
+    final $result = create();
+    if (summary != null) {
+      $result.summary = summary;
+    }
+    if (results != null) {
+      $result.results.addAll(results);
+    }
+    return $result;
+  }
   GuardianSearchRespPb._() : super();
   factory GuardianSearchRespPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GuardianSearchRespPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

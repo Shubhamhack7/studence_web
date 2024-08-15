@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -89,6 +89,23 @@ class DeviceIPAddressType extends $pb.ProtobufEnum {
   static DeviceIPAddressType? valueOf($core.int value) => _byValue[value];
 
   const DeviceIPAddressType._($core.int v, $core.String n) : super(v, n);
+}
+
+class DeviceAppPlatformType extends $pb.ProtobufEnum {
+  static const DeviceAppPlatformType UNKNOWN_PLATFORM = DeviceAppPlatformType._(0, _omitEnumNames ? '' : 'UNKNOWN_PLATFORM');
+  static const DeviceAppPlatformType BROWSER = DeviceAppPlatformType._(1, _omitEnumNames ? '' : 'BROWSER');
+  static const DeviceAppPlatformType APPLICATION = DeviceAppPlatformType._(2, _omitEnumNames ? '' : 'APPLICATION');
+
+  static const $core.List<DeviceAppPlatformType> values = <DeviceAppPlatformType> [
+    UNKNOWN_PLATFORM,
+    BROWSER,
+    APPLICATION,
+  ];
+
+  static final $core.Map<$core.int, DeviceAppPlatformType> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static DeviceAppPlatformType? valueOf($core.int value) => _byValue[value];
+
+  const DeviceAppPlatformType._($core.int v, $core.String n) : super(v, n);
 }
 
 

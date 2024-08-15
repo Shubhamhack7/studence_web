@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -20,7 +20,31 @@ import 'timePb.pbenum.dart' as $0;
 export 'entityPb.pbenum.dart';
 
 class EntityPb extends $pb.GeneratedMessage {
-  factory EntityPb() => create();
+  factory EntityPb({
+    $core.String? hashId,
+    $core.String? rangeId,
+    LifeTimeEnum? lifetime,
+    PbConfig? config,
+    $0.TimezoneEnum? timezone,
+  }) {
+    final $result = create();
+    if (hashId != null) {
+      $result.hashId = hashId;
+    }
+    if (rangeId != null) {
+      $result.rangeId = rangeId;
+    }
+    if (lifetime != null) {
+      $result.lifetime = lifetime;
+    }
+    if (config != null) {
+      $result.config = config;
+    }
+    if (timezone != null) {
+      $result.timezone = timezone;
+    }
+    return $result;
+  }
   EntityPb._() : super();
   factory EntityPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory EntityPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -104,7 +128,27 @@ class EntityPb extends $pb.GeneratedMessage {
 }
 
 class PbConfig extends $pb.GeneratedMessage {
-  factory PbConfig() => create();
+  factory PbConfig({
+    $core.int? version,
+    $0.TimePb? createdAt,
+    $0.TimePb? updatedAt,
+    $core.String? updatedBy,
+  }) {
+    final $result = create();
+    if (version != null) {
+      $result.version = version;
+    }
+    if (createdAt != null) {
+      $result.createdAt = createdAt;
+    }
+    if (updatedAt != null) {
+      $result.updatedAt = updatedAt;
+    }
+    if (updatedBy != null) {
+      $result.updatedBy = updatedBy;
+    }
+    return $result;
+  }
   PbConfig._() : super();
   factory PbConfig.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory PbConfig.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

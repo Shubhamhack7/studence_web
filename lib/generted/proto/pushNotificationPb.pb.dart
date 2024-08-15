@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -18,7 +18,35 @@ import 'genericRefPb.pb.dart' as $1;
 import 'summaryPb.pb.dart' as $2;
 
 class PushNotificationPb extends $pb.GeneratedMessage {
-  factory PushNotificationPb() => create();
+  factory PushNotificationPb({
+    $0.EntityPb? dbInfo,
+    $core.String? token,
+    $1.GenericRefPb? orgRef,
+    $1.GenericRefPb? campusRef,
+    $1.GenericRefPb? deviceRef,
+    $1.GenericRefPb? loginRef,
+  }) {
+    final $result = create();
+    if (dbInfo != null) {
+      $result.dbInfo = dbInfo;
+    }
+    if (token != null) {
+      $result.token = token;
+    }
+    if (orgRef != null) {
+      $result.orgRef = orgRef;
+    }
+    if (campusRef != null) {
+      $result.campusRef = campusRef;
+    }
+    if (deviceRef != null) {
+      $result.deviceRef = deviceRef;
+    }
+    if (loginRef != null) {
+      $result.loginRef = loginRef;
+    }
+    return $result;
+  }
   PushNotificationPb._() : super();
   factory PushNotificationPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory PushNotificationPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -120,7 +148,19 @@ class PushNotificationPb extends $pb.GeneratedMessage {
 }
 
 class PushNotificationRefPb extends $pb.GeneratedMessage {
-  factory PushNotificationRefPb() => create();
+  factory PushNotificationRefPb({
+    $core.String? dbInfoId,
+    $core.String? token,
+  }) {
+    final $result = create();
+    if (dbInfoId != null) {
+      $result.dbInfoId = dbInfoId;
+    }
+    if (token != null) {
+      $result.token = token;
+    }
+    return $result;
+  }
   PushNotificationRefPb._() : super();
   factory PushNotificationRefPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory PushNotificationRefPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -172,7 +212,31 @@ class PushNotificationRefPb extends $pb.GeneratedMessage {
 }
 
 class PushNotificationSearchReqPb extends $pb.GeneratedMessage {
-  factory PushNotificationSearchReqPb() => create();
+  factory PushNotificationSearchReqPb({
+    $core.String? token,
+    $core.String? orgRefId,
+    $core.String? campusRefId,
+    $core.String? deviceRefId,
+    $core.String? loginRefId,
+  }) {
+    final $result = create();
+    if (token != null) {
+      $result.token = token;
+    }
+    if (orgRefId != null) {
+      $result.orgRefId = orgRefId;
+    }
+    if (campusRefId != null) {
+      $result.campusRefId = campusRefId;
+    }
+    if (deviceRefId != null) {
+      $result.deviceRefId = deviceRefId;
+    }
+    if (loginRefId != null) {
+      $result.loginRefId = loginRefId;
+    }
+    return $result;
+  }
   PushNotificationSearchReqPb._() : super();
   factory PushNotificationSearchReqPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory PushNotificationSearchReqPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -254,7 +318,19 @@ class PushNotificationSearchReqPb extends $pb.GeneratedMessage {
 }
 
 class PushNotificationSearchRespPb extends $pb.GeneratedMessage {
-  factory PushNotificationSearchRespPb() => create();
+  factory PushNotificationSearchRespPb({
+    $2.SummaryPb? summary,
+    $core.Iterable<PushNotificationPb>? results,
+  }) {
+    final $result = create();
+    if (summary != null) {
+      $result.summary = summary;
+    }
+    if (results != null) {
+      $result.results.addAll(results);
+    }
+    return $result;
+  }
   PushNotificationSearchRespPb._() : super();
   factory PushNotificationSearchRespPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory PushNotificationSearchRespPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -18,7 +18,27 @@ import 'requestContextPb.pbenum.dart';
 export 'requestContextPb.pbenum.dart';
 
 class RequestContextPb extends $pb.GeneratedMessage {
-  factory RequestContextPb() => create();
+  factory RequestContextPb({
+    $core.String? reqClass,
+    $core.String? reqMethod,
+    ReqPriorityUiEnum? priority,
+    $core.String? reqId,
+  }) {
+    final $result = create();
+    if (reqClass != null) {
+      $result.reqClass = reqClass;
+    }
+    if (reqMethod != null) {
+      $result.reqMethod = reqMethod;
+    }
+    if (priority != null) {
+      $result.priority = priority;
+    }
+    if (reqId != null) {
+      $result.reqId = reqId;
+    }
+    return $result;
+  }
   RequestContextPb._() : super();
   factory RequestContextPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory RequestContextPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

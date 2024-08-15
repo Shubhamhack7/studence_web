@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -19,7 +19,71 @@ import 'timePb.pbenum.dart';
 export 'timePb.pbenum.dart';
 
 class TimePb extends $pb.GeneratedMessage {
-  factory TimePb() => create();
+  factory TimePb({
+    $core.String? date,
+    $core.String? time24h,
+    $core.String? time12h,
+    TimezoneEnum? timezone,
+    WeekDay? dayOfWeek,
+    $core.int? year,
+    $core.int? monthOfYear,
+    $core.int? dayOfMonth,
+    Month? month,
+    Day? day,
+    $fixnum.Int64? unixTimestamp,
+    $fixnum.Int64? unixTimestampMs,
+    $fixnum.Int64? unixTimestampUs,
+    $fixnum.Int64? unixTimestampNs,
+    $core.String? canonicalDatetime,
+  }) {
+    final $result = create();
+    if (date != null) {
+      $result.date = date;
+    }
+    if (time24h != null) {
+      $result.time24h = time24h;
+    }
+    if (time12h != null) {
+      $result.time12h = time12h;
+    }
+    if (timezone != null) {
+      $result.timezone = timezone;
+    }
+    if (dayOfWeek != null) {
+      $result.dayOfWeek = dayOfWeek;
+    }
+    if (year != null) {
+      $result.year = year;
+    }
+    if (monthOfYear != null) {
+      $result.monthOfYear = monthOfYear;
+    }
+    if (dayOfMonth != null) {
+      $result.dayOfMonth = dayOfMonth;
+    }
+    if (month != null) {
+      $result.month = month;
+    }
+    if (day != null) {
+      $result.day = day;
+    }
+    if (unixTimestamp != null) {
+      $result.unixTimestamp = unixTimestamp;
+    }
+    if (unixTimestampMs != null) {
+      $result.unixTimestampMs = unixTimestampMs;
+    }
+    if (unixTimestampUs != null) {
+      $result.unixTimestampUs = unixTimestampUs;
+    }
+    if (unixTimestampNs != null) {
+      $result.unixTimestampNs = unixTimestampNs;
+    }
+    if (canonicalDatetime != null) {
+      $result.canonicalDatetime = canonicalDatetime;
+    }
+    return $result;
+  }
   TimePb._() : super();
   factory TimePb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TimePb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -64,6 +128,7 @@ class TimePb extends $pb.GeneratedMessage {
   static TimePb getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TimePb>(create);
   static TimePb? _defaultInstance;
 
+  /// The current date.
   @$pb.TagNumber(1)
   $core.String get date => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -73,6 +138,7 @@ class TimePb extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearDate() => clearField(1);
 
+  /// The current time in 24-hour format.
   @$pb.TagNumber(2)
   $core.String get time24h => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -82,6 +148,7 @@ class TimePb extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearTime24h() => clearField(2);
 
+  /// The current time in 12-hour format.
   @$pb.TagNumber(3)
   $core.String get time12h => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -91,6 +158,7 @@ class TimePb extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearTime12h() => clearField(3);
 
+  /// The timezone offset from UTC (e.g., +05:30).
   @$pb.TagNumber(4)
   TimezoneEnum get timezone => $_getN(3);
   @$pb.TagNumber(4)
@@ -100,6 +168,7 @@ class TimePb extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearTimezone() => clearField(4);
 
+  /// The day of the week (e.g., Monday, Tuesday, etc.).
   @$pb.TagNumber(5)
   WeekDay get dayOfWeek => $_getN(4);
   @$pb.TagNumber(5)
@@ -109,6 +178,7 @@ class TimePb extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   void clearDayOfWeek() => clearField(5);
 
+  /// The current year (e.g., 2023).
   @$pb.TagNumber(6)
   $core.int get year => $_getIZ(5);
   @$pb.TagNumber(6)
@@ -136,6 +206,7 @@ class TimePb extends $pb.GeneratedMessage {
   @$pb.TagNumber(8)
   void clearDayOfMonth() => clearField(8);
 
+  /// The current month (e.g., January, February, etc.).
   @$pb.TagNumber(9)
   Month get month => $_getN(8);
   @$pb.TagNumber(9)
@@ -145,6 +216,7 @@ class TimePb extends $pb.GeneratedMessage {
   @$pb.TagNumber(9)
   void clearMonth() => clearField(9);
 
+  /// The current day of the month.
   @$pb.TagNumber(10)
   Day get day => $_getN(9);
   @$pb.TagNumber(10)
@@ -154,6 +226,7 @@ class TimePb extends $pb.GeneratedMessage {
   @$pb.TagNumber(10)
   void clearDay() => clearField(10);
 
+  /// The number of seconds since the Unix Epoch (January 1, 1970, 00:00:00 UTC).
   @$pb.TagNumber(11)
   $fixnum.Int64 get unixTimestamp => $_getI64(10);
   @$pb.TagNumber(11)
@@ -163,6 +236,7 @@ class TimePb extends $pb.GeneratedMessage {
   @$pb.TagNumber(11)
   void clearUnixTimestamp() => clearField(11);
 
+  /// The number of milliseconds since the Unix Epoch.
   @$pb.TagNumber(12)
   $fixnum.Int64 get unixTimestampMs => $_getI64(11);
   @$pb.TagNumber(12)
@@ -172,6 +246,7 @@ class TimePb extends $pb.GeneratedMessage {
   @$pb.TagNumber(12)
   void clearUnixTimestampMs() => clearField(12);
 
+  /// The number of microseconds since the Unix Epoch.
   @$pb.TagNumber(13)
   $fixnum.Int64 get unixTimestampUs => $_getI64(12);
   @$pb.TagNumber(13)
@@ -181,6 +256,7 @@ class TimePb extends $pb.GeneratedMessage {
   @$pb.TagNumber(13)
   void clearUnixTimestampUs() => clearField(13);
 
+  /// The number of nanoseconds since the Unix Epoch.
   @$pb.TagNumber(14)
   $fixnum.Int64 get unixTimestampNs => $_getI64(13);
   @$pb.TagNumber(14)
@@ -190,6 +266,7 @@ class TimePb extends $pb.GeneratedMessage {
   @$pb.TagNumber(14)
   void clearUnixTimestampNs() => clearField(14);
 
+  /// The canonical date and time in the format "DD-MMM-YYYY HH:MM:SSsss".
   @$pb.TagNumber(15)
   $core.String get canonicalDatetime => $_getSZ(14);
   @$pb.TagNumber(15)

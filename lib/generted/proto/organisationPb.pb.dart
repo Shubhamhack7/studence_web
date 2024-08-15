@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -19,7 +19,23 @@ import 'namePb.pb.dart' as $1;
 import 'summaryPb.pb.dart' as $3;
 
 class OrganisationPb extends $pb.GeneratedMessage {
-  factory OrganisationPb() => create();
+  factory OrganisationPb({
+    $0.EntityPb? dbInfo,
+    $1.NamePb? name,
+    $2.ContactDetailsPb? contactDetails,
+  }) {
+    final $result = create();
+    if (dbInfo != null) {
+      $result.dbInfo = dbInfo;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (contactDetails != null) {
+      $result.contactDetails = contactDetails;
+    }
+    return $result;
+  }
   OrganisationPb._() : super();
   factory OrganisationPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory OrganisationPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -87,7 +103,19 @@ class OrganisationPb extends $pb.GeneratedMessage {
 }
 
 class OrganisationRefPb extends $pb.GeneratedMessage {
-  factory OrganisationRefPb() => create();
+  factory OrganisationRefPb({
+    $core.String? dbInfoId,
+    $core.String? name,
+  }) {
+    final $result = create();
+    if (dbInfoId != null) {
+      $result.dbInfoId = dbInfoId;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    return $result;
+  }
   OrganisationRefPb._() : super();
   factory OrganisationRefPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory OrganisationRefPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -139,7 +167,19 @@ class OrganisationRefPb extends $pb.GeneratedMessage {
 }
 
 class OrganisationSearchReqPb extends $pb.GeneratedMessage {
-  factory OrganisationSearchReqPb() => create();
+  factory OrganisationSearchReqPb({
+    $3.NextTokenPb? nextToken,
+    $core.String? name,
+  }) {
+    final $result = create();
+    if (nextToken != null) {
+      $result.nextToken = nextToken;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    return $result;
+  }
   OrganisationSearchReqPb._() : super();
   factory OrganisationSearchReqPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory OrganisationSearchReqPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -193,7 +233,19 @@ class OrganisationSearchReqPb extends $pb.GeneratedMessage {
 }
 
 class OrganisationSearchRespPb extends $pb.GeneratedMessage {
-  factory OrganisationSearchRespPb() => create();
+  factory OrganisationSearchRespPb({
+    $3.SummaryPb? summary,
+    $core.Iterable<OrganisationPb>? results,
+  }) {
+    final $result = create();
+    if (summary != null) {
+      $result.summary = summary;
+    }
+    if (results != null) {
+      $result.results.addAll(results);
+    }
+    return $result;
+  }
   OrganisationSearchRespPb._() : super();
   factory OrganisationSearchRespPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory OrganisationSearchRespPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

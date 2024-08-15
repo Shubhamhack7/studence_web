@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -20,7 +20,31 @@ import 'organisationPb.pb.dart' as $3;
 import 'summaryPb.pb.dart' as $4;
 
 class CampusPb extends $pb.GeneratedMessage {
-  factory CampusPb() => create();
+  factory CampusPb({
+    $0.EntityPb? dbInfo,
+    $1.NamePb? name,
+    $2.ContactDetailsPb? contactDetails,
+    $3.OrganisationRefPb? organisationRef,
+    $core.String? campusCode,
+  }) {
+    final $result = create();
+    if (dbInfo != null) {
+      $result.dbInfo = dbInfo;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (contactDetails != null) {
+      $result.contactDetails = contactDetails;
+    }
+    if (organisationRef != null) {
+      $result.organisationRef = organisationRef;
+    }
+    if (campusCode != null) {
+      $result.campusCode = campusCode;
+    }
+    return $result;
+  }
   CampusPb._() : super();
   factory CampusPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CampusPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -110,7 +134,23 @@ class CampusPb extends $pb.GeneratedMessage {
 }
 
 class CampusRefPb extends $pb.GeneratedMessage {
-  factory CampusRefPb() => create();
+  factory CampusRefPb({
+    $core.String? dbInfoId,
+    $core.String? name,
+    $3.OrganisationRefPb? organisationRef,
+  }) {
+    final $result = create();
+    if (dbInfoId != null) {
+      $result.dbInfoId = dbInfoId;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (organisationRef != null) {
+      $result.organisationRef = organisationRef;
+    }
+    return $result;
+  }
   CampusRefPb._() : super();
   factory CampusRefPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CampusRefPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -174,7 +214,15 @@ class CampusRefPb extends $pb.GeneratedMessage {
 }
 
 class CampusSearchReqPb extends $pb.GeneratedMessage {
-  factory CampusSearchReqPb() => create();
+  factory CampusSearchReqPb({
+    $core.String? name,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    return $result;
+  }
   CampusSearchReqPb._() : super();
   factory CampusSearchReqPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CampusSearchReqPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -216,7 +264,19 @@ class CampusSearchReqPb extends $pb.GeneratedMessage {
 }
 
 class CampusSearchRespPb extends $pb.GeneratedMessage {
-  factory CampusSearchRespPb() => create();
+  factory CampusSearchRespPb({
+    $4.SummaryPb? summary,
+    $core.Iterable<CampusPb>? results,
+  }) {
+    final $result = create();
+    if (summary != null) {
+      $result.summary = summary;
+    }
+    if (results != null) {
+      $result.results.addAll(results);
+    }
+    return $result;
+  }
   CampusSearchRespPb._() : super();
   factory CampusSearchRespPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CampusSearchRespPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -264,7 +324,19 @@ class CampusSearchRespPb extends $pb.GeneratedMessage {
 }
 
 class OrganisationCreateAndCampusCreateReqPb extends $pb.GeneratedMessage {
-  factory OrganisationCreateAndCampusCreateReqPb() => create();
+  factory OrganisationCreateAndCampusCreateReqPb({
+    $3.OrganisationPb? organisation,
+    CampusPb? campus,
+  }) {
+    final $result = create();
+    if (organisation != null) {
+      $result.organisation = organisation;
+    }
+    if (campus != null) {
+      $result.campus = campus;
+    }
+    return $result;
+  }
   OrganisationCreateAndCampusCreateReqPb._() : super();
   factory OrganisationCreateAndCampusCreateReqPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory OrganisationCreateAndCampusCreateReqPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -320,7 +392,19 @@ class OrganisationCreateAndCampusCreateReqPb extends $pb.GeneratedMessage {
 }
 
 class OrganisationCreateAndCampusCreateRespPb extends $pb.GeneratedMessage {
-  factory OrganisationCreateAndCampusCreateRespPb() => create();
+  factory OrganisationCreateAndCampusCreateRespPb({
+    $3.OrganisationPb? organisation,
+    CampusPb? campus,
+  }) {
+    final $result = create();
+    if (organisation != null) {
+      $result.organisation = organisation;
+    }
+    if (campus != null) {
+      $result.campus = campus;
+    }
+    return $result;
+  }
   OrganisationCreateAndCampusCreateRespPb._() : super();
   factory OrganisationCreateAndCampusCreateRespPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory OrganisationCreateAndCampusCreateRespPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

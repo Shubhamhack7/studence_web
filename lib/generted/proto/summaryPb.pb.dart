@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -14,7 +14,19 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 class SummaryPb extends $pb.GeneratedMessage {
-  factory SummaryPb() => create();
+  factory SummaryPb({
+    $core.int? resultsCount,
+    $core.String? nextToken,
+  }) {
+    final $result = create();
+    if (resultsCount != null) {
+      $result.resultsCount = resultsCount;
+    }
+    if (nextToken != null) {
+      $result.nextToken = nextToken;
+    }
+    return $result;
+  }
   SummaryPb._() : super();
   factory SummaryPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SummaryPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -66,7 +78,15 @@ class SummaryPb extends $pb.GeneratedMessage {
 }
 
 class NextTokenPb extends $pb.GeneratedMessage {
-  factory NextTokenPb() => create();
+  factory NextTokenPb({
+    $core.String? nextToken,
+  }) {
+    final $result = create();
+    if (nextToken != null) {
+      $result.nextToken = nextToken;
+    }
+    return $result;
+  }
   NextTokenPb._() : super();
   factory NextTokenPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory NextTokenPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

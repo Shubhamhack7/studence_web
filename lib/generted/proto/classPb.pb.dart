@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -22,7 +22,31 @@ import 'summaryPb.pb.dart' as $3;
 export 'classPb.pbenum.dart';
 
 class ClassesPb extends $pb.GeneratedMessage {
-  factory ClassesPb() => create();
+  factory ClassesPb({
+    $0.EntityPb? dbInfo,
+    ClassType? classType,
+    SectionType? sectionType,
+    $1.CampusRefPb? campusRef,
+    $core.Iterable<$2.GenericRefPbWithBoolean>? othersTeacher,
+  }) {
+    final $result = create();
+    if (dbInfo != null) {
+      $result.dbInfo = dbInfo;
+    }
+    if (classType != null) {
+      $result.classType = classType;
+    }
+    if (sectionType != null) {
+      $result.sectionType = sectionType;
+    }
+    if (campusRef != null) {
+      $result.campusRef = campusRef;
+    }
+    if (othersTeacher != null) {
+      $result.othersTeacher.addAll(othersTeacher);
+    }
+    return $result;
+  }
   ClassesPb._() : super();
   factory ClassesPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ClassesPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -102,7 +126,23 @@ class ClassesPb extends $pb.GeneratedMessage {
 }
 
 class ClassesRefPb extends $pb.GeneratedMessage {
-  factory ClassesRefPb() => create();
+  factory ClassesRefPb({
+    $core.String? dbInfoId,
+    ClassType? classType,
+    SectionType? sectionType,
+  }) {
+    final $result = create();
+    if (dbInfoId != null) {
+      $result.dbInfoId = dbInfoId;
+    }
+    if (classType != null) {
+      $result.classType = classType;
+    }
+    if (sectionType != null) {
+      $result.sectionType = sectionType;
+    }
+    return $result;
+  }
   ClassesRefPb._() : super();
   factory ClassesRefPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ClassesRefPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -164,7 +204,23 @@ class ClassesRefPb extends $pb.GeneratedMessage {
 }
 
 class ClassesSearchReqPb extends $pb.GeneratedMessage {
-  factory ClassesSearchReqPb() => create();
+  factory ClassesSearchReqPb({
+    ClassType? classType,
+    SectionType? sectionType,
+    $core.String? campusRefId,
+  }) {
+    final $result = create();
+    if (classType != null) {
+      $result.classType = classType;
+    }
+    if (sectionType != null) {
+      $result.sectionType = sectionType;
+    }
+    if (campusRefId != null) {
+      $result.campusRefId = campusRefId;
+    }
+    return $result;
+  }
   ClassesSearchReqPb._() : super();
   factory ClassesSearchReqPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ClassesSearchReqPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -226,7 +282,19 @@ class ClassesSearchReqPb extends $pb.GeneratedMessage {
 }
 
 class ClassesSearchRespPb extends $pb.GeneratedMessage {
-  factory ClassesSearchRespPb() => create();
+  factory ClassesSearchRespPb({
+    $3.SummaryPb? summary,
+    $core.Iterable<ClassesPb>? results,
+  }) {
+    final $result = create();
+    if (summary != null) {
+      $result.summary = summary;
+    }
+    if (results != null) {
+      $result.results.addAll(results);
+    }
+    return $result;
+  }
   ClassesSearchRespPb._() : super();
   factory ClassesSearchRespPb.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ClassesSearchRespPb.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

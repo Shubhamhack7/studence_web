@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -56,6 +56,7 @@ class TimezoneEnum extends $pb.ProtobufEnum {
   const TimezoneEnum._($core.int v, $core.String n) : super(v, n);
 }
 
+/// Enum representing months with an "UNKNOWN" option.
 class Month extends $pb.ProtobufEnum {
   static const Month UNKNOWN = Month._(0, _omitEnumNames ? '' : 'UNKNOWN');
   static const Month JANUARY = Month._(1, _omitEnumNames ? '' : 'JANUARY');
@@ -93,6 +94,7 @@ class Month extends $pb.ProtobufEnum {
   const Month._($core.int v, $core.String n) : super(v, n);
 }
 
+/// Enum representing days of the week with an "UNKNOWN" option.
 class Day extends $pb.ProtobufEnum {
   static const Day UNKNOWN_DAY = Day._(0, _omitEnumNames ? '' : 'UNKNOWN_DAY');
   static const Day ONE = Day._(1, _omitEnumNames ? '' : 'ONE');
