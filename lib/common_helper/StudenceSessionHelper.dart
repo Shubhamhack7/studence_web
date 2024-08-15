@@ -1,8 +1,8 @@
-import 'package:studence_mvc/generted/proto/campusPb.pb.dart';
-import 'package:studence_mvc/generted/proto/clientSessionPb.pb.dart';
-import 'package:studence_mvc/generted/proto/deviceDetailsPb.pb.dart';
-import 'package:studence_mvc/generted/proto/loginPb.pb.dart';
-import 'package:studence_mvc/generted/proto/organisationPb.pb.dart';
+import 'package:com.tiwari.studence_mvc/generted/proto/campusPb.pb.dart';
+import 'package:com.tiwari.studence_mvc/generted/proto/clientSessionPb.pb.dart';
+import 'package:com.tiwari.studence_mvc/generted/proto/deviceDetailsPb.pb.dart';
+import 'package:com.tiwari.studence_mvc/generted/proto/loginPb.pb.dart';
+import 'package:com.tiwari.studence_mvc/generted/proto/organisationPb.pb.dart';
 
 class StudenceSessionHelper {
   late StudenceSession m_studenceSession;

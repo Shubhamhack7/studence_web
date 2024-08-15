@@ -1,20 +1,40 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:com.tiwari.studence_mvc/common_comfig/StudenceAppStateEnumType.dart';
+import 'package:com.tiwari.studence_mvc/mvc/model/SimpleModel.dart';
+import 'package:com.tiwari.studence_mvc/mvc/model/interfaces/IModelUpdateListener.dart';
+import 'package:com.tiwari.studence_mvc/providers/StudenceAppStateEnumTypeProvider.dart';
 
 class StudenceAppStage extends WidgetsBindingObserver {
-  StudenceAppStage() {}
+  final SimpleModel<StudenceAppStateEnumType, StudenceAppStateEnumTypeProvider>
+  _appStatesModel =
+  SimpleModel<StudenceAppStateEnumType, StudenceAppStateEnumTypeProvider>(
+      StudenceAppStateEnumTypeProvider());
+
+  SimpleModel<StudenceAppStateEnumType,
+      StudenceAppStateEnumTypeProvider> get appStatesModel => _appStatesModel;
+
+
+  StudenceAppStage(){
+    _appStatesModel.getDataOrWrapperModel().registerModelUpdateListener(
+        AppStateModelListener(appStatesModel));
+  }
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
     if (state == AppLifecycleState.paused) {
-      // appState.setValue(StudenceAppStateEnumType.PAUSED);
+      _appStatesModel.setDataOrWrapper(StudenceAppStateEnumType.PAUSED);
     } else if (state == AppLifecycleState.resumed) {
-      //appState.setValue(StudenceAppStateEnumType.RESUME);
+      _appStatesModel.setDataOrWrapper(StudenceAppStateEnumType.RESUME);
     } else if (state == AppLifecycleState.inactive) {
-      //  appState.setValue(StudenceAppStateEnumType.INCACTIVE);
+      _appStatesModel.setDataOrWrapper(StudenceAppStateEnumType.INCACTIVE);
     } else if (state == AppLifecycleState.detached) {
-      //appState.setValue(StudenceAppStateEnumType.DETACHED);
+      _appStatesModel.setDataOrWrapper(StudenceAppStateEnumType.DETACHED);
+    }
+    else {
+      _appStatesModel.setDataOrWrapper(StudenceAppStateEnumType.UNKNOWN_STATE);
     }
   }
 
@@ -39,7 +59,9 @@ class StudenceAppStage extends WidgetsBindingObserver {
     print('Size: ${metrics.width}x${metrics.height} pixels');
     print('Pixel ratio: $pixelRatio');
     print(
-        'Orientation: ${metrics.width > metrics.height ? "landscape" : "portrait"}');
+        'Orientation: ${metrics.width > metrics.height
+            ? "landscape"
+            : "portrait"}');
   }
 
   @override
@@ -77,4 +99,22 @@ class StudenceAppStage extends WidgetsBindingObserver {
     // TODO: implement didPushRouteInformation
     return super.didPushRouteInformation(routeInformation);
   }
+}
+
+class AppStateModelListener implements IModelUpdateListener {
+  late SimpleModel<StudenceAppStateEnumType, StudenceAppStateEnumTypeProvider>
+  _appStatesModel;
+
+  AppStateModelListener(
+      SimpleModel<StudenceAppStateEnumType, StudenceAppStateEnumTypeProvider>
+      appStatesModel) {
+    _appStatesModel = appStatesModel;
+  }
+
+  @override
+  void onRefresh() {
+    print(_appStatesModel.getDataOrWrapper()!.name
+    );
+  }
+
 }

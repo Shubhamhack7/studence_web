@@ -1,7 +1,7 @@
 
-import 'package:studence_mvc/Service/Campus/CampusPathProvider.dart';
-import 'package:studence_mvc/common_service/AClientService.dart';
-import 'package:studence_mvc/generted/proto/campusPb.pb.dart';
+import 'package:com.tiwari.studence_mvc/Service/Campus/CampusPathProvider.dart';
+import 'package:com.tiwari.studence_mvc/common_service/AClientService.dart';
+import 'package:com.tiwari.studence_mvc/generted/proto/campusPb.pb.dart';
 
 class CampusClientService extends AClientService<CampusPb, CampusSearchReqPb,
     CampusSearchRespPb, CampusPathProvider> {

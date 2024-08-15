@@ -1,10 +1,10 @@
-import 'package:studence_mvc/common_wrapper/StringWrapper.dart';
-import 'package:studence_mvc/mvc/Listener/ListenerProvider.dart';
-import 'package:studence_mvc/mvc/handlers/InputHandler.dart';
-import 'package:studence_mvc/mvc/model/GModelAndListener.dart';
-import 'package:studence_mvc/mvc/model/SimpleModel.dart';
-import 'package:studence_mvc/mvc/model/interfaces/IModelUpdateListener.dart';
-import 'package:studence_mvc/providers/StringIListenerPRovider.dart';
+import 'package:com.tiwari.studence_mvc/common_wrapper/StringWrapper.dart';
+import 'package:com.tiwari.studence_mvc/mvc/Listener/ListenerProvider.dart';
+import 'package:com.tiwari.studence_mvc/mvc/handlers/InputHandler.dart';
+import 'package:com.tiwari.studence_mvc/mvc/model/GModelAndListener.dart';
+import 'package:com.tiwari.studence_mvc/mvc/model/SimpleModel.dart';
+import 'package:com.tiwari.studence_mvc/mvc/model/interfaces/IModelUpdateListener.dart';
+import 'package:com.tiwari.studence_mvc/providers/StringIListenerPRovider.dart';
 
 import 'StudenceTextBoxWidgetController.dart';
 

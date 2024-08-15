@@ -1,8 +1,8 @@
-import 'package:studence_mvc/commom_interfaces/IDropdownWidgetComposer.dart';
-import 'package:studence_mvc/commom_interfaces/IFormatter.dart';
-import 'package:studence_mvc/common_formatter/ISDCodesFormatter.dart';
-import 'package:studence_mvc/generted/proto/contactDetailsPb.pb.dart';
-import 'package:studence_mvc/generted/proto/voidPb.pb.dart';
+import 'package:com.tiwari.studence_mvc/commom_interfaces/IDropdownWidgetComposer.dart';
+import 'package:com.tiwari.studence_mvc/commom_interfaces/IFormatter.dart';
+import 'package:com.tiwari.studence_mvc/common_formatter/ISDCodesFormatter.dart';
+import 'package:com.tiwari.studence_mvc/generted/proto/contactDetailsPb.pb.dart';
+import 'package:com.tiwari.studence_mvc/generted/proto/voidPb.pb.dart';
 
 class ISDCodesDropdownComposer
     implements IDropdownWidgetComposer<ISDCode, VoidPb, ISDCodesFormatter> {

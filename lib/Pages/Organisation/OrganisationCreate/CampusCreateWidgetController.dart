@@ -1,12 +1,12 @@
-import 'package:studence_mvc/common_widget/StudencePhoneNumberInputWidget/ISDCodeListenerProvider.dart';
-import 'package:studence_mvc/common_widget/StudencePhoneNumberInputWidget/ISDCodesDefaultWrapperProvider.dart';
-import 'package:studence_mvc/common_wrapper/StringWrapper.dart';
-import 'package:studence_mvc/generted/proto/contactDetailsPb.pbenum.dart';
-import 'package:studence_mvc/mvc/handlers/InputHandler.dart';
-import 'package:studence_mvc/mvc/model/GModelAndListener.dart';
-import 'package:studence_mvc/providers/CountryStateEnumProvider.dart';
-import 'package:studence_mvc/providers/CountryStateEnumWrapperProvider.dart';
-import 'package:studence_mvc/providers/StringIListenerPRovider.dart';
+import 'package:com.tiwari.studence_mvc/common_widget/StudencePhoneNumberInputWidget/ISDCodeListenerProvider.dart';
+import 'package:com.tiwari.studence_mvc/common_widget/StudencePhoneNumberInputWidget/ISDCodesDefaultWrapperProvider.dart';
+import 'package:com.tiwari.studence_mvc/common_wrapper/StringWrapper.dart';
+import 'package:com.tiwari.studence_mvc/generted/proto/contactDetailsPb.pbenum.dart';
+import 'package:com.tiwari.studence_mvc/mvc/handlers/InputHandler.dart';
+import 'package:com.tiwari.studence_mvc/mvc/model/GModelAndListener.dart';
+import 'package:com.tiwari.studence_mvc/providers/CountryStateEnumProvider.dart';
+import 'package:com.tiwari.studence_mvc/providers/CountryStateEnumWrapperProvider.dart';
+import 'package:com.tiwari.studence_mvc/providers/StringIListenerPRovider.dart';
 
 class CampusCreateWidgetController {
   final GModelAndListener<String, StringIListenerPRovider, StringWrapper>

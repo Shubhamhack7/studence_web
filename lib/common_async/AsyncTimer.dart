@@ -1,6 +1,7 @@
 import 'dart:async';
 
-import 'package:controlflow/ITimer.dart';
+import 'package:com.tiwari.studence_mvc/common_async/ITimer.dart';
+
 
 class AsyncTimer extends ITimer {
   int duration = 0; // Fixed duration

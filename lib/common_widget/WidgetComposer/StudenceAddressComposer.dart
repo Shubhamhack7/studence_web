@@ -1,7 +1,7 @@
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:studence_mvc/common_widget/StudenceCards/StudenceAddressCardView.dart';
-import 'package:studence_mvc/common_widget/WidgetComposer/WidgetComposer.dart';
-import 'package:studence_mvc/generted/proto/contactDetailsPb.pb.dart';
+import 'package:com.tiwari.studence_mvc/common_widget/StudenceCards/StudenceAddressCardView.dart';
+import 'package:com.tiwari.studence_mvc/common_widget/WidgetComposer/WidgetComposer.dart';
+import 'package:com.tiwari.studence_mvc/generted/proto/contactDetailsPb.pb.dart';
 
 class StudenceAddressComposer
     implements WidgetCompoer<AddressPb, StudenceAddressCardView> {

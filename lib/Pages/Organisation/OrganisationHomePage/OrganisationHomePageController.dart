@@ -1,12 +1,12 @@
 import 'dart:async';
 
-import 'package:studence_mvc/Service/Campus/CampusClientService.dart';
-import 'package:studence_mvc/Pages/Organisation/OrganisationHomePage/OrganisationPageIdentifierEnum.dart';
-import 'package:studence_mvc/Pages/Organisation/OrganisationHomePage/OrganisationPageIdentifierEnumProvider.dart';
-import 'package:studence_mvc/generted/proto/campusPb.pb.dart';
-import 'package:studence_mvc/generted/proto/loginPb.pb.dart';
-import 'package:studence_mvc/mvc/model/SimpleModel.dart';
-import 'package:studence_mvc/session/StudenceClientSession.dart';
+import 'package:com.tiwari.studence_mvc/Service/Campus/CampusClientService.dart';
+import 'package:com.tiwari.studence_mvc/Pages/Organisation/OrganisationHomePage/OrganisationPageIdentifierEnum.dart';
+import 'package:com.tiwari.studence_mvc/Pages/Organisation/OrganisationHomePage/OrganisationPageIdentifierEnumProvider.dart';
+import 'package:com.tiwari.studence_mvc/generted/proto/campusPb.pb.dart';
+import 'package:com.tiwari.studence_mvc/generted/proto/loginPb.pb.dart';
+import 'package:com.tiwari.studence_mvc/mvc/model/SimpleModel.dart';
+import 'package:com.tiwari.studence_mvc/session/StudenceClientSession.dart';
 
 class OrganisationHomePageController {
   late SimpleModel<OrganisationPageIdentifierEnum,
@@ -50,13 +50,14 @@ class OrganisationHomePageController {
   }
 
   bool isOrgansationLogin() {
-    if (StudenceClientSession().getStudenceSession?.login.type ==
+    /*if (StudenceClientSession.instance.getStudenceSession?.login.type ==
             ProfileTypeEnum.ORGANISATION ||
         StudenceClientSession().getStudenceSession?.login.type ==
             ProfileTypeEnum.ADMIN) {
       return true;
     } else {
       return false;
-    }
+    }*/
+    return true;
   }
 }

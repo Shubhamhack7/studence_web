@@ -1,8 +1,8 @@
-import 'package:studence_mvc/mvc/Listener/ListenerProvider.dart';
-import 'package:studence_mvc/mvc/handlers/InputHandler.dart';
-import 'package:studence_mvc/mvc/model/SimpleModel.dart';
-import 'package:studence_mvc/mvc/model/interfaces/IModelUpdateListener.dart';
-import 'package:studence_mvc/mvc/wrapper/ADefaultWrapperProvider.dart';
+import 'package:com.tiwari.studence_mvc/mvc/Listener/ListenerProvider.dart';
+import 'package:com.tiwari.studence_mvc/mvc/handlers/InputHandler.dart';
+import 'package:com.tiwari.studence_mvc/mvc/model/SimpleModel.dart';
+import 'package:com.tiwari.studence_mvc/mvc/model/interfaces/IModelUpdateListener.dart';
+import 'package:com.tiwari.studence_mvc/mvc/wrapper/ADefaultWrapperProvider.dart';
 
 class GModelAndListener<T, LP extends ListenerProvider<InputHandler<T>>,
     DP extends ADefaultWrapperProvider<T, T>> {

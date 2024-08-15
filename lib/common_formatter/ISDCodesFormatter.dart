@@ -1,5 +1,5 @@
-import 'package:studence_mvc/commom_interfaces/IFormatter.dart';
-import 'package:studence_mvc/generted/proto/contactDetailsPb.pbenum.dart';
+import 'package:com.tiwari.studence_mvc/commom_interfaces/IFormatter.dart';
+import 'package:com.tiwari.studence_mvc/generted/proto/contactDetailsPb.pbenum.dart';
 
 class ISDCodesFormatter extends IFormatter<ISDCode> {
   @override

@@ -1,13 +1,15 @@
 import 'dart:async';
-import 'package:controlflow/DoneLatch.dart';
-import 'package:controlflow/ErrorException.dart';
-import 'package:controlflow/IFuture.dart';
-import 'package:controlflow/ICallback.dart';
-import 'package:controlflow/IDoneCallback.dart';
-import 'package:controlflow/LoggedRuntimeException.dart';
-import 'package:controlflow/ParsedErrorProto.dart';
-import 'package:controlflow/collection/Pair.dart';
-import 'package:synchronized/extension.dart'; // For UnmodifiableListView
+
+import 'package:com.tiwari.studence_mvc/common_async/DoneLatch.dart';
+import 'package:com.tiwari.studence_mvc/common_async/ErrorException.dart';
+import 'package:com.tiwari.studence_mvc/common_async/ICallback.dart';
+import 'package:com.tiwari.studence_mvc/common_async/IDoneCallback.dart';
+import 'package:com.tiwari.studence_mvc/common_async/IFuture.dart';
+import 'package:com.tiwari.studence_mvc/common_async/LoggedRuntimeException.dart';
+import 'package:com.tiwari.studence_mvc/common_async/ParsedErrorProto.dart';
+import 'package:com.tiwari.studence_mvc/common_async/collection/Pair.dart';
+import 'package:synchronized/extension.dart';
+ // For UnmodifiableListView
 
 // Assuming you have classes for R, K (Exception), ErrorException, IDoneCallback, Pair
 

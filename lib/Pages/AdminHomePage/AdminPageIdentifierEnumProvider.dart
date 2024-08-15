@@ -1,5 +1,5 @@
-import 'package:studence_mvc/Pages/AdminHomePage/AdminPageIdentifierEnum.dart';
-import 'package:studence_mvc/mvc/wrapper/ADefaultWrapperProvider.dart';
+import 'package:com.tiwari.studence_mvc/Pages/AdminHomePage/AdminPageIdentifierEnum.dart';
+import 'package:com.tiwari.studence_mvc/mvc/wrapper/ADefaultWrapperProvider.dart';
 
 class AdminPageIdentifierEnumProvider extends ADefaultWrapperProvider<
     AdminPageIdentifierEnum, AdminPageIdentifierEnum> {

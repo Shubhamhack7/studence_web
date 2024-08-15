@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:studence_mvc/List_Widgets/CampusList/CampusLIstPage.dart';
-import 'package:studence_mvc/Pages/Organisation/OrganisationHomePage/OrganisationHomePageController.dart';
-import 'package:studence_mvc/Pages/Organisation/OrganisationHomePage/OrganisationPageIdentifierEnum.dart';
-import 'package:studence_mvc/common_widget/widget_utility/VoidWidget.dart';
-import 'package:studence_mvc/generted/proto/campusPb.pb.dart';
+import 'package:com.tiwari.studence_mvc/List_Widgets/CampusList/CampusLIstPage.dart';
+import 'package:com.tiwari.studence_mvc/Pages/Organisation/OrganisationHomePage/OrganisationHomePageController.dart';
+import 'package:com.tiwari.studence_mvc/Pages/Organisation/OrganisationHomePage/OrganisationPageIdentifierEnum.dart';
+import 'package:com.tiwari.studence_mvc/common_widget/widget_utility/VoidWidget.dart';
+import 'package:com.tiwari.studence_mvc/generted/proto/campusPb.pb.dart';
 
 class OrganisationHomePage extends StatefulWidget {
   @override

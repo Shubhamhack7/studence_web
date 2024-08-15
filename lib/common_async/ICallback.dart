@@ -1,5 +1,7 @@
-import 'package:controlflow/IDoneCallback.dart';
-import 'package:controlflow/LoggedRuntimeException.dart';
+
+
+import 'package:com.tiwari.studence_mvc/common_async/IDoneCallback.dart';
+import 'package:com.tiwari.studence_mvc/common_async/LoggedRuntimeException.dart';
 
 abstract class ICallback<R, E extends Exception> implements IDoneCallback {
   void set(R response);

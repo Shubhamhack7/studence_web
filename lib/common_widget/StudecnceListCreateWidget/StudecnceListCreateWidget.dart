@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:studence_mvc/common_widget/StudenceCards/StudenceCardList.dart';
-import 'package:studence_mvc/common_widget/WidgetComposer/StudenceMobileAndEmailComposer.dart';
-import 'package:studence_mvc/common_widget/WidgetComposer/WidgetComposer.dart';
-import 'package:studence_mvc/mvc/Listener/ListenerProvider.dart';
-import 'package:studence_mvc/mvc/handlers/EventHandler.dart';
-import 'package:studence_mvc/mvc/model/SimpleModel.dart';
+import 'package:com.tiwari.studence_mvc/common_widget/StudenceCards/StudenceCardList.dart';
+import 'package:com.tiwari.studence_mvc/common_widget/WidgetComposer/StudenceMobileAndEmailComposer.dart';
+import 'package:com.tiwari.studence_mvc/common_widget/WidgetComposer/WidgetComposer.dart';
+import 'package:com.tiwari.studence_mvc/mvc/Listener/ListenerProvider.dart';
+import 'package:com.tiwari.studence_mvc/mvc/handlers/EventHandler.dart';
+import 'package:com.tiwari.studence_mvc/mvc/model/SimpleModel.dart';
 
 class StudecnceListCreateWidget<T, V> extends StatefulWidget {
   final Widget inputWidget;

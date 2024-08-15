@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:studence_mvc/common_comfig/DeviceDetails.dart';
-import 'package:studence_mvc/common_comfig/ServerEnvironmentType.dart';
-import 'package:studence_mvc/session/StudenceClientSession.dart';
+import 'package:com.tiwari.studence_mvc/common_comfig/DeviceDetails.dart';
+import 'package:com.tiwari.studence_mvc/common_comfig/ServerEnvironmentType.dart';
+import 'package:com.tiwari.studence_mvc/session/StudenceClientSession.dart';
 
 class StudenceAppConfig {
   static final StudenceAppConfig _instance = StudenceAppConfig._internal();
@@ -16,7 +16,7 @@ class StudenceAppConfig {
   }
 
   StudenceAppConfig._internal() {
-    StudenceClientSession().setLoginDeviceData(deviceDetails.getDeviceDetails);
+
     setServerEnvironmentUrl();
 
   }

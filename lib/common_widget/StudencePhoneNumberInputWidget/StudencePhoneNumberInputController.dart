@@ -1,14 +1,14 @@
-import 'package:studence_mvc/common_widget/StudencePhoneNumberInputWidget/ISDCodeListenerProvider.dart';
-import 'package:studence_mvc/common_widget/StudencePhoneNumberInputWidget/ISDCodesDefaultWrapperProvider.dart';
-import 'package:studence_mvc/common_wrapper/StringWrapper.dart';
-import 'package:studence_mvc/generted/proto/contactDetailsPb.pb.dart';
-import 'package:studence_mvc/generted/proto/voidPb.pb.dart';
-import 'package:studence_mvc/mvc/handlers/InputHandler.dart';
-import 'package:studence_mvc/mvc/model/GModelAndListener.dart';
-import 'package:studence_mvc/mvc/model/SimpleModel.dart';
-import 'package:studence_mvc/providers/StringIListenerPRovider.dart';
-import 'package:studence_mvc/providers/VoidPbDefaultWrapperProvider.dart';
-import 'package:studence_mvc/providers/VoidPbListenerProvider.dart';
+import 'package:com.tiwari.studence_mvc/common_widget/StudencePhoneNumberInputWidget/ISDCodeListenerProvider.dart';
+import 'package:com.tiwari.studence_mvc/common_widget/StudencePhoneNumberInputWidget/ISDCodesDefaultWrapperProvider.dart';
+import 'package:com.tiwari.studence_mvc/common_wrapper/StringWrapper.dart';
+import 'package:com.tiwari.studence_mvc/generted/proto/contactDetailsPb.pb.dart';
+import 'package:com.tiwari.studence_mvc/generted/proto/voidPb.pb.dart';
+import 'package:com.tiwari.studence_mvc/mvc/handlers/InputHandler.dart';
+import 'package:com.tiwari.studence_mvc/mvc/model/GModelAndListener.dart';
+import 'package:com.tiwari.studence_mvc/mvc/model/SimpleModel.dart';
+import 'package:com.tiwari.studence_mvc/providers/StringIListenerPRovider.dart';
+import 'package:com.tiwari.studence_mvc/providers/VoidPbDefaultWrapperProvider.dart';
+import 'package:com.tiwari.studence_mvc/providers/VoidPbListenerProvider.dart';
 
 class StudencePhoneNumberInputController {
   GModelAndListener<String, StringIListenerPRovider, StringWrapper>

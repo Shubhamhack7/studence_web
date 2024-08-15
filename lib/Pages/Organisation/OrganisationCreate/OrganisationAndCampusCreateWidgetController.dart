@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:studence_mvc/generted/proto/contactDetailsPb.pbenum.dart';
+import 'package:com.tiwari.studence_mvc/generted/proto/contactDetailsPb.pbenum.dart';
 
 class OrganisationAndCampusCreateWidgetController {
   late TextEditingController _mobileController;

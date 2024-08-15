@@ -1,7 +1,7 @@
 import 'dart:math';
 
-import 'package:controlflow/IStatistics.dart';
-import 'package:controlflow/time.pb.dart';
+import 'package:com.tiwari.studence_mvc/common_async/IStatistics.dart';
+import 'package:com.tiwari.studence_mvc/generted/proto/time.pb.dart';
 
 class CumulativeStatistics implements IStatistics {
   int _totalValue = 0; // Assuming int is sufficient for values

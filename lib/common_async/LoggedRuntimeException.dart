@@ -1,9 +1,10 @@
 import 'dart:collection';
 import 'package:aws_lambda_dart_runtime/runtime/exception.dart';
-import 'package:controlflow/ErrorException.dart';
-import 'package:controlflow/ParsedErrorProto.dart';
-import 'package:controlflow/error.pbenum.dart';
-import 'package:logging/logging.dart'; // Replace with your logging library
+import 'package:logging/logging.dart';
+import 'package:com.tiwari.studence_mvc/common_async/ErrorException.dart';
+
+import 'package:com.tiwari.studence_mvc/common_async/ParsedErrorProto.dart';
+import 'package:com.tiwari.studence_mvc/generted/proto/error.pb.dart'; // Replace with your logging library
 
 // Assuming you have classes for ParsedErrorProto, ErrorCategoryUiEnum
 class LoggedRuntimeException extends RuntimeException {

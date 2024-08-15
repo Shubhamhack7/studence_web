@@ -1,5 +1,5 @@
-import 'package:studence_mvc/generted/proto/voidPb.pb.dart';
-import 'package:studence_mvc/mvc/wrapper/ADefaultWrapperProvider.dart';
+import 'package:com.tiwari.studence_mvc/generted/proto/voidPb.pb.dart';
+import 'package:com.tiwari.studence_mvc/mvc/wrapper/ADefaultWrapperProvider.dart';
 
 class VoidPbDefaultWrapperProvider
     extends ADefaultWrapperProvider<VoidPb, VoidPb> {

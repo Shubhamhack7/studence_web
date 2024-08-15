@@ -1,8 +1,8 @@
-import 'package:studence_mvc/mvc/collect/Lists.dart';
-import 'package:studence_mvc/mvc/exceptions/Preconditions.dart';
-import 'package:studence_mvc/mvc/model/interfaces/IModel.dart';
-import 'package:studence_mvc/mvc/model/interfaces/IModelUpdateListener.dart';
-import 'package:studence_mvc/mvc/model/interfaces/IUpdateListener.dart';
+import 'package:com.tiwari.studence_mvc/mvc/collect/Lists.dart';
+import 'package:com.tiwari.studence_mvc/mvc/exceptions/Preconditions.dart';
+import 'package:com.tiwari.studence_mvc/mvc/model/interfaces/IModel.dart';
+import 'package:com.tiwari.studence_mvc/mvc/model/interfaces/IModelUpdateListener.dart';
+import 'package:com.tiwari.studence_mvc/mvc/model/interfaces/IUpdateListener.dart';
 
 abstract class AModel implements IModel {
   List<IModelUpdateListener> mModelUpdateListeners = Lists.newArrayList();

@@ -1,12 +1,12 @@
-import 'package:studence_mvc/Pages/Organisation/OrganisationCreate/OrganisationCreateWidgetController.dart';
-import 'package:studence_mvc/commom_interfaces/IWidgetProtobuf.dart';
-import 'package:studence_mvc/common_wrapper/StringWrapper.dart';
-import 'package:studence_mvc/generted/proto/contactDetailsPb.pb.dart';
-import 'package:studence_mvc/generted/proto/organisationPb.pb.dart';
-import 'package:studence_mvc/mvc/model/GModelAndListener.dart';
-import 'package:studence_mvc/mvc/model/SimpleModel.dart';
-import 'package:studence_mvc/mvc/model/interfaces/IModelUpdateListener.dart';
-import 'package:studence_mvc/providers/StringIListenerPRovider.dart';
+import 'package:com.tiwari.studence_mvc/Pages/Organisation/OrganisationCreate/OrganisationCreateWidgetController.dart';
+import 'package:com.tiwari.studence_mvc/commom_interfaces/IWidgetProtobuf.dart';
+import 'package:com.tiwari.studence_mvc/common_wrapper/StringWrapper.dart';
+import 'package:com.tiwari.studence_mvc/generted/proto/contactDetailsPb.pb.dart';
+import 'package:com.tiwari.studence_mvc/generted/proto/organisationPb.pb.dart';
+import 'package:com.tiwari.studence_mvc/mvc/model/GModelAndListener.dart';
+import 'package:com.tiwari.studence_mvc/mvc/model/SimpleModel.dart';
+import 'package:com.tiwari.studence_mvc/mvc/model/interfaces/IModelUpdateListener.dart';
+import 'package:com.tiwari.studence_mvc/providers/StringIListenerPRovider.dart';
 
 class OrganisationCreateController extends OrganisationCreateWidgetController implements IWidgetProtobuf<OrganisationPb>{
   OrganisationCreateController() {

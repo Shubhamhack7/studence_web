@@ -1,5 +1,5 @@
-import 'package:studence_mvc/mvc/wrapper/ADefaultWrapperProvider.dart';
-import 'package:studence_mvc/generted/proto/clientSessionPb.pb.dart';
+import 'package:com.tiwari.studence_mvc/mvc/wrapper/ADefaultWrapperProvider.dart';
+import 'package:com.tiwari.studence_mvc/generted/proto/clientSessionPb.pb.dart';
 
 class StudenceSessionWrapper
     extends ADefaultWrapperProvider<StudenceSession, StudenceSession> {

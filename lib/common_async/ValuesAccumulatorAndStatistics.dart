@@ -1,10 +1,10 @@
 import 'dart:collection';
 
-import 'package:collection/collection.dart';
-import 'package:controlflow/CumulativeStatistics.dart';
-import 'package:controlflow/IAccumulator.dart';
-import 'package:controlflow/IStatistics.dart';
-import 'package:controlflow/time.pb.dart'; // For ConcurrentHashMap
+import 'package:com.tiwari.studence_mvc/common_async/CumulativeStatistics.dart';
+import 'package:com.tiwari.studence_mvc/common_async/IAccumulator.dart';
+import 'package:com.tiwari.studence_mvc/common_async/IStatistics.dart';
+import 'package:com.tiwari.studence_mvc/generted/proto/time.pb.dart';
+ // For ConcurrentHashMap
 
 class ValuesAccumulatorAndStatistics implements IAccumulator {
   final Map<String, IStatistics> mStatIdsStatisticsMap =

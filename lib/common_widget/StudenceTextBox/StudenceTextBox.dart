@@ -77,14 +77,14 @@ class _StudenceTextBoxState extends State<StudenceTextBox> {
 }*/
 
 import 'package:flutter/material.dart';
-import 'package:studence_mvc/commom_interfaces/IController.dart';
-import 'package:studence_mvc/common_widget/StudenceTextBox/StudenceTextBoxController.dart';
-import 'package:studence_mvc/common_wrapper/StringWrapper.dart';
-import 'package:studence_mvc/mvc/Listener/ListenerProvider.dart';
-import 'package:studence_mvc/mvc/handlers/InputHandler.dart';
-import 'package:studence_mvc/mvc/model/GModelAndListener.dart';
-import 'package:studence_mvc/mvc/model/SimpleModel.dart';
-import 'package:studence_mvc/providers/StringIListenerPRovider.dart';
+import 'package:com.tiwari.studence_mvc/commom_interfaces/IController.dart';
+import 'package:com.tiwari.studence_mvc/common_widget/StudenceTextBox/StudenceTextBoxController.dart';
+import 'package:com.tiwari.studence_mvc/common_wrapper/StringWrapper.dart';
+import 'package:com.tiwari.studence_mvc/mvc/Listener/ListenerProvider.dart';
+import 'package:com.tiwari.studence_mvc/mvc/handlers/InputHandler.dart';
+import 'package:com.tiwari.studence_mvc/mvc/model/GModelAndListener.dart';
+import 'package:com.tiwari.studence_mvc/mvc/model/SimpleModel.dart';
+import 'package:com.tiwari.studence_mvc/providers/StringIListenerPRovider.dart';
 
 class StudenceTextBox extends StatefulWidget
     implements IController<StudenceTextBox, StudenceTextBoxController> {

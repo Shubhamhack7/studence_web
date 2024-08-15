@@ -1,14 +1,9 @@
 import 'dart:collection';
-import 'dart:ffi';
-
-import 'package:controlflow/IAccumulator.dart';
-import 'package:controlflow/ValuesAccumulatorAndStatistics.dart';
-import 'package:controlflow/collection/Pair.dart';
-import 'package:controlflow/time.pb.dart';
-import 'package:controlflow/time.pbenum.dart';
-import 'package:collection/collection.dart';
 import 'package:quiver/collection.dart';
-import 'package:sdl3/sdl3/generated/struct_sdl.dart';
+import 'package:com.tiwari.studence_mvc/common_async/IAccumulator.dart';
+import 'package:com.tiwari.studence_mvc/common_async/ValuesAccumulatorAndStatistics.dart';
+import 'package:com.tiwari.studence_mvc/common_async/collection/Pair.dart';
+import 'package:com.tiwari.studence_mvc/generted/proto/time.pb.dart';
 
 import 'collection/Sets.dart';
 
@@ -20,9 +15,9 @@ class TimeStatisticsFactory {
   final Map<AccumulatedTimeStatsIdPb, IAccumulator> _instanceMap =
       HashMap<AccumulatedTimeStatsIdPb, IAccumulator>();
   final Map<TimeProfileDimensionEnum,
-          Map<String, Set<Pair<Long, AccumulatedTimeStatsIdPb>>>> _indexMap =
+          Map<String, Set<Pair<int, AccumulatedTimeStatsIdPb>>>> _indexMap =
       HashMap<TimeProfileDimensionEnum,
-          Map<String, Set<Pair<Long, AccumulatedTimeStatsIdPb>>>>();
+          Map<String, Set<Pair<int, AccumulatedTimeStatsIdPb>>>>();
 
   final Comparator<Pair<int, AccumulatedTimeStatsIdPb>> _pairIndexComparator =
       (a, b) => a.first.compareTo(b.first);
@@ -56,21 +51,21 @@ class TimeStatisticsFactory {
     if (value != null) {
       return value;
     }
-    Pair<Long, AccumulatedTimeStatsIdPb> idPair =
-        Pair<Long, AccumulatedTimeStatsIdPb>(
-            getNewInsertId() as Long, id); // Using Pair from dart:collection
+    Pair<int, AccumulatedTimeStatsIdPb> idPair =
+        Pair<int, AccumulatedTimeStatsIdPb>(
+            getNewInsertId() as int, id); // Using Pair from dart:collection
     indexId(idPair);
     return _instanceMap[id]!;
   }
 
   List<AccumulatedTimeStatsPb> getAcculmulatedTimeStatsList() {
-    TreeSet<Pair<Long, AccumulatedTimeStatsIdPb>> sortedSet =
-        Sets<Pair<Long, AccumulatedTimeStatsIdPb>>()
-            .createTreeSetWithComparator<Pair<Long, AccumulatedTimeStatsIdPb>>(
+    TreeSet<Pair<int, AccumulatedTimeStatsIdPb>> sortedSet =
+        Sets<Pair<int, AccumulatedTimeStatsIdPb>>()
+            .createTreeSetWithComparator<Pair<int, AccumulatedTimeStatsIdPb>>(
                 _pairIndexComparator
-                    as Comparator<Pair<Long, AccumulatedTimeStatsIdPb>>);
+                    as Comparator<Pair<int, AccumulatedTimeStatsIdPb>>);
     if (_indexMap.containsKey(TimeProfileDimensionEnum.CONTEXT)) {
-      Iterable<Set<Pair<Long, AccumulatedTimeStatsIdPb>>>?
+      Iterable<Set<Pair<int, AccumulatedTimeStatsIdPb>>>?
           accTimeStatsIdCollection =
           _indexMap[TimeProfileDimensionEnum.CONTEXT]?.values;
 
@@ -84,7 +79,7 @@ class TimeStatisticsFactory {
   }
 
   List<AccumulatedTimeStatsPb> getAccTimeStatsPbList(
-      TreeSet<Pair<Long, AccumulatedTimeStatsIdPb>> set) {
+      TreeSet<Pair<int, AccumulatedTimeStatsIdPb>> set) {
     final accTimeStatsList = <AccumulatedTimeStatsPb>[];
     for (final pair in set) {
       accTimeStatsList.add(
@@ -103,25 +98,25 @@ class TimeStatisticsFactory {
     return accStatsBuilder;
   }
 
-  TreeSet<Pair<Long, AccumulatedTimeStatsIdPb>> getIntersection(
-      List<Set<Pair<Long, AccumulatedTimeStatsIdPb>>> collection) {
+  TreeSet<Pair<int, AccumulatedTimeStatsIdPb>> getIntersection(
+      List<Set<Pair<int, AccumulatedTimeStatsIdPb>>> collection) {
     if (collection.length <= 0) {
-      return new TreeSet<Pair<Long, AccumulatedTimeStatsIdPb>>();
+      return new TreeSet<Pair<int, AccumulatedTimeStatsIdPb>>();
     }
-    TreeSet<Pair<Long, AccumulatedTimeStatsIdPb>> result =
-        Sets<Pair<Long, AccumulatedTimeStatsIdPb>>()
-            .createTreeSetWithComparator<Pair<Long, AccumulatedTimeStatsIdPb>>(
+    TreeSet<Pair<int, AccumulatedTimeStatsIdPb>> result =
+        Sets<Pair<int, AccumulatedTimeStatsIdPb>>()
+            .createTreeSetWithComparator<Pair<int, AccumulatedTimeStatsIdPb>>(
                 _pairIndexComparator
-                    as Comparator<Pair<Long, AccumulatedTimeStatsIdPb>>);
+                    as Comparator<Pair<int, AccumulatedTimeStatsIdPb>>);
     ;
     result.addAll(collection.first);
-    for (Set<Pair<Long, AccumulatedTimeStatsIdPb>> item in collection) {
+    for (Set<Pair<int, AccumulatedTimeStatsIdPb>> item in collection) {
       result.retainAll(item);
     }
     return result;
   }
 
-  Set<Pair<Long, AccumulatedTimeStatsIdPb>>? getAccumulatedTimeStatsIdPairList(
+  Set<Pair<int, AccumulatedTimeStatsIdPb>>? getAccumulatedTimeStatsIdPairList(
     TimeProfileDimensionId timeProfileDimensionId,
   ) {
     final name = timeProfileDimensionId.name;
@@ -145,17 +140,17 @@ class TimeStatisticsFactory {
     return builder;
   }
 
-  void indexId(Pair<Long, AccumulatedTimeStatsIdPb> idPair) {
+  void indexId(Pair<int, AccumulatedTimeStatsIdPb> idPair) {
     // Assuming int for insertId
     for (TimeProfileDimensionId dimensionId in idPair.second.dimensionId) {
-      final Map<String, Set<Pair<Long, AccumulatedTimeStatsIdPb>>> idMap =
-          HashMap<String, Set<Pair<Long, AccumulatedTimeStatsIdPb>>>();
+      final Map<String, Set<Pair<int, AccumulatedTimeStatsIdPb>>> idMap =
+          HashMap<String, Set<Pair<int, AccumulatedTimeStatsIdPb>>>();
       _indexMap.putIfAbsent(dimensionId.name, () => idMap);
-      final Set<Pair<Long, AccumulatedTimeStatsIdPb>> idSet =
-          HashSet<Pair<Long, AccumulatedTimeStatsIdPb>>();
+      final Set<Pair<int, AccumulatedTimeStatsIdPb>> idSet =
+          HashSet<Pair<int, AccumulatedTimeStatsIdPb>>();
       _indexMap[dimensionId.name]?.putIfAbsent(dimensionId.value, () => idSet);
       _indexMap[dimensionId.name]?.values;
-      for (Set<Pair<Long, AccumulatedTimeStatsIdPb>> idSet
+      for (Set<Pair<int, AccumulatedTimeStatsIdPb>> idSet
           in _indexMap[dimensionId.name]?.values ?? []) {
         if (idSet.first.second.dimensionId.contains(dimensionId)) {
           // If the value matches, add the idPair:

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:studence_mvc/generted/proto/dataTypesPb.pb.dart';
-import 'package:studence_mvc/mvc/handlers/InputHandler.dart';
+import 'package:com.tiwari.studence_mvc/generted/proto/dataTypesPb.pb.dart';
+import 'package:com.tiwari.studence_mvc/mvc/handlers/InputHandler.dart';
 
 class StudenceCheckbox extends StatefulWidget {
   final String studentName;

@@ -1,11 +1,8 @@
 import 'dart:core';
-import 'dart:ffi';
-import 'package:controlflow/ABatchAsyncCall.dart';
-import 'package:controlflow/ErrorException.dart';
-import 'package:controlflow/IDoneCallback.dart';
-import 'package:controlflow/LoggedRuntimeException.dart';
-import 'package:controlflow/ParsedErrorProto.dart';
-import 'package:controlflow/StateHandler.dart';
+import 'package:com.tiwari.studence_mvc/common_async/ABatchAsyncCall.dart';
+import 'package:com.tiwari.studence_mvc/common_async/IDoneCallback.dart';
+import 'package:com.tiwari.studence_mvc/common_async/LoggedRuntimeException.dart';
+import 'package:com.tiwari.studence_mvc/common_async/StateHandler.dart';
 import 'package:synchronized/extension.dart';
 
 abstract class AControlFlow<E extends Enum, R, K extends Exception>

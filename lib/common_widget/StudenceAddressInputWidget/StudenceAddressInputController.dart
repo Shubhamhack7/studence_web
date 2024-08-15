@@ -1,9 +1,9 @@
-import 'package:studence_mvc/common_wrapper/StringWrapper.dart';
-import 'package:studence_mvc/generted/proto/contactDetailsPb.pb.dart';
-import 'package:studence_mvc/mvc/model/GModelAndListener.dart';
-import 'package:studence_mvc/providers/CountryStateEnumProvider.dart';
-import 'package:studence_mvc/providers/CountryStateEnumWrapperProvider.dart';
-import 'package:studence_mvc/providers/StringIListenerPRovider.dart';
+import 'package:com.tiwari.studence_mvc/common_wrapper/StringWrapper.dart';
+import 'package:com.tiwari.studence_mvc/generted/proto/contactDetailsPb.pb.dart';
+import 'package:com.tiwari.studence_mvc/mvc/model/GModelAndListener.dart';
+import 'package:com.tiwari.studence_mvc/providers/CountryStateEnumProvider.dart';
+import 'package:com.tiwari.studence_mvc/providers/CountryStateEnumWrapperProvider.dart';
+import 'package:com.tiwari.studence_mvc/providers/StringIListenerPRovider.dart';
 
 class StudenceAddressInputController {
   late GModelAndListener<String, StringIListenerPRovider, StringWrapper>

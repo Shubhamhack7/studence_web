@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:studence_mvc/List_Widgets/OrganisationList/OrganisationCardView.dart';
-import 'package:studence_mvc/List_Widgets/OrganisationList/OrganisationListWidgetComposer.dart';
-import 'package:studence_mvc/common_widget/StudenceCards/StudenceCardList.dart';
-import 'package:studence_mvc/generted/proto/organisationPb.pb.dart';
+import 'package:com.tiwari.studence_mvc/List_Widgets/OrganisationList/OrganisationCardView.dart';
+import 'package:com.tiwari.studence_mvc/List_Widgets/OrganisationList/OrganisationListWidgetComposer.dart';
+import 'package:com.tiwari.studence_mvc/common_widget/StudenceCards/StudenceCardList.dart';
+import 'package:com.tiwari.studence_mvc/generted/proto/organisationPb.pb.dart';
 
 class OrganisationListPage extends StatefulWidget {
   final List<OrganisationPb> dataList; // Add the dataList parameter

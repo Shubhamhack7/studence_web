@@ -1,16 +1,16 @@
 import 'package:flutter/src/foundation/change_notifier.dart';
-import 'package:studence_mvc/Pages/Organisation/OrganisationCreate/OrganisationAndCampusCreateWidgetController.dart';
-import 'package:studence_mvc/Pages/Organisation/OrganisationCreate/PageIdentifierEnum.dart';
-import 'package:studence_mvc/Pages/Organisation/OrganisationCreate/PageIdentifierEnumProvider.dart';
-import 'package:studence_mvc/Wrapper/OrganisationCreateAndCampusCreateWrapperProvider.dart';
-import 'package:studence_mvc/generted/proto/campusPb.pb.dart';
-import 'package:studence_mvc/generted/proto/contactDetailsPb.pbenum.dart';
-import 'package:studence_mvc/model/StudenceEmailPhoneModel.dart';
-import 'package:studence_mvc/mvc/Listener/ListenerProvider.dart';
-import 'package:studence_mvc/mvc/collect/Lists.dart';
-import 'package:studence_mvc/mvc/handlers/EventHandler.dart';
-import 'package:studence_mvc/mvc/model/SimpleModel.dart';
-import 'package:studence_mvc/providers/EvelentListnerProvider.dart';
+import 'package:com.tiwari.studence_mvc/Pages/Organisation/OrganisationCreate/OrganisationAndCampusCreateWidgetController.dart';
+import 'package:com.tiwari.studence_mvc/Pages/Organisation/OrganisationCreate/PageIdentifierEnum.dart';
+import 'package:com.tiwari.studence_mvc/Pages/Organisation/OrganisationCreate/PageIdentifierEnumProvider.dart';
+import 'package:com.tiwari.studence_mvc/Wrapper/OrganisationCreateAndCampusCreateWrapperProvider.dart';
+import 'package:com.tiwari.studence_mvc/generted/proto/campusPb.pb.dart';
+import 'package:com.tiwari.studence_mvc/generted/proto/contactDetailsPb.pbenum.dart';
+import 'package:com.tiwari.studence_mvc/model/StudenceEmailPhoneModel.dart';
+import 'package:com.tiwari.studence_mvc/mvc/Listener/ListenerProvider.dart';
+import 'package:com.tiwari.studence_mvc/mvc/collect/Lists.dart';
+import 'package:com.tiwari.studence_mvc/mvc/handlers/EventHandler.dart';
+import 'package:com.tiwari.studence_mvc/mvc/model/SimpleModel.dart';
+import 'package:com.tiwari.studence_mvc/providers/EvelentListnerProvider.dart';
 
 class OrganisationAndCampusCreateController
     extends OrganisationAndCampusCreateWidgetController {

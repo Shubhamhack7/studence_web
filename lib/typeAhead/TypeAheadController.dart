@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:studence_mvc/common_utility/Strings.dart';
-import 'package:studence_mvc/generted/proto/loginPb.pb.dart';
-import 'package:studence_mvc/generted/proto/typeAheadPb.pb.dart';
-import 'package:studence_mvc/mvc/Listener/ListenerProvider.dart';
-import 'package:studence_mvc/mvc/handlers/InputHandler.dart';
-import 'package:studence_mvc/mvc/model/SimpleModel.dart';
-import 'package:studence_mvc/providers/StringIListenerPRovider.dart';
-import 'package:studence_mvc/typeAhead/TypeAheadClientService.dart';
-import 'package:studence_mvc/typeAhead/TypeAheadWidgetController.dart';
+import 'package:com.tiwari.studence_mvc/common_utility/Strings.dart';
+import 'package:com.tiwari.studence_mvc/generted/proto/loginPb.pb.dart';
+import 'package:com.tiwari.studence_mvc/generted/proto/typeAheadPb.pb.dart';
+import 'package:com.tiwari.studence_mvc/mvc/Listener/ListenerProvider.dart';
+import 'package:com.tiwari.studence_mvc/mvc/handlers/InputHandler.dart';
+import 'package:com.tiwari.studence_mvc/mvc/model/SimpleModel.dart';
+import 'package:com.tiwari.studence_mvc/providers/StringIListenerPRovider.dart';
+import 'package:com.tiwari.studence_mvc/typeAhead/TypeAheadClientService.dart';
+import 'package:com.tiwari.studence_mvc/typeAhead/TypeAheadWidgetController.dart';
 
 class TypeAheadController extends TypeAheadWidgetController {
   static late final BuildContext m_context;

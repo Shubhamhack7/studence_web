@@ -1,12 +1,12 @@
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:studence_mvc/Pages/Organisation/providers/OrganisationRefListenerProvider.dart';
-import 'package:studence_mvc/common_widget/StudenceCards/StudenceSimpleCardView.dart';
-import 'package:studence_mvc/common_widget/WidgetComposer/WidgetComposer.dart';
-import 'package:studence_mvc/generted/proto/organisationPb.pb.dart';
-import 'package:studence_mvc/mvc/Listener/ListenerProvider.dart';
-import 'package:studence_mvc/mvc/handlers/InputHandler.dart';
-import 'package:studence_mvc/mvc/model/SimpleModel.dart';
-import 'package:studence_mvc/providers/StringIListenerPRovider.dart';
+import 'package:com.tiwari.studence_mvc/Pages/Organisation/providers/OrganisationRefListenerProvider.dart';
+import 'package:com.tiwari.studence_mvc/common_widget/StudenceCards/StudenceSimpleCardView.dart';
+import 'package:com.tiwari.studence_mvc/common_widget/WidgetComposer/WidgetComposer.dart';
+import 'package:com.tiwari.studence_mvc/generted/proto/organisationPb.pb.dart';
+import 'package:com.tiwari.studence_mvc/mvc/Listener/ListenerProvider.dart';
+import 'package:com.tiwari.studence_mvc/mvc/handlers/InputHandler.dart';
+import 'package:com.tiwari.studence_mvc/mvc/model/SimpleModel.dart';
+import 'package:com.tiwari.studence_mvc/providers/StringIListenerPRovider.dart';
 
 class StudenceSimpleCardWidgetComposer
     implements WidgetCompoer<OrganisationRefPb, StudenceSimpleCardView> {

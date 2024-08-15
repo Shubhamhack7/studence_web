@@ -1,7 +1,7 @@
-import 'package:studence_mvc/mvc/model/AModel.dart';
-import 'package:studence_mvc/mvc/model/interfaces/IBUpdater.dart';
-import 'package:studence_mvc/mvc/model/interfaces/IModelUpdateListener.dart';
-import 'package:studence_mvc/mvc/wrapper/ADefaultWrapperProvider.dart';
+import 'package:com.tiwari.studence_mvc/mvc/model/AModel.dart';
+import 'package:com.tiwari.studence_mvc/mvc/model/interfaces/IBUpdater.dart';
+import 'package:com.tiwari.studence_mvc/mvc/model/interfaces/IModelUpdateListener.dart';
+import 'package:com.tiwari.studence_mvc/mvc/wrapper/ADefaultWrapperProvider.dart';
 
 class SimpleModel<O, OP extends ADefaultWrapperProvider<O, dynamic>>
     extends AModel {

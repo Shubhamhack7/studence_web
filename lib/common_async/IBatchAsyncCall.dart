@@ -1,4 +1,5 @@
-import 'package:controlflow/IFuture.dart';
+
+import 'package:com.tiwari.studence_mvc/common_async/IFuture.dart';
 
 abstract class IBatchAsyncCall<R, E extends Exception> {
   void startAsyncCall();

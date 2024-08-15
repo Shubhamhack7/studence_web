@@ -1,7 +1,10 @@
 
-import 'CallbackFuturesGroup.dart';
-import 'IBatchAsyncCall.dart';
-import 'TimingControlFlowHook.dart';
+import 'package:com.tiwari.studence_mvc/common_async/CallbackFuturesGroup.dart';
+import 'package:com.tiwari.studence_mvc/common_async/IBatchAsyncCall.dart';
+import 'package:com.tiwari.studence_mvc/common_async/IDoneCallback.dart';
+import 'package:com.tiwari.studence_mvc/common_async/IFuture.dart';
+import 'package:com.tiwari.studence_mvc/common_async/TimingControlFlowHook.dart';
+
 
 abstract class ABatchAsyncCall<R, E extends Exception>
     implements IBatchAsyncCall<R, E> {

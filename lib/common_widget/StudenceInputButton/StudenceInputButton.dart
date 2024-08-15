@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:studence_mvc/commom_interfaces/IFormatter.dart';
-import 'package:studence_mvc/common_utility/Strings.dart';
-import 'package:studence_mvc/common_widget/widget_utility/ButtonAlignment.dart';
+import 'package:com.tiwari.studence_mvc/commom_interfaces/IFormatter.dart';
+import 'package:com.tiwari.studence_mvc/common_utility/Strings.dart';
+import 'package:com.tiwari.studence_mvc/common_widget/widget_utility/ButtonAlignment.dart';
 
 class StudenceInputButton extends StatefulWidget {
   late final Color backgroundColor;

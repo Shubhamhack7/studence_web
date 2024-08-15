@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:studence_mvc/List_Widgets/OrganisationList/OrganisationListPage.dart';
-import 'package:studence_mvc/Pages/AdminHomePage/AdminHomePageController.dart';
-import 'package:studence_mvc/List_Widgets/CampusList/CampusLIstPage.dart';
-import 'package:studence_mvc/Pages/Organisation/OrganisationCreate/OrganisationAndCampusCreate.dart';
-import 'package:studence_mvc/common_widget/StudenceCustomWidgetDialogBoxWidget/StudenceCustomWidgetDialogBoxWidget.dart';
-import 'package:studence_mvc/common_widget/StudenceEventButton/StudenceEventButton%20.dart';
-import 'package:studence_mvc/common_widget/StudenceTypeAhead/StudenceTypeAhead.dart';
-import 'package:studence_mvc/generted/proto/loginPb.pb.dart';
-import 'package:studence_mvc/generted/proto/organisationPb.pb.dart';
-import 'package:studence_mvc/mvc/handlers/EventHandler.dart';
-import 'package:studence_mvc/mvc/handlers/InputHandler.dart';
-import 'package:studence_mvc/session/StudenceClientSession.dart';
+import 'package:com.tiwari.studence_mvc/List_Widgets/OrganisationList/OrganisationListPage.dart';
+import 'package:com.tiwari.studence_mvc/Pages/AdminHomePage/AdminHomePageController.dart';
+import 'package:com.tiwari.studence_mvc/List_Widgets/CampusList/CampusLIstPage.dart';
+import 'package:com.tiwari.studence_mvc/Pages/Organisation/OrganisationCreate/OrganisationAndCampusCreate.dart';
+import 'package:com.tiwari.studence_mvc/common_widget/StudenceCustomWidgetDialogBoxWidget/StudenceCustomWidgetDialogBoxWidget.dart';
+import 'package:com.tiwari.studence_mvc/common_widget/StudenceEventButton/StudenceEventButton%20.dart';
+import 'package:com.tiwari.studence_mvc/common_widget/StudenceTypeAhead/StudenceTypeAhead.dart';
+import 'package:com.tiwari.studence_mvc/generted/proto/loginPb.pb.dart';
+import 'package:com.tiwari.studence_mvc/generted/proto/organisationPb.pb.dart';
+import 'package:com.tiwari.studence_mvc/mvc/handlers/EventHandler.dart';
+import 'package:com.tiwari.studence_mvc/mvc/handlers/InputHandler.dart';
+import 'package:com.tiwari.studence_mvc/session/StudenceClientSession.dart';
 
 import '../../common_widget/StudencePopUpEventButton/StudencePopUpEventButton .dart';
 import 'AdminPageIdentifierEnum.dart';

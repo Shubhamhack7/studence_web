@@ -6,9 +6,18 @@ import 'package:mac_address/mac_address.dart';
 import 'package:flutter/material.dart';
 import 'package:dart_ipify/dart_ipify.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
-import 'package:studence_mvc/generted/proto/deviceDetailsPb.pb.dart';
+import 'package:com.tiwari.studence_mvc/Wrapper/DeviceDetailsPbWrapperProvider.dart';
+import 'package:com.tiwari.studence_mvc/generted/proto/deviceDetailsPb.pb.dart';
+import 'package:com.tiwari.studence_mvc/mvc/model/SimpleModel.dart';
 
 class DeviceDetails {
+  SimpleModel<DeviceDetailsPb, DeviceDetailsPbWrapperProvider>
+      _deviceDetailsModel =
+      SimpleModel<DeviceDetailsPb, DeviceDetailsPbWrapperProvider>(
+          DeviceDetailsPbWrapperProvider());
+
+  SimpleModel<DeviceDetailsPb, DeviceDetailsPbWrapperProvider>
+      get deviceDetailsModel => _deviceDetailsModel;
   static final DeviceDetailsPb deviceDeatilsPb = DeviceDetailsPb.create();
   static final DeviceInfoPlugin deviceInfoPlugin = DeviceInfoPlugin();
 
@@ -16,6 +25,7 @@ class DeviceDetails {
 
   DeviceDetails() {
     collectDeviceDetails();
+    _deviceDetailsModel.setDataOrWrapper(deviceDeatilsPb);
   }
 
   Future<void> collectDeviceDetails() async {
@@ -47,7 +57,8 @@ class DeviceDetails {
         deviceDeatilsPb.mode = DeviceAppMode.WEB_APP;
       }
       String ipAddr = await getIpAddress();
-      deviceDeatilsPb.deviceIpAddress = DeviceIpAddress().createEmptyInstance();//ipAddr.toString() as DeviceIpAddress;
+      deviceDeatilsPb.deviceIpAddress = DeviceIpAddress()
+          .createEmptyInstance(); //ipAddr.toString() as DeviceIpAddress;
 
       print(deviceDeatilsPb.toProto3Json());
     } catch (e, stackTrace) {
@@ -109,7 +120,7 @@ class DeviceDetails {
     builder.androidDevice.type = androidDevice.type;
     builder.androidDevice.isPhysicalDevice = androidDevice.isPhysicalDevice;
     builder.androidDevice.systemFeatures.addAll(androidDevice.systemFeatures);
-    builder.androidDevice.displayInfo.displaySizeInches =
+    /*  builder.androidDevice.displayInfo.displaySizeInches =
         ((androidDevice.displayMetrics.sizeInches * 10).roundToDouble() / 10);
     builder.androidDevice.displayInfo.displayWidthPixels =
         androidDevice.displayMetrics.widthPx as int;
@@ -123,7 +134,7 @@ class DeviceDetails {
         androidDevice.displayMetrics.xDpi;
     builder.androidDevice.displayInfo.displayYDpi =
         androidDevice.displayMetrics.yDpi;
-    builder.androidDevice.serialNumber = androidDevice.serialNumber;
+    builder.androidDevice.serialNumber = androidDevice.serialNumber;*/
   }
 
   void readIosData(

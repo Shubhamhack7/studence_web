@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:studence_mvc/common_route/StudenceRouteEnum.dart';
-import 'package:studence_mvc/common_route/StudenceRouterConfig.dart';
+import 'package:com.tiwari.studence_mvc/common_route/StudenceRouteEnum.dart';
+import 'package:com.tiwari.studence_mvc/common_route/StudenceRouterConfig.dart';
 
 class AboutPage extends StatefulWidget {
   @override

@@ -1,5 +1,5 @@
 import 'package:protobuf/protobuf.dart';
-import 'package:studence_mvc/generted/proto/contactDetailsPb.pb.dart';
+import 'package:com.tiwari.studence_mvc/generted/proto/contactDetailsPb.pb.dart';
 
 class StudenceGenericSorter<T> {
   final List<T> _list;

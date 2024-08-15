@@ -1,5 +1,5 @@
-import 'package:studence_mvc/common_formatter/ISDCodesFormatter.dart';
-import 'package:studence_mvc/generted/proto/contactDetailsPb.pbenum.dart';
+import 'package:com.tiwari.studence_mvc/common_formatter/ISDCodesFormatter.dart';
+import 'package:com.tiwari.studence_mvc/generted/proto/contactDetailsPb.pbenum.dart';
 
 class StudenceEmailPhoneModel {
   final ISDCode isdCode;

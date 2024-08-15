@@ -1,7 +1,7 @@
 import 'dart:collection';
 import 'dart:convert'; // for jsonEncode
-import 'package:controlflow/ParsedErrorProto.dart';
-import 'package:logging/logging.dart'; // for logging
+import 'package:logging/logging.dart';
+import 'package:com.tiwari.studence_mvc/common_async/ParsedErrorProto.dart'; // for logging
 
 class ErrorException implements Exception {
   static final Logger _logger = Logger('ErrorException');

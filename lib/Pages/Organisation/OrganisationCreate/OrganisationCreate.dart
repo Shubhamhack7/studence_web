@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:studence_mvc/Pages/Organisation/OrganisationCreate/OrganisationAndCampusCreateController.dart';
-import 'package:studence_mvc/Pages/Organisation/OrganisationCreate/OrganisationCreateController.dart';
-import 'package:studence_mvc/commom_interfaces/IController.dart';
-import 'package:studence_mvc/common_formatter/ISDCodesFormatter.dart';
-import 'package:studence_mvc/common_widget/StudecnceListCreateWidget/StudecnceListCreateWidget.dart';
-import 'package:studence_mvc/common_widget/StudenceAddressInputWidget/StudenceAddressInputWidget.dart';
-import 'package:studence_mvc/common_widget/StudencePhoneNumberInputWidget/StudencePhoneNumberInputWidget.dart';
-import 'package:studence_mvc/common_widget/StudenceTextBox/StudenceTextBox.dart';
-import 'package:studence_mvc/common_widget/WidgetComposer/StudenceAddressComposer.dart';
-import 'package:studence_mvc/common_widget/WidgetComposer/StudenceMobileAndEmailComposer.dart';
+import 'package:com.tiwari.studence_mvc/Pages/Organisation/OrganisationCreate/OrganisationAndCampusCreateController.dart';
+import 'package:com.tiwari.studence_mvc/Pages/Organisation/OrganisationCreate/OrganisationCreateController.dart';
+import 'package:com.tiwari.studence_mvc/commom_interfaces/IController.dart';
+import 'package:com.tiwari.studence_mvc/common_formatter/ISDCodesFormatter.dart';
+import 'package:com.tiwari.studence_mvc/common_utility/AppStrings.dart';
+import 'package:com.tiwari.studence_mvc/common_utility/AppWidgetSize.dart';
+import 'package:com.tiwari.studence_mvc/common_widget/StudecnceListCreateWidget/StudecnceListCreateWidget.dart';
+import 'package:com.tiwari.studence_mvc/common_widget/StudenceAddressInputWidget/StudenceAddressInputWidget.dart';
+import 'package:com.tiwari.studence_mvc/common_widget/StudencePhoneNumberInputWidget/StudencePhoneNumberInputWidget.dart';
+import 'package:com.tiwari.studence_mvc/common_widget/StudenceTextBox/StudenceTextBox.dart';
+import 'package:com.tiwari.studence_mvc/common_widget/WidgetComposer/StudenceAddressComposer.dart';
+import 'package:com.tiwari.studence_mvc/common_widget/WidgetComposer/StudenceMobileAndEmailComposer.dart';
 
 class OrganisationCreate extends StatefulWidget
     implements IController<OrganisationCreate, OrganisationCreateController> {
@@ -41,7 +43,7 @@ class _OrganisationCreateState extends State<OrganisationCreate> {
     widget._controller = OrganisationCreateController();
     _firstName = StudenceTextBox(
       stringModelAndListener: widget.getController().firstNameModel,
-      placeholder: "First Name",
+      placeholder: AppStrings.first_name,
       height: 60,
     );
     super.initState();
@@ -57,7 +59,7 @@ class _OrganisationCreateState extends State<OrganisationCreate> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Text('Enter Organisation Name:', style: TextStyle(fontSize: 18)),
+        Text('Enter Organisation Name:', style: TextStyle(fontSize: AppWidgetSize.double_size_ten)),
         SizedBox(height: 10),
         Form(
           child: Row(

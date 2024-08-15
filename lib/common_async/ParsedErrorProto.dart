@@ -1,6 +1,7 @@
-import 'package:controlflow/ErrorProtoBuilder.dart';
-import 'package:controlflow/error.pb.dart';
-import 'package:protobuf/protobuf.dart'; // Assuming usage of protobuf package
+
+import 'package:protobuf/protobuf.dart';
+import 'package:com.tiwari.studence_mvc/common_async/ErrorProtoBuilder.dart';
+import 'package:com.tiwari.studence_mvc/generted/proto/error.pb.dart'; // Assuming usage of protobuf package
 
 // Assuming you have classes for ErrorProtoPb, ErrorCategoryUiEnum, and ErrorTypePbEnum
 class ParsedErrorProto {

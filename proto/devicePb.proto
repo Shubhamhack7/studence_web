@@ -37,6 +37,12 @@ enum DeviceIPAddressType {
   IPV6 =2;
 }
 
+enum DeviceAppPlatformType {
+UNKNOWN_PLATFORM =0;
+BROWSER=1;
+APPLICATION =2;
+}
+
 message AndroidDisplayInfo{
   float display_size_inches = 1;
   int32 display_width_pixels = 2;
@@ -210,6 +216,7 @@ message DeviceDetailsRefPb{
   DeviceAppMode mode = 6;
   DeviceTypeEnum deviceType =7;
   string device_id = 8;
+  DeviceAppPlatformType platform = 9;
 }
 
 message DeviceDetailsSearchReqPb{

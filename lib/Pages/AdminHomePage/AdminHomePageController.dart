@@ -1,12 +1,12 @@
 import 'dart:async';
 
 import 'package:flutter/widgets.dart';
-import 'package:studence_mvc/Pages/AdminHomePage/AdminPageIdentifierEnum.dart';
-import 'package:studence_mvc/Pages/AdminHomePage/AdminPageIdentifierEnumProvider.dart';
-import 'package:studence_mvc/Service/Organisation/OrganisationClientService.dart';
-import 'package:studence_mvc/generted/proto/organisationPb.pb.dart';
-import 'package:studence_mvc/mvc/handlers/EventHandler.dart';
-import 'package:studence_mvc/mvc/model/SimpleModel.dart';
+import 'package:com.tiwari.studence_mvc/Pages/AdminHomePage/AdminPageIdentifierEnum.dart';
+import 'package:com.tiwari.studence_mvc/Pages/AdminHomePage/AdminPageIdentifierEnumProvider.dart';
+import 'package:com.tiwari.studence_mvc/Service/Organisation/OrganisationClientService.dart';
+import 'package:com.tiwari.studence_mvc/generted/proto/organisationPb.pb.dart';
+import 'package:com.tiwari.studence_mvc/mvc/handlers/EventHandler.dart';
+import 'package:com.tiwari.studence_mvc/mvc/model/SimpleModel.dart';
 
 class AdminHomePageController {
   late SimpleModel<AdminPageIdentifierEnum, AdminPageIdentifierEnumProvider>

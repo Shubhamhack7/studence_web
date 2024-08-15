@@ -8,9 +8,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:331366928134:android:5568c55c6dbae43bcfd887",
+        "mobilesdk_app_id": "1:331366928134:android:3eb2cc15c5d1ca9ecfd887",
         "android_client_info": {
-          "package_name": "com.example.studence_mvc"
+          "package_name": "com.tiwari.studenceMvc"
         }
       },
       "oauth_client": [

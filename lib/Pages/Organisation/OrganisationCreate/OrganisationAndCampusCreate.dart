@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:studence_mvc/Pages/Organisation/OrganisationCreate/CampusCreate.dart';
-import 'package:studence_mvc/Pages/Organisation/OrganisationCreate/OrganisationAndCampusCreateController.dart';
-import 'package:studence_mvc/Pages/Organisation/OrganisationCreate/OrganisationCreate.dart';
-import 'package:studence_mvc/Pages/Organisation/OrganisationCreate/PageIdentifierEnum.dart';
+import 'package:com.tiwari.studence_mvc/Pages/Organisation/OrganisationCreate/CampusCreate.dart';
+import 'package:com.tiwari.studence_mvc/Pages/Organisation/OrganisationCreate/OrganisationAndCampusCreateController.dart';
+import 'package:com.tiwari.studence_mvc/Pages/Organisation/OrganisationCreate/OrganisationCreate.dart';
+import 'package:com.tiwari.studence_mvc/Pages/Organisation/OrganisationCreate/PageIdentifierEnum.dart';
 
 class OrganisationAndCampusCreate extends StatefulWidget {
   late OrganisationAndCampusCreateController

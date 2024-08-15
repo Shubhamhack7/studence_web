@@ -1,4 +1,4 @@
-import 'package:studence_mvc/commom_interfaces/IPathProvider.dart';
+import 'package:com.tiwari.studence_mvc/commom_interfaces/IPathProvider.dart';
 
 class OrganisationAndCampusCreatePathProvider implements IPathProvider {
   @override

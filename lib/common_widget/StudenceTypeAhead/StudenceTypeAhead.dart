@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
-import 'package:studence_mvc/generted/proto/loginPb.pbenum.dart';
-import 'package:studence_mvc/mvc/handlers/InputHandler.dart';
-import 'package:studence_mvc/typeAhead/TypeAheadController.dart';
+import 'package:com.tiwari.studence_mvc/generted/proto/loginPb.pbenum.dart';
+import 'package:com.tiwari.studence_mvc/mvc/handlers/InputHandler.dart';
+import 'package:com.tiwari.studence_mvc/typeAhead/TypeAheadController.dart';
 
 class StudenceTypeAhead extends StatefulWidget {
   final ProfileTypeEnum profileType;
@@ -48,13 +48,13 @@ class _StudenceTypeAheadState extends State<StudenceTypeAhead> {
         width: widget.width,
         height: widget.height,
         child: TypeAheadField(
-          textFieldConfiguration: TextFieldConfiguration(
+          /*textFieldConfiguration: TextFieldConfiguration(
             controller: _typeAheadController.getSearchController,
             decoration: const InputDecoration(
               hintText: 'Search',
               border: OutlineInputBorder(),
             ),
-          ),
+          ),*/
           suggestionsCallback: (pattern) async {
             List<String> list = [];
             list.clear();
@@ -73,12 +73,15 @@ class _StudenceTypeAheadState extends State<StudenceTypeAhead> {
               title: Text(suggestion),
             );
           },
-          onSuggestionSelected: (suggestion) {
+          onSelected:(value) {
+
+          } ,
+         /* onSuggestionSelected: (suggestion) {
             _typeAheadController.getInputHandlerModel
                 .getDataOrWrapper()
                 ?.onInput(suggestion);
                 
-          },
+          },*/
         ),
       ),
     );

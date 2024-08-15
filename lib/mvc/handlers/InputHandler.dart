@@ -1,6 +1,6 @@
 import 'package:singleton/singleton.dart';
-import 'package:studence_mvc/mvc/future/IFuture.dart';
-import 'package:studence_mvc/mvc/future/SyncFuture.dart';
+import 'package:com.tiwari.studence_mvc/mvc/future/IFuture.dart';
+import 'package:com.tiwari.studence_mvc/mvc/future/SyncFuture.dart';
 
 class InputHandler<T> {
   bool onInput(T finalInput) {

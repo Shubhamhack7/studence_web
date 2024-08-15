@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:studence_mvc/Pages/Organisation/OrganisationCreate/CampusCreateController.dart';
-import 'package:studence_mvc/commom_interfaces/IController.dart';
-import 'package:studence_mvc/common_widget/StudenceAddressInputWidget/StudenceAddressInputWidget.dart';
-import 'package:studence_mvc/common_widget/StudencePhoneNumberInputWidget/StudencePhoneNumberInputWidget.dart';
+import 'package:com.tiwari.studence_mvc/Pages/Organisation/OrganisationCreate/CampusCreateController.dart';
+import 'package:com.tiwari.studence_mvc/commom_interfaces/IController.dart';
+import 'package:com.tiwari.studence_mvc/common_widget/StudenceAddressInputWidget/StudenceAddressInputWidget.dart';
+import 'package:com.tiwari.studence_mvc/common_widget/StudencePhoneNumberInputWidget/StudencePhoneNumberInputWidget.dart';
 
 import '../../../common_widget/StudenceTextBox/StudenceTextBox.dart';
 

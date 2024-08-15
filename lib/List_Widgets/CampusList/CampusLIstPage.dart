@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:studence_mvc/List_Widgets/CampusList/CampusCardView.dart';
-import 'package:studence_mvc/common_widget/StudenceCards/StudenceCardList.dart';
-import 'package:studence_mvc/generted/proto/campusPb.pb.dart';
+import 'package:com.tiwari.studence_mvc/List_Widgets/CampusList/CampusCardView.dart';
+import 'package:com.tiwari.studence_mvc/common_widget/StudenceCards/StudenceCardList.dart';
+import 'package:com.tiwari.studence_mvc/generted/proto/campusPb.pb.dart';
 
 import 'CampusListWidgetComposer.dart';
 

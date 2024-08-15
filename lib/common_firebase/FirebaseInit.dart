@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 
 import '../firebase_options.dart';
 
@@ -23,7 +24,7 @@ class FirebaseInit {
   }
 
   DatabaseReference firebaseDatabaseRef() {
-    return FirebaseDatabase.instance.reference();
+    return FirebaseDatabase.instance.ref();
   }
 
   FirebaseAuth firebaseAuth() {
@@ -32,5 +33,8 @@ class FirebaseInit {
 
   FirebaseMessaging firebaseMessesing() {
     return FirebaseMessaging.instance;
+  }
+  Reference firebaseStorageRef(String path) {
+   return FirebaseStorage.instance.ref();
   }
 }

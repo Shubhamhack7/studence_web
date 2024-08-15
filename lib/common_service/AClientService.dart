@@ -1,10 +1,10 @@
 import 'package:protobuf/protobuf.dart';
-import 'package:studence_mvc/commom_interfaces/IClientService.dart';
-import 'package:studence_mvc/commom_interfaces/IPathProvider.dart';
-import 'package:studence_mvc/common_service/CreateService.dart';
-import 'package:studence_mvc/common_service/GetService.dart';
-import 'package:studence_mvc/common_service/SearchService.dart';
-import 'package:studence_mvc/common_service/UipbService.dart';
+import 'package:com.tiwari.studence_mvc/commom_interfaces/IClientService.dart';
+import 'package:com.tiwari.studence_mvc/commom_interfaces/IPathProvider.dart';
+import 'package:com.tiwari.studence_mvc/common_service/CreateService.dart';
+import 'package:com.tiwari.studence_mvc/common_service/GetService.dart';
+import 'package:com.tiwari.studence_mvc/common_service/SearchService.dart';
+import 'package:com.tiwari.studence_mvc/common_service/UipbService.dart';
 
 class AClientService<
     P extends GeneratedMessage,

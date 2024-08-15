@@ -1,4 +1,4 @@
-import 'package:studence_mvc/mvc/wrapper/ADefaultWrapperProvider.dart';
+import 'package:com.tiwari.studence_mvc/mvc/wrapper/ADefaultWrapperProvider.dart';
 
 class StringWrapper extends ADefaultWrapperProvider<String, String> {
   @override

@@ -1,4 +1,4 @@
-import 'package:studence_mvc/mvc/model/interfaces/IUpdateListener.dart';
+import 'package:com.tiwari.studence_mvc/mvc/model/interfaces/IUpdateListener.dart';
 
 abstract class IBUpdater {
   void registerUpdateListenersWithoutNotifyList(List<IUpdateListener> listener);

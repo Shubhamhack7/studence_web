@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:studence_mvc/common_widget/WidgetComposer/WidgetComposer.dart';
+import 'package:com.tiwari.studence_mvc/common_widget/WidgetComposer/WidgetComposer.dart';
 
 class StudenceCardList<T, V> extends StatefulWidget {
   final List<T> dataList;

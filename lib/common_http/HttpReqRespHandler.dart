@@ -2,7 +2,7 @@ import 'dart:io';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:protobuf/protobuf.dart';
-import 'package:studence_mvc/common_http/HttpRequestTypeEnum.dart';
+import 'package:com.tiwari.studence_mvc/common_http/HttpRequestTypeEnum.dart';
 
 class HttpReqRespHandler {
   HttpReqRespHandler() {}

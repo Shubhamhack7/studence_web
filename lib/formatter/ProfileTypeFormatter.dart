@@ -1,5 +1,5 @@
-import 'package:studence_mvc/commom_interfaces/IFormatter.dart';
-import 'package:studence_mvc/generted/proto/loginPb.pb.dart';
+import 'package:com.tiwari.studence_mvc/commom_interfaces/IFormatter.dart';
+import 'package:com.tiwari.studence_mvc/generted/proto/loginPb.pb.dart';
 
 class ProfileTypeFormatter implements IFormatter<ProfileTypeEnum> {
   @override

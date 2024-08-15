@@ -1,12 +1,12 @@
 import 'package:fluro/fluro.dart';
-import 'package:studence_mvc/Pages/AboutPage.dart';
-import 'package:studence_mvc/Pages/AdminHomePage/AdminHomePage.dart';
-import 'package:studence_mvc/Pages/HomePage/Page.dart';
-import 'package:studence_mvc/Pages/LoginPage/LoginPage.dart';
-import 'package:studence_mvc/Pages/NotFoundPage.dart';
-import 'package:studence_mvc/Pages/Organisation/OrganisationCreate/OrganisationAndCampusCreate.dart';
-import 'package:studence_mvc/Pages/Organisation/OrganisationHomePage/OrganisationHomePage.dart';
-import 'package:studence_mvc/common_route/StudenceRouteEnum.dart';
+import 'package:com.tiwari.studence_mvc/Pages/AboutPage.dart';
+import 'package:com.tiwari.studence_mvc/Pages/AdminHomePage/AdminHomePage.dart';
+import 'package:com.tiwari.studence_mvc/Pages/HomePage/Page.dart';
+import 'package:com.tiwari.studence_mvc/Pages/LoginPage/LoginPage.dart';
+import 'package:com.tiwari.studence_mvc/Pages/NotFoundPage.dart';
+import 'package:com.tiwari.studence_mvc/Pages/Organisation/OrganisationCreate/OrganisationAndCampusCreate.dart';
+import 'package:com.tiwari.studence_mvc/Pages/Organisation/OrganisationHomePage/OrganisationHomePage.dart';
+import 'package:com.tiwari.studence_mvc/common_route/StudenceRouteEnum.dart';
 
 class StudenceRouterConfig {
   static FluroRouter router = FluroRouter();

@@ -1,7 +1,7 @@
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:studence_mvc/common_widget/StudenceCards/StudenceMobileAndEmailCardView.dart';
-import 'package:studence_mvc/common_widget/WidgetComposer/WidgetComposer.dart';
-import 'package:studence_mvc/model/StudenceEmailPhoneModel.dart';
+import 'package:com.tiwari.studence_mvc/common_widget/StudenceCards/StudenceMobileAndEmailCardView.dart';
+import 'package:com.tiwari.studence_mvc/common_widget/WidgetComposer/WidgetComposer.dart';
+import 'package:com.tiwari.studence_mvc/model/StudenceEmailPhoneModel.dart';
 
 class StudenceMobileAndEmailComposer
     implements

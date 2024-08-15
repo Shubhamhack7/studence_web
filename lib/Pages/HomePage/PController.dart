@@ -1,11 +1,11 @@
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:studence_mvc/Pages/Organisation/providers/OrganisationRefListenerProvider.dart';
-import 'package:studence_mvc/generted/proto/contactDetailsPb.pbenum.dart';
-import 'package:studence_mvc/generted/proto/organisationPb.pb.dart';
-import 'package:studence_mvc/mvc/Listener/ListenerProvider.dart';
-import 'package:studence_mvc/mvc/handlers/InputHandler.dart';
-import 'package:studence_mvc/mvc/model/SimpleModel.dart';
-import 'package:studence_mvc/providers/CountryStateEnumProvider.dart';
+import 'package:com.tiwari.studence_mvc/Pages/Organisation/providers/OrganisationRefListenerProvider.dart';
+import 'package:com.tiwari.studence_mvc/generted/proto/contactDetailsPb.pbenum.dart';
+import 'package:com.tiwari.studence_mvc/generted/proto/organisationPb.pb.dart';
+import 'package:com.tiwari.studence_mvc/mvc/Listener/ListenerProvider.dart';
+import 'package:com.tiwari.studence_mvc/mvc/handlers/InputHandler.dart';
+import 'package:com.tiwari.studence_mvc/mvc/model/SimpleModel.dart';
+import 'package:com.tiwari.studence_mvc/providers/CountryStateEnumProvider.dart';
 
 class PController {
   final SimpleModel<InputHandler<OrganisationRefPb>,

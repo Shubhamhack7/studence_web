@@ -1,5 +1,5 @@
-import 'package:studence_mvc/generted/proto/contactDetailsPb.pbenum.dart';
-import 'package:studence_mvc/mvc/wrapper/ADefaultWrapperProvider.dart';
+import 'package:com.tiwari.studence_mvc/generted/proto/contactDetailsPb.pbenum.dart';
+import 'package:com.tiwari.studence_mvc/mvc/wrapper/ADefaultWrapperProvider.dart';
 
 class CountryStateEnumWrapperProvider
     extends ADefaultWrapperProvider<CountryStateEnum, CountryStateEnum> {

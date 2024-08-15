@@ -1,10 +1,10 @@
 import 'package:protobuf/protobuf.dart';
-import 'package:studence_mvc/commom_interfaces/IPathProvider.dart';
-import 'package:studence_mvc/common_comfig/StudenceAppConfig.dart';
-import 'package:studence_mvc/common_helper/ServerHelper.dart';
-import 'package:studence_mvc/common_http/HttpReqRespHandler.dart';
-import 'package:studence_mvc/common_http/HttpRequestTypeEnum.dart';
-import 'package:studence_mvc/common_utility/ProtobufConvertor.dart';
+import 'package:com.tiwari.studence_mvc/commom_interfaces/IPathProvider.dart';
+import 'package:com.tiwari.studence_mvc/common_comfig/StudenceAppConfig.dart';
+import 'package:com.tiwari.studence_mvc/common_helper/ServerHelper.dart';
+import 'package:com.tiwari.studence_mvc/common_http/HttpReqRespHandler.dart';
+import 'package:com.tiwari.studence_mvc/common_http/HttpRequestTypeEnum.dart';
+import 'package:com.tiwari.studence_mvc/common_utility/ProtobufConvertor.dart';
 
 class CreateService<P extends GeneratedMessage, PP extends IPathProvider> {
   late P m_pb;
