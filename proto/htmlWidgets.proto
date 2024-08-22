@@ -33,8 +33,17 @@ enum AlignmentTypeEnum {
     ALIGN_RIGHT=3;
     ALIGN_TOP=4;
     ALIGN_BOTTOM=5;
-
+    ALIGN_HORIZONTAL=6;
+    ALIGN_VERTICAL=7;
 }
+
+enum ColorInTypeEnum {
+ UNKNOWN_COLOR_IN_TYPE=0;
+    COLOR_FOR_BACKGROUND=1;
+    COLOR_FOR_FONT=2;
+    COLOR_FOR_FOREGROUND =3;
+}
+
 
 enum ContainerTypeEnum {
     UNKNOWN_CONTAINER_TYPE=0;
@@ -59,11 +68,23 @@ enum InputBoxTypeEnum {
   PASSWORD=2;
 }
 
-enum ButtonTypeEnum {
+enum ButtonInputTypeEnum {
+ UNKNOWN_INPUT_BUTTON_TYPE=0;
+  SIMPLE_MULTIPLE=1;
+}
+
+enum ButtonEventTypeEnum {
+ UNKNOWN_EVENT_BUTTON_TYPE=0;
+  EVENT_SUBMIT=1;
+  EVENT_REQUEST_CALL=2;
+  EVENT_NAVIGATION=3;
+}
+
+enum ButtonEventTypeEnum {
  UNKNOWN_BUTTON_TYPE=0;
-  EVENT=1;
-  INPUT=2;
-  EVENT_SUBMIT =3;
+  EVENT_SUBMIT=1;
+  EVENT_REQUEST_CALL=2;
+  EVENT_NAVIGATION=3;
 }
 
 enum BorderTypeEnum {
@@ -109,6 +130,7 @@ message WidgetPb {
     WidgetsTypeEnum widgetType = 1;
     int32 widgetPosition = 2;
     ConfigPb config = 3;
+    string widgetId =4;
 }
 
 
@@ -150,12 +172,16 @@ message CheckboxPb{
 
 message ColorPb {
 ColorTypeEnum colorType =1;
-RGBOPb rgboBackgroundColor = 2;
-ARGBPb argbBackgroundColor = 3;
-string hexCodeBackgroundColor =4;
-RGBOPb rgboFontColor = 5;
-ARGBPb aegbFontColor = 6;
-string hexCodefontColor = 7;
+ColorInTypeEnum colorInType=2;
+RGBOPb rgboBackgroundColor = 3;
+ARGBPb argbBackgroundColor = 4;
+string hexCodeBackgroundColor =5;
+RGBOPb rgboFontColor = 6;
+ARGBPb aegbFontColor = 7;
+string hexCodefontColor = 8;
+RGBOPb rgboForegroundColor = 9;
+ARGBPb aegbForegroundColor = 10;
+string hexCodeForegroundColor = 11;
 }
 
 message labelPb {
@@ -169,6 +195,22 @@ message InputBoxConfig{
     BooleanEnum isRequired = 4;
 }
 
+enum BorderRadiusTypeEnum{
+ UNKNOWN_BORDER_RADIUS_TYPE=0;
+BORDER_RADIUS=1;
+BORDER_RADIUS_ALL=2;
+BORDER_RADIUS_ONLY=3;
+BORDER_RADIUS_CIRCULAR=4;
+}
+
+message BorderRadiusPb {
+    BorderRadiusTypeEnum radiusType =1;
+    ValueTypeEnum borderValueType =2;
+    ValueUnitTypeEnum unit =3;
+    double value= 4;
+    DirectionConfig multipleValues =5;
+}
+
 message BorderConfigPb {
         ValueTypeEnum borderValueType =1;
         ValueUnitTypeEnum unit =2;
@@ -176,14 +218,37 @@ message BorderConfigPb {
         DirectionConfig multipleValues =4;
         ColorPb color =5;
         BorderTypeEnum borderType = 6;
+        BorderRadiusPb borderRadius =7;
+}
 
+message ButtonEventPb {
+   ColorPb backgroundColor =1;
+   ColorPb textColor =2;
+   HeightPb height =3;
+   WidthPb width =4;
+   BorderConfigPb =5;
+   string label =6;
+   string loadingText =7;
+   ColorPb foregroundColor =8;
+}
 
+message ButtonInputPb {
+       ColorPb backgroundColor =1;
+       ColorPb textColor =2;
+       ColorPb isSelectedBackgroundColor =3;
+       ColorPb isSelectedTextColor =4;
+       HeightPb height =5;
+       WidthPb width =6;
+
+       
 }
 
 message ButtonPb {
     ButtonTypeEnum buttonType =1;
-    ButtonTypeEnum type = 2;
-    string buttonName =3;
+    ButtonInputTypeEnum type = 2;
+    ButtonEventTypeEnum type = 3;
+    ButtonEventPb eventButton =4;
+    ButtonInputPb inputButton =5;
 }
 
 message ATagPb {
@@ -224,6 +289,13 @@ message MarginPb {
 }
 
 message WidthPb {
+    ValueTypeEnum widthType =1;
+    ValueUnitTypeEnum unit =2;
+    double value= 3;
+    DirectionConfig multipleValues =4;
+}
+
+message HeightPb {
     ValueTypeEnum widthType =1;
     ValueUnitTypeEnum unit =2;
     double value= 3;

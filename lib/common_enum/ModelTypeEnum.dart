@@ -1,0 +1,6 @@
+enum ModelTypeEnum {
+  UNKNOWN_MODEL,
+  TEXT_MODEL,
+  EVENT_MODEL,
+  CHECK_BOX_INPUT_MODEL,
+}

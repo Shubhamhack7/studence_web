@@ -1,83 +1,79 @@
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/widgets.dart';
-import 'package:com.tiwari.studence_mvc/Pages/LoginPage/LoginWIdgetController.dart';
-import 'package:com.tiwari.studence_mvc/Service/login/LoginClientService.dart';
-import 'package:com.tiwari.studence_mvc/common_route/StudenceDeviceNavigation.dart';
+import 'package:com.tiwari.studence_mvc/Pages/GenericPage/GenericPageController.dart';
 import 'package:com.tiwari.studence_mvc/common_route/StudenceRouteEnum.dart';
-import 'package:com.tiwari.studence_mvc/common_route/StudenceRouterConfig.dart';
-import 'package:com.tiwari.studence_mvc/common_utility/EntityHelper.dart';
-import 'package:com.tiwari.studence_mvc/generted/proto/loginPb.pb.dart';
-import 'package:com.tiwari.studence_mvc/Service/login/LoginRespUiPbWrapper.dart';
-import 'package:com.tiwari.studence_mvc/model/DeviceNavigationModel.dart';
-import 'package:com.tiwari.studence_mvc/mvc/model/SimpleModel.dart';
+import 'package:com.tiwari.studence_mvc/generted/proto/dataTypesPb.pb.dart';
+import 'package:com.tiwari.studence_mvc/mvc/handlers/EventHandler.dart';
+import 'package:com.tiwari.studence_mvc/mvc/handlers/InputHandler.dart';
 import 'package:com.tiwari.studence_mvc/mvc/model/interfaces/IModelUpdateListener.dart';
-import 'package:com.tiwari.studence_mvc/session/StudenceClientSession.dart';
+import 'package:com.tiwari.studence_mvc/mvc/studence_model/StudenceSimpleCheckboxInputModel.dart';
+import 'package:com.tiwari.studence_mvc/mvc/studence_model/StudenceSimpleEventModel.dart';
+import 'package:com.tiwari.studence_mvc/mvc/studence_model/StudenceSimpleTextInputModel.dart';
 
+class LoginController extends GenericPageController {
+  late final StudenceRouteEnum pageEnum;
+  late final StudenceSimpleEventModel _logineventModel;
+  late final StudenceSimpleEventModel _canceleventModel;
+  late final StudenceSimpleTextInputModel _textInputModel;
+  late final StudenceSimpleCheckboxInputModel _checkboxModel;
 
-class LoginController extends LoginWIdgetController {
-  bool isLoading = false;
-  late LoginClientService m_service;
-  SimpleModel<LoginRespUiPb, LoginRespUiPbWrapper> m_LoginRespModel =
-      SimpleModel<LoginRespUiPb, LoginRespUiPbWrapper>(LoginRespUiPbWrapper());
+  LoginController(context, page) : super(context, page) {
+    pageEnum = page;
+    _logineventModel = StudenceSimpleEventModel(pageEnum, "button6");
+    _canceleventModel = StudenceSimpleEventModel(pageEnum, "button8");
+    _textInputModel = StudenceSimpleTextInputModel(pageEnum, "textbox3");
+    _checkboxModel = StudenceSimpleCheckboxInputModel(pageEnum, "checkbox7");
 
-  LoginController(BuildContext context) : super(context) {
-    m_LoginRespModel
-        .registerModelUpdateListener(LoginRespUipbListener(m_LoginRespModel));
-    m_service = LoginClientService();
-  }
-
-  bool get getisLoading => isLoading;
-
-  Future<void> performLogin() async {
-    StudenceDeviceNavigation()
-        .deviceNavigationModel
-        .inputModel
-        .mdataOrWrapper
-        ?.onInput(DeviceNavigationModel(
-            context: context,
-            routeEnum: StudenceRouteEnum.HOME));
-    /* User? user  = await StudenceFirebaseService().signIn("test@studence.com","test@123");
-    LoginPb loginPb = await m_service.get(user!.displayName!);
-    print(loginPb);
-
-
-
-    isLoading = true;
-    // Simulate a login process here
-    await Future.delayed(Duration(seconds: 2));
-    isLoading = false;*/
-    /* LoginReqUiPb loginPb = LoginReqUiPb();
-    loginPb.emailId = getEmailController.text;
-    loginPb.password = getPasswordController.text;
-    m_service
-        .getUiPb(loginPb)
-        .then((value) => {m_LoginRespModel.setDataOrWrapper(value)})
-        .catchError((error) {
-      print(
-          'Error here : $error'); // Prints any errors that occurred during the Future's execution
-    }).whenComplete(() {
-      print(
-          'The Future is completed!'); // This message will be printed regardless of whether the Future succeeded or failed
-    });*/
-  }
-}
-
-class LoginRespUipbListener implements IModelUpdateListener {
-  late SimpleModel<LoginRespUiPb, LoginRespUiPbWrapper> m_LoginRespModel;
-
-  LoginRespUipbListener(
-      SimpleModel<LoginRespUiPb, LoginRespUiPbWrapper> LoginRespModel) {
-    m_LoginRespModel = LoginRespModel;
+    // settButtonEventHandler(ButtonEventHandler());
+    // setCheckBoxInputHandler(CheckBoxInputHandler());
+    getTextEditingControllerHandler().addListener(
+      () {
+        print(getTextEditingControllerHandler().selection);
+      },
+    );
   }
 
   @override
+  void refreshModel() {
+    _logineventModel
+        .getEventWidgetModel()
+        .setDataOrWrapper(ButtonEventHandler());
+    _textInputModel
+        .getTextINputWidgetModel()
+        .getEditTextModel()
+        .registerModelUpdateListener(UsernameInputlistener());
+    _checkboxModel
+        .getCheckInputWidgetModel()
+        .setDataOrWrapper(RememberMeCheckbox());
+    super.refreshModel();
+  }
+}
+
+class RememberMeCheckbox implements InputHandler<BooleanEnum> {
+  @override
+  bool onInput(BooleanEnum finalInput) {
+    print(finalInput);
+    return true;
+  }
+}
+
+class UsernameInputlistener implements IModelUpdateListener {
+  @override
   void onRefresh() {
-    if (EntityHelper.idNotEmpty(
-        m_LoginRespModel.getDataOrWrapper()!.login.dbInfo)) {
-      StudenceClientSession.instance
-          .setLoginData(m_LoginRespModel.getDataOrWrapper()!.login);
-/*      StudenceRouterConfig.router.navigateTo(,
-          StudenceRoute.getPath(StudenceRouteEnum.HOME));*/
-    }
+    print("listener triggerd");
+  }
+}
+
+class CheckBoxInputHandler implements InputHandler<BooleanEnum> {
+  @override
+  bool onInput(BooleanEnum finalInput) {
+    print(finalInput);
+    return false;
+  }
+}
+
+class ButtonEventHandler implements EventHandler {
+  @override
+  bool handleEvent() {
+    print("Event handle");
+    return false;
   }
 }

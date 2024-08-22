@@ -1,0 +1,224 @@
+{
+  "tile" : "Login Page",
+  "childrenContainer" : [ {
+    "containerType" : "CENTER",
+    "childrenWidget" : [ {
+      "widgetType" : "TEXT_HEADING",
+      "widgetPosition" : 1,
+      "config" : {
+        "headingConfig" : {
+          "fontSize" : 28,
+          "fontWeight" : "BOLD",
+          "fontValue" : "Student Login Form"
+        }
+      }
+    } ],
+    "containerPosition" : 1
+  }, {
+    "containerType" : "FORM",
+    "containerPosition" : 2,
+    "childContainer" : [ {
+      "containerType" : "CONTAINER",
+      "childrenWidget" : [ {
+        "widgetType" : "LABEL",
+        "widgetPosition" : 2,
+        "config" : {
+          "labelConfig" : {
+            "labelText" : "Username :"
+          }
+        }
+      }, {
+        "widgetType" : "TEXT_INPUT_BOX",
+        "widgetPosition" : 3,
+        "config" : {
+          "padding" : {
+            "paddingType" : "MULTIPLE_VALUE",
+            "unit" : "PX",
+            "multipleValues" : {
+              "top" : 12.0,
+              "right" : 20.0,
+              "bottom" : 12.0,
+              "left" : 20.0
+            }
+          },
+          "inputBoxConfig" : {
+            "type" : "NORMAL_TEXT",
+            "placeHolder" : "Enter Username",
+            "name" : "username",
+            "isRequired" : "TRUE"
+          },
+          "marginConfig" : {
+            "marginType" : "MULTIPLE_VALUE",
+            "unit" : "PX",
+            "multipleValues" : {
+              "top" : 8.0,
+              "bottom" : 8.0
+            }
+          },
+          "borderConfig" : {
+            "borderValueType" : "SINGLE_VALUE",
+            "unit" : "PX",
+            "value" : 2.0,
+            "color" : {
+              "colorType" : "HEXCODE",
+              "hexCodeBackgroundColor" : "0xFF008000"
+            },
+            "borderType" : "SOLID"
+          },
+          "widthConfig" : {
+            "widthType" : "SINGLE_VALUE",
+            "unit" : "PERCENT",
+            "value" : 100.0
+          },
+          "checkboxConfig" : {
+            "isChecked" : "FALSE"
+          }
+        }
+      }, {
+        "widgetType" : "LABEL",
+        "widgetPosition" : 4,
+        "config" : {
+          "labelConfig" : {
+            "labelText" : "Password :"
+          }
+        }
+      }, {
+        "widgetType" : "TEXT_INPUT_BOX_PASSWORD",
+        "widgetPosition" : 5,
+        "config" : {
+          "padding" : {
+            "paddingType" : "MULTIPLE_VALUE",
+            "unit" : "PX",
+            "multipleValues" : {
+              "top" : 12.0,
+              "right" : 20.0,
+              "bottom" : 12.0,
+              "left" : 20.0
+            }
+          },
+          "inputBoxConfig" : {
+            "type" : "PASSWORD",
+            "placeHolder" : "Enter Password",
+            "name" : "password",
+            "isRequired" : "TRUE"
+          },
+          "marginConfig" : {
+            "marginType" : "MULTIPLE_VALUE",
+            "unit" : "PX",
+            "multipleValues" : {
+              "top" : 8.0,
+              "bottom" : 8.0
+            }
+          },
+          "borderConfig" : {
+            "borderValueType" : "SINGLE_VALUE",
+            "unit" : "PX",
+            "value" : 2.0,
+            "color" : {
+              "colorType" : "HEXCODE",
+              "hexCodeBackgroundColor" : "0xFF008000"
+            },
+            "borderType" : "SOLID"
+          },
+          "widthConfig" : {
+            "widthType" : "SINGLE_VALUE",
+            "unit" : "PERCENT",
+            "value" : 100.0
+          },
+          "checkboxConfig" : {
+            "isChecked" : "FALSE"
+          }
+        }
+      }, {
+        "widgetType" : "EVENT_BUTTON",
+        "widgetPosition" : 6,
+        "config" : {
+          "padding" : {
+            "paddingType" : "SINGLE_VALUE",
+            "unit" : "PX",
+            "value" : 15.0
+          },
+          "colorConfig" : {
+            "colorType" : "HEXCODE",
+            "hexCodeBackgroundColor" : "0xFF4CAF50"
+          },
+          "inputBoxConfig" : { },
+          "marginConfig" : {
+            "marginType" : "MULTIPLE_VALUE",
+            "unit" : "PX",
+            "multipleValues" : {
+              "top" : 10.0,
+              "bottom" : 10.0
+            }
+          },
+          "borderConfig" : {
+            "borderValueType" : "SINGLE_VALUE",
+            "unit" : "PX"
+          },
+          "widthConfig" : {
+            "widthType" : "SINGLE_VALUE",
+            "unit" : "PERCENT",
+            "value" : 100.0
+          },
+          "buttonConfig" : {
+            "buttonType" : "EVENT",
+            "buttonName" : "Login"
+          }
+        }
+      }, {
+        "widgetType" : "CHECKBOX",
+        "widgetPosition" : 7,
+        "config" : {
+          "inputBoxConfig" : {
+            "isRequired" : "FALSE"
+          },
+          "checkboxConfig" : {
+            "isChecked" : "TRUE",
+            "checkboxName" : "Remember me"
+          }
+        }
+      }, {
+        "widgetType" : "EVENT_BUTTON",
+        "widgetPosition" : 8,
+        "config" : {
+          "inputBoxConfig" : { },
+          "marginConfig" : {
+            "marginType" : "MULTIPLE_VALUE",
+            "unit" : "PX",
+            "multipleValues" : {
+              "top" : 10.0,
+              "right" : 5.0,
+              "bottom" : 10.0,
+              "left" : 5.0
+            }
+          },
+          "buttonConfig" : {
+            "buttonType" : "EVENT",
+            "buttonName" : "Cancel"
+          }
+        }
+      }, {
+        "widgetType" : "A_TAG",
+        "widgetPosition" : 9,
+        "config" : {
+          "aTagConfig" : {
+            "href" : "#",
+            "label" : "Forget password"
+          }
+        }
+      } ],
+      "config" : {
+        "padding" : {
+          "paddingType" : "SINGLE_VALUE",
+          "unit" : "PX",
+          "value" : 25.0
+        },
+        "colorConfig" : {
+          "colorType" : "HEXCODE",
+          "hexCodeBackgroundColor" : "0xFFADD8E6"
+        }
+      },
+      "containerPosition" : 3
+    } ]
+  } ]
+}

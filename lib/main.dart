@@ -1,76 +1,52 @@
 import 'dart:convert';
 
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_crashlytics/firebase_crashlytics.dart';
-import 'package:firebase_database/firebase_database.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
-import 'package:firebase_storage/firebase_storage.dart';
-import 'package:fluro/fluro.dart';
-import 'package:flutter/foundation.dart';
-import 'package:http/http.dart' as http;
-import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:sqflite/sqflite.dart';
-import 'package:com.tiwari.studence_mvc/Controlflow/StudenceInit.dart';
-import 'package:com.tiwari.studence_mvc/common_async/ErrorException.dart';
-import 'package:com.tiwari.studence_mvc/common_async/IFuture.dart';
+import 'package:com.tiwari.studence_mvc/common_cache/ProtobufCache.dart';
 import 'package:com.tiwari.studence_mvc/common_comfig/StudenceAppState.dart';
-import 'package:com.tiwari.studence_mvc/common_firebase/StudenceFirebaseService.dart';
 import 'package:com.tiwari.studence_mvc/common_route/StudenceRouteEnum.dart';
 import 'package:com.tiwari.studence_mvc/common_route/StudenceRouterConfig.dart';
-import 'package:com.tiwari.studence_mvc/Pages/HomePage/Page.dart';
-import 'package:com.tiwari.studence_mvc/Pages/AboutPage.dart';
-import 'package:com.tiwari.studence_mvc/common_sqlitedb/StudenceSqlite.dart';
-import 'package:com.tiwari.studence_mvc/mvc/Listener/ListenerProvider.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'common_firebase/FirebaseInit.dart';
-import 'firebase_options.dart';
-
-import 'package:com.tiwari.studence_mvc/mvc/future/SyncFuture.dart';
-import 'package:com.tiwari.studence_mvc/mvc/handlers/EventHandler.dart';
-import 'package:com.tiwari.studence_mvc/mvc/handlers/InputHandler.dart';
-import 'package:com.tiwari.studence_mvc/mvc/model/SimpleModel.dart';
-import 'package:com.tiwari.studence_mvc/mvc/model/interfaces/IModelUpdateListener.dart';
-import 'package:sqflite_common_ffi/sqflite_ffi.dart';
+import 'package:com.tiwari.studence_mvc/common_utility/ProtobufConvertor.dart';
+import 'package:com.tiwari.studence_mvc/generted/proto/htmlWidgets.pb.dart';
+import 'package:firebase_storage/firebase_storage.dart';
+import 'package:fluro/fluro.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:http/http.dart' as http;
+import 'package:protobuf/protobuf.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:shared_preferences/src/shared_preferences_legacy.dart';
-
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   WidgetsBinding.instance.addObserver(StudenceAppStage());
+  final jsonString = await rootBundle.loadString('ui_json/${StudenceRouteEnum.LOGIN_SIGNUP.name}.json');
   final router = FluroRouter();
   StudenceRouterConfig.router = router;
-  StudenceRouterConfig.defineRoutes();
-  StudenceInit initialization = StudenceInit();
-  IFuture<String, ErrorException> a  = await initialization.init(router);
+  StudenceRouterConfig.defineRoutes(ProtobufConvertor.fromJsonToProto(jsonString, UiPagePb()) as UiPagePb);
+  //StudenceInit initialization = StudenceInit();
+  /*IFuture<String, ErrorException> a = await initialization.init(router);
   print(a.get());
-  StudenceSqlite sq  = StudenceSqlite();
-  sq.path();
-  sq.create();
-
   try {
     await Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,
     );
-  }catch(e){
+  } catch (e) {
     print(e);
   }
   await FirebaseInit().init();
   StudenceFirebaseService service = StudenceFirebaseService();
   User? user = await service.signIn("studence_web@studence.com", "Nikerisk@07");
   print(user!.uid);
-  if(user!.uid!=null) {
+  if (user!.uid != null) {
     try {
       await getData();
     } catch (e) {
       print(e);
     }
-  }else{
-    print ("user not logged in");
-  }
+  } else {
+    print("user not logged in");
+  }*/
 
-
- /* StudenceFirebaseService service = StudenceFirebaseService();
+  /* StudenceFirebaseService service = StudenceFirebaseService();
 
   print(service.fetchJsonFromFirebaseStorage("/DEVELOPMENT/UI"));*/
 
@@ -78,10 +54,10 @@ Future<void> main() async {
   databaseFactory = databaseFactoryFfi;
   String path = await getDatabasesPath();
   print(path);*/
- /* await Firebase.initializeApp(
+  /* await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );*/
- /* StudenceFirebaseService firebaseService = StudenceFirebaseService();
+  /* StudenceFirebaseService firebaseService = StudenceFirebaseService();
   User?  user  = await firebaseService.signIn("studence_web@studence.com", "studence_web");
   print(user);
   final DatabaseReference databaseRef = FirebaseInit().firebaseDatabaseRef();
@@ -111,12 +87,11 @@ Future<void> main() async {
   FirebaseMessaging.onMessage.listen((message) {
     print(message);
   });*/
- /* ui_web.bootstrapEngine(
+  /* ui_web.bootstrapEngine(
     runApp: () {
       runApp(MyApp(router: router));
     },
   );*/
-
 
   runApp(MyApp(router: router));
   /*SimpleModel<InputHandler<String>, ListenerProvider<InputHandler<String>>>
@@ -139,29 +114,35 @@ Future<void> main() async {
   //print(model.getDataOrWrapper());
 }
 
+
+
 Future<String> getData() async {
   final cachedData = await getCachedData();
   if (cachedData != null) {
     return cachedData;
   } else {
-    final data = await downloadDataFromFirebase();
+    final data = await downloadDataFromFirebase(StudenceRouteEnum.LOGIN_SIGNUP);
     await cacheData(data);
     return data;
   }
 }
 
-Future<String> downloadDataFromFirebase() async {
-  final storageRef = FirebaseStorage.instanceFor(bucket: "gs://studence-dev.appspot.com").ref("/DEVELOPMENT/UI/LOGIN_PAGE.json");
-  Uri downloadTask= Uri();
+Future<String> downloadDataFromFirebase(StudenceRouteEnum page) async {
+  final storageRef =
+      FirebaseStorage.instanceFor(bucket: "gs://studence-dev.appspot.com")
+          .ref("/DEVELOPMENT/UI/" + page.name + ".json");
+  Uri downloadTask = Uri();
   try {
     downloadTask = Uri.parse(await storageRef.getDownloadURL());
-  }catch(e){
+  } catch (e) {
     print(e);
   }
   final response = await http.get(downloadTask);
-  final data = jsonDecode(response.body);
-  print(data);
-  return jsonEncode(data);
+  UiPagePb pb = ProtobufConvertor.fromJsonToProto(response.body, UiPagePb()) as UiPagePb;
+  await ProtobufCache.storeProtobufObject(
+      "key",pb);
+  GeneratedMessage? pbC = await ProtobufCache.getProtobufObject("key");
+  return jsonEncode(response.body);
 }
 
 Future<void> cacheData(String data) async {
@@ -173,7 +154,6 @@ Future<String?> getCachedData() async {
   final prefs = await SharedPreferences.getInstance();
   return prefs.getString('cachedData');
 }
-
 
 /*class StringEventhandler implements EventHandler {
   @override
@@ -207,8 +187,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Studence App',
-       initialRoute: StudenceRouterConfig.initRoute(),
-     // initialRoute: '/',
+      initialRoute: StudenceRouterConfig.initRoute(),
+      // initialRoute: '/',
       onGenerateRoute: router.generator, // Use the router's generator here
     );
   }
