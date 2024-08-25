@@ -36,6 +36,9 @@ class LoginController extends GenericPageController {
     _logineventModel
         .getEventWidgetModel()
         .setDataOrWrapper(ButtonEventHandler());
+    _canceleventModel
+        .getEventWidgetModel()
+        .setDataOrWrapper(CancelButtonEventHandler());
     _textInputModel
         .getTextINputWidgetModel()
         .getEditTextModel()
@@ -66,6 +69,14 @@ class CheckBoxInputHandler implements InputHandler<BooleanEnum> {
   @override
   bool onInput(BooleanEnum finalInput) {
     print(finalInput);
+    return false;
+  }
+}
+
+class CancelButtonEventHandler implements EventHandler {
+  @override
+  bool handleEvent() {
+    print("Event handle for Cancel");
     return false;
   }
 }

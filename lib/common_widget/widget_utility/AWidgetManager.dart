@@ -78,9 +78,6 @@ abstract class AWidgetManager {
             item.id == id &&
             item.pageEnum == pageEnum) {
           return item.model;
-        } else {
-          throw LoggedRuntimeException(null, pageEnum,
-              "No Such Found mapped in Widget Manager ${pageEnum.name} , $id , ${modelType.name}");
         }
       }
       throw LoggedRuntimeException(null, pageEnum,
@@ -115,7 +112,7 @@ abstract class AWidgetManager {
           ListenerProvider<InputHandler<BooleanEnum>>>
       getCheckInputWidgetInfoInMap(
           StudenceRouteEnum pageEnum, String id, ModelTypeEnum modelType) {
-    if (_widgetList.textInputlist.isNotEmpty) {
+    if (_widgetList.checkboxInputlist.isNotEmpty) {
       for (StudenceCheckboxModel item in _widgetList.checkboxInputlist) {
         if (item.modelType == modelType &&
             item.id == id &&

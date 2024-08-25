@@ -5,11 +5,15 @@ import 'package:com.tiwari.studence_mvc/Pages/Organisation/OrganisationHomePage/
 import 'package:com.tiwari.studence_mvc/common_route/StudenceRouteEnum.dart';
 import 'package:com.tiwari.studence_mvc/common_utility/Strings.dart';
 import 'package:com.tiwari.studence_mvc/common_widget/StudenceCheckbox/StudenceCheckboxWidget.dart';
+import 'package:com.tiwari.studence_mvc/common_widget/StudenceDropdown/StudenceDropdownFormatter.dart';
+import 'package:com.tiwari.studence_mvc/common_widget/StudenceDropdown/StudenceDropdownWidget.dart';
 import 'package:com.tiwari.studence_mvc/common_widget/StudenceEventButton/StudenceEventButton%20.dart';
 import 'package:com.tiwari.studence_mvc/common_widget/StudenceEventButton/StudenceEventButtonWidget.dart';
 import 'package:com.tiwari.studence_mvc/common_widget/StudenceTextBox/StudenceTextWidget.dart';
 import 'package:com.tiwari.studence_mvc/common_widget/widget_utility/VoidWidget.dart';
+import 'package:com.tiwari.studence_mvc/formatter/ProfileTypeFormatter.dart';
 import 'package:com.tiwari.studence_mvc/generted/proto/htmlWidgets.pb.dart';
+import 'package:com.tiwari.studence_mvc/generted/proto/loginPb.pbenum.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
@@ -279,6 +283,7 @@ class _GenericPageState extends State<GenericPage> {
           break;
         case WidgetsTypeEnum.CHECKBOX:
           _wid.add(buildCheckboxWidget(widget));
+          _wid.add(StudenceDropdownWidget(formatter:StudencDropdownFormatter(ProfileTypeEnum.values, ProfileTypeFormatter())));
           break;
         case WidgetsTypeEnum.EVENT_BUTTON:
           _wid.add(StudenceEventButtonWidget(widget, _genericPageController));
@@ -378,5 +383,13 @@ class _GenericPageState extends State<GenericPage> {
         ),
       ),
     );
+  }
+
+  getEnumString() {
+    List<String> enumList = [];
+    for (ProfileTypeEnum a in ProfileTypeEnum.values){
+      enumList.add(a.name);
+    }
+    return enumList;
   }
 }
